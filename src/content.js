@@ -15,20 +15,20 @@ export const FOUNDERS = [
   {
     img: "founder-1.jpg",
     name: "Isaac Asamoah",
-    role: "Co-founder",          // ← EDIT when roles are decided, e.g. "Lead Developer"
-    bio: "",                     // ← EDIT one line: what he builds + one human detail
+    role: "Co-founder & CEO",
+    bio: "Sets the vision and owns every client relationship — the first voice you hear at IJW.",
   },
   {
     img: "founder-2.jpg",
     name: "Judah B. Amanor",
-    role: "Co-founder",
-    bio: "",
+    role: "Co-founder & COO",
+    bio: "Runs the engine room — timelines, delivery and quality control on every project.",
   },
   {
     img: "founder-3.jpg",
     name: "Wisdom Dzanado",
-    role: "Co-founder",
-    bio: "",
+    role: "Co-founder & Creative Director",
+    bio: "Owns the visuals — media, brand and everything that makes IJW work look the part.",
   },
 ];
 

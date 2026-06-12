@@ -12,7 +12,7 @@ export default function ImageSlot({ file, alt, hint, className = "" }) {
           {hint && <span style={{ fontSize: "0.78rem" }}>{hint}</span>}
         </div>
       ) : (
-        <img src={`/images/${file}`} alt={alt} loading="lazy" onError={() => setMissing(true)} />
+        <img src={`${import.meta.env.BASE_URL}images/${file}`} alt={alt} loading="lazy" onError={() => setMissing(true)} />
       )}
     </div>
   );
