@@ -40,7 +40,7 @@ export default function About() {
           <Reveal className="sec-head">
             <span className="kicker">The founders</span>
             <h2 className="display">The people behind the work</h2>
-            <p>Edit our names and bios in <code>src/content.js</code> — photos go in <code>public/images/</code>.</p>
+            <p>The I, the J and the W. When you message IJW Labs, one of these three replies.</p>
           </Reveal>
           <div className="grid-3">
             {FOUNDERS.map((f, i) => (
@@ -48,7 +48,7 @@ export default function About() {
                 <ImageSlot file={f.img} alt={`${f.name}, ${f.role}`} hint="Portrait ~900×1000" />
                 <h3>{f.name}</h3>
                 <div className="role">{f.role}</div>
-                <p>{f.bio}</p>
+                {f.bio && <p>{f.bio}</p>}
               </Reveal>
             ))}
           </div>

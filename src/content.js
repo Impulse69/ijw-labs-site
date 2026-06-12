@@ -13,22 +13,22 @@ export const SOCIALS = {
 // Photos: drop founder-1.jpg, founder-2.jpg, founder-3.jpg into public/images/
 export const FOUNDERS = [
   {
-    img: "founder-1.jpg",
-    name: "Founder One",        // ← EDIT
-    role: "Co-founder",          // ← EDIT e.g. "Lead Developer"
-    bio: "Short bio goes here — what they build, what they're great at, one human detail.", // ← EDIT
+    img: "founder-1.png",
+    name: "Isaac Asamoah",
+    role: "Co-founder",          // ← EDIT when roles are decided, e.g. "Lead Developer"
+    bio: "",                     // ← EDIT one line: what he builds + one human detail
   },
   {
-    img: "founder-2.jpg",
-    name: "Founder Two",
+    img: "founder-2.png",
+    name: "Judah B. Amanor",
     role: "Co-founder",
-    bio: "Short bio goes here — what they build, what they're great at, one human detail.",
+    bio: "",
   },
   {
-    img: "founder-3.jpg",
-    name: "Founder Three",
+    img: "founder-3.png",
+    name: "Wisdom Dzanado",
     role: "Co-founder",
-    bio: "Short bio goes here — what they build, what they're great at, one human detail.",
+    bio: "",
   },
 ];
 
