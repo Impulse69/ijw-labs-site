@@ -21,9 +21,27 @@ TILES = [
 with sync_playwright() as p:
     browser = p.chromium.launch()
     page = browser.new_page(viewport={"width": 1200, "height": 900})
+    page.set_default_timeout(180000)
     for name, url in TILES:
-        page.goto(url, wait_until="networkidle")
-        page.wait_for_timeout(1500)
+        page.goto(url, wait_until="networkidle", timeout=180000)
+        # AI-image URLs generate on demand and most arrive as CSS backgrounds —
+        # preload every background URL (incl. ::before/::after) until painted.
+        loaded = page.evaluate("""async () => {
+            const urls = new Set();
+            for (const el of document.querySelectorAll('*')) {
+                for (const pe of [null, '::before', '::after']) {
+                    const bg = getComputedStyle(el, pe).backgroundImage || '';
+                    for (const m of bg.matchAll(/url\\("?(http[^")]+)"?\\)/g)) urls.add(m[1]);
+                }
+            }
+            for (const img of document.images) if (img.src.startsWith('http')) urls.add(img.src);
+            await Promise.all([...urls].map(u => new Promise(res => {
+                const i = new Image(); i.onload = i.onerror = res; i.src = u;
+            })));
+            return urls.size;
+        }""")
+        print(f"  {name}: {loaded} remote images loaded")
+        page.wait_for_timeout(2500)
         png = page.screenshot()
         im = Image.open(io.BytesIO(png)).convert("RGB")
         im.save(OUT / name, "JPEG", quality=82, optimize=True, progressive=True)
