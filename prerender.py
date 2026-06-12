@@ -8,9 +8,12 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
+import os
+
 ROOT = Path(__file__).parent
 DIST = ROOT / "dist"
-BASE = "http://localhost:4173/ijw-labs-site"
+_base = os.environ.get("DEPLOY_BASE", "/ijw-labs-site/").rstrip("/")
+BASE = f"http://localhost:4173{_base}"
 ROUTES = {"/": "index.html", "/services": "services/index.html",
           "/about": "about/index.html", "/contact": "contact/index.html"}
 
@@ -29,11 +32,15 @@ try:
             page.wait_for_timeout(1500)
             html = page.content()
             out = DIST / outfile
+            title = page.title()
+            if not title or "IJW" not in title:
+                raise SystemExit(f"PRERENDER FAILED for {route}: title='{title}' — wrong/stale server on 4173?")
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(html, encoding="utf-8")
-            title = page.title()
             print(f"{route:<12} -> {outfile}  [{title[:60]}]")
         browser.close()
 finally:
-    server.terminate()
+    # shell=True means terminate() would only kill the shell — kill the whole tree
+    subprocess.run(["taskkill", "/PID", str(server.pid), "/T", "/F"],
+                   capture_output=True)
 print("prerender done")
