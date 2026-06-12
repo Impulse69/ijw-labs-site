@@ -1,0 +1,45 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box;font-family:'Source Sans 3',sans-serif}
+body{width:1200px;height:900px;background:#0f172a;overflow:hidden;display:flex}
+.side{width:220px;background:#1e293b;padding:26px 0;color:#94a3b8}
+.side .logo{font-family:Archivo;font-weight:800;color:#fff;padding:0 24px 26px;font-size:17px}
+.side .logo b{color:#38bdf8}
+.mi{padding:13px 24px;font-size:14px;font-weight:600}
+.mi.on{background:#0f172a;color:#38bdf8;border-left:3px solid #38bdf8}
+.main{flex:1;padding:30px 36px}
+.hdr{display:flex;justify-content:space-between;align-items:center;color:#fff}
+.hdr h1{font-family:Archivo;font-size:24px}
+.hdr .user{background:#1e293b;border-radius:99px;padding:9px 18px;font-size:13px;color:#94a3b8}
+.cards{display:flex;gap:16px;margin-top:24px}
+.kpi{flex:1;background:#1e293b;border-radius:14px;padding:20px;border:1px solid #334155}
+.kpi span{color:#64748b;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.kpi b{display:block;font-family:Archivo;font-size:27px;color:#fff;margin-top:6px}
+.kpi .up{color:#34d399;font-size:12px;font-weight:700}
+.kpi .down{color:#f87171;font-size:12px;font-weight:700}
+.panel{background:#1e293b;border:1px solid #334155;border-radius:14px;margin-top:18px;padding:22px}
+.panel h2{color:#fff;font-family:Archivo;font-size:15px;margin-bottom:16px}
+.bars{display:flex;gap:14px;align-items:flex-end;height:150px}
+.bar{flex:1;background:linear-gradient(180deg,#38bdf8,#0ea5e9);border-radius:6px 6px 0 0}
+.bar.dim{background:#334155}
+.tr{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:11px 4px;border-bottom:1px solid #334155;color:#cbd5e1;font-size:13px}
+.tr.h{color:#64748b;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.pill{width:fit-content;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:700}
+.ok{background:rgba(52,211,153,.15);color:#34d399}.low{background:rgba(248,113,113,.15);color:#f87171}
+</style></head><body>
+<div class="side"><div class="logo">STOCK<b>PILOT</b></div>
+<div class="mi on">Dashboard</div><div class="mi">Inventory</div><div class="mi">Orders</div><div class="mi">Suppliers</div><div class="mi">Reports</div><div class="mi">Settings</div></div>
+<div class="main"><div class="hdr"><h1>Good morning, Kwame</h1><div class="user">Mensah Hardware · Admin</div></div>
+<div class="cards">
+<div class="kpi"><span>Stock value</span><b>GH₵ 184,200</b><div class="up">▲ 4.2% this week</div></div>
+<div class="kpi"><span>Orders today</span><b>47</b><div class="up">▲ 12 vs yesterday</div></div>
+<div class="kpi"><span>Low-stock items</span><b>9</b><div class="down">needs reorder</div></div>
+<div class="kpi"><span>Pending deliveries</span><b>5</b><div class="up">2 arriving today</div></div></div>
+<div class="panel"><h2>WEEKLY SALES</h2><div class="bars"><div class="bar dim" style="height:45%"></div><div class="bar dim" style="height:62%"></div><div class="bar" style="height:78%"></div><div class="bar dim" style="height:54%"></div><div class="bar" style="height:92%"></div><div class="bar dim" style="height:70%"></div><div class="bar" style="height:100%"></div></div></div>
+<div class="panel"><h2>REORDER ALERTS</h2>
+<div class="tr h"><span>Item</span><span>Stock</span><span>Reorder at</span><span>Status</span></div>
+<div class="tr"><span>Cement 50kg (GHACEM)</span><span>14</span><span>25</span><span class="pill low">LOW</span></div>
+<div class="tr"><span>Roofing nails 5kg</span><span>8</span><span>20</span><span class="pill low">LOW</span></div>
+<div class="tr"><span>PVC pipe 4" × 6m</span><span>112</span><span>40</span><span class="pill ok">OK</span></div></div>
+</div></body></html>

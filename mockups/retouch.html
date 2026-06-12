@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box;font-family:'Source Sans 3',sans-serif}
+body{width:1200px;height:900px;background:#18181b;overflow:hidden;color:#fff;padding:48px 56px}
+.hdr{display:flex;justify-content:space-between;align-items:baseline}
+h1{font-family:Archivo;font-weight:800;font-size:34px}
+h1 b{color:#e879f9}
+.hdr span{color:#a1a1aa;font-size:14px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:30px;height:560px;border-radius:18px;overflow:hidden;position:relative}
+.before{background:linear-gradient(160deg,#52525b 0%,#3f3f46 60%,#27272a)}
+.after{background:linear-gradient(160deg,#fbcfe8 0%,#e879f9 45%,#7e22ce)}
+.pane{position:relative}
+.pane .subject{position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);width:240px;height:340px;border-radius:120px 120px 18px 18px}
+.before .subject{background:linear-gradient(180deg,#71717a,#52525b)}
+.after .subject{background:linear-gradient(180deg,#fdf4ff,#f0abfc)}
+.tag{position:absolute;top:22px;left:22px;font-family:Archivo;font-weight:800;font-size:13px;letter-spacing:.25em;padding:9px 16px;border-radius:99px}
+.before .tag{background:rgba(0,0,0,.45);color:#a1a1aa}
+.after .tag{background:#fff;color:#7e22ce}
+.divider{position:absolute;left:50%;top:0;bottom:0;width:4px;background:#fff;transform:translateX(-50%);z-index:2}
+.divider::after{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;color:#18181b;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:20px;font-weight:700}
+.row{display:flex;gap:28px;margin-top:28px;color:#a1a1aa;font-size:14px}
+.row b{color:#fff;font-family:Archivo;display:block;font-size:16px;margin-bottom:3px}
+</style></head><body>
+<div class="hdr"><h1>GLOW STUDIO — <b>brand shoot retouch</b></h1><span>Batch of 86 images · 48h turnaround</span></div>
+<div class="split"><div class="pane before"><div class="tag">RAW</div><div class="subject"></div></div><div class="pane after"><div class="tag">RETOUCHED</div><div class="subject"></div></div><div class="divider"></div></div>
+<div class="row"><div><b>Color &amp; skin</b>tone-true grading, natural skin texture kept</div><div><b>Background</b>cleaned, brand palette matched</div><div><b>Output</b>web, print &amp; social crops delivered</div></div>
+</body></html>

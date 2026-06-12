@@ -32,14 +32,15 @@ export const FOUNDERS = [
   },
 ];
 
-// Work samples — replace captions; drop work-1.jpg … work-6.jpg into public/images/
+// Work tiles. "Concept" = lab designs, not client deliveries — swap in real
+// projects (screenshot + honest title) as they land.
 export const WORK = [
-  { img: "work-1.jpg", title: "Project title", tag: "Web Development" },
-  { img: "work-2.jpg", title: "Project title", tag: "Systems Development" },
-  { img: "work-3.jpg", title: "Project title", tag: "Photo Editing" },
-  { img: "work-4.jpg", title: "Project title", tag: "Systems Development" },
-  { img: "work-5.jpg", title: "Project title", tag: "Web Development" },
-  { img: "work-6.jpg", title: "Project title", tag: "Photo Editing" },
+  { img: "work-1.jpg", title: "ijwlabs.com — this very website", tag: "Web Development" },
+  { img: "work-2.jpg", title: "Concept — restaurant ordering site", tag: "Concept · Web Development" },
+  { img: "work-3.jpg", title: "Concept — inventory dashboard", tag: "Concept · Systems Development" },
+  { img: "work-4.jpg", title: "Concept — clinic booking flow", tag: "Concept · Systems Development" },
+  { img: "work-5.jpg", title: "Concept — fashion e-commerce", tag: "Concept · Web Development" },
+  { img: "work-6.jpg", title: "Concept — brand shoot retouch", tag: "Concept · Photo Editing" },
 ];
 
 export const SERVICES = [

@@ -2,8 +2,15 @@ import Reveal from "../components/Reveal";
 import ImageSlot from "../components/ImageSlot";
 import { waLink, SERVICES } from "../content";
 import { IconCheck, IconWhatsApp } from "../components/Icons";
+import { usePageMeta, JsonLd, ORG_JSONLD } from "../seo";
 
 export default function Services() {
+  usePageMeta({
+    title: "Web Development, Business Systems & Photo Editing in Ghana | IJW Labs",
+    description:
+      "IJW Labs services: mobile-first websites and online stores, custom inventory/booking/billing systems, and professional photo editing. Clear quotes on WhatsApp within 48 hours.",
+    path: "/services",
+  });
   return (
     <>
       <section className="page-hero">

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://impulse69.github.io/ijw-labs-site/sitemap.xml

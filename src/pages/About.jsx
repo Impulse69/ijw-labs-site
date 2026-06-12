@@ -2,10 +2,18 @@ import Reveal from "../components/Reveal";
 import ImageSlot from "../components/ImageSlot";
 import { waLink, FOUNDERS, WORK } from "../content";
 import { IconWhatsApp } from "../components/Icons";
+import { usePageMeta, JsonLd, ORG_JSONLD } from "../seo";
 
 export default function About() {
+  usePageMeta({
+    title: "About IJW Labs — Isaac, Judah & Wisdom | Digital Agency in Accra",
+    description:
+      "IJW Labs was founded in Accra by Isaac Asamoah, Judah B. Amanor and Wisdom Dzanado — three friends fixing bad digital presence for good businesses. Meet the team behind the work.",
+    path: "/about",
+  });
   return (
     <>
+      <JsonLd data={ORG_JSONLD} />
       <section className="page-hero">
         <div className="container">
           <span className="kicker">About us</span>

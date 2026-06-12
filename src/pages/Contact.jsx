@@ -1,8 +1,15 @@
 import Reveal from "../components/Reveal";
 import { waLink, SOCIALS } from "../content";
 import { IconWhatsApp, IconInstagram, IconX, IconSnapchat, IconPin, IconClock } from "../components/Icons";
+import { usePageMeta } from "../seo";
 
 export default function Contact() {
+  usePageMeta({
+    title: "Contact IJW Labs — WhatsApp +233 53 992 3975 | Accra, Ghana",
+    description:
+      "Reach IJW Labs on WhatsApp (+233 53 992 3975), Instagram @ijw_labs or X @ijwlabs. A founder replies within 48 hours with a plan and a clear quote. Based in Accra, working everywhere.",
+    path: "/contact",
+  });
   return (
     <>
       <section className="page-hero">

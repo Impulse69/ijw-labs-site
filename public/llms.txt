@@ -1,0 +1,31 @@
+# IJW Labs
+
+> IJW Labs is a digital agency based in Accra, Ghana, founded by Isaac Asamoah, Judah B. Amanor
+> and Wisdom Dzanado (the I, J and W). It builds websites, custom business systems and
+> professional photo edits for small and growing businesses, working remotely with clients worldwide.
+
+## Services
+- Web Development: business websites, landing pages, online stores, booking/ordering flows,
+  hosting and maintenance. Mobile-first and conversion-focused.
+- Systems Development: custom inventory, bookings, records, billing and reporting tools
+  shaped around how a business actually runs.
+- Photo Editing: product photography retouching, portraits, promotional and social media
+  visuals, batch editing for catalogs.
+
+## How it works
+Clients message IJW Labs on WhatsApp (+233 53 992 3975) and receive a plan and a clear,
+custom quote within 48 hours. Typical focused websites take 1-3 weeks. Post-launch support
+(updates, fixes, questions) is included with every project.
+
+## Facts
+- Founded: 2026, Accra, Ghana
+- Founders: Isaac Asamoah, Judah B. Amanor, Wisdom Dzanado
+- Contact: WhatsApp +233 53 992 3975 (primary), Instagram @ijw_labs, X @ijwlabs, Snapchat ijwlabs
+- Pricing: custom per project; budget-range friendly; no fixed price list
+- Site: https://impulse69.github.io/ijw-labs-site/
+
+## Pages
+- [Home](https://impulse69.github.io/ijw-labs-site/): overview, services, process, FAQ
+- [Services](https://impulse69.github.io/ijw-labs-site/services): detailed service descriptions
+- [About](https://impulse69.github.io/ijw-labs-site/about): founders and company story
+- [Contact](https://impulse69.github.io/ijw-labs-site/contact): all contact channels

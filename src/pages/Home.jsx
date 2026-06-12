@@ -4,6 +4,7 @@ import Reveal from "../components/Reveal";
 import ImageSlot from "../components/ImageSlot";
 import { waLink, SERVICES, WORK } from "../content";
 import { IconCode, IconSystem, IconPhoto, IconArrow, IconWhatsApp } from "../components/Icons";
+import { usePageMeta, JsonLd, ORG_JSONLD, FAQ_JSONLD, FAQS } from "../seo";
 
 const icons = { web: IconCode, systems: IconSystem, photo: IconPhoto };
 
@@ -17,8 +18,16 @@ const line = {
 };
 
 export default function Home() {
+  usePageMeta({
+    title: "IJW Labs — Web Development & Digital Solutions in Accra, Ghana",
+    description:
+      "IJW Labs builds websites, custom business systems and professional photo edits for growing businesses. Based in Accra, working worldwide. WhatsApp +233 53 992 3975 for a free quote within 48 hours.",
+    path: "/",
+  });
   return (
     <>
+      <JsonLd data={ORG_JSONLD} />
+      <JsonLd data={FAQ_JSONLD} />
       <section className="hero">
         <div className="container hero-grid">
           <div>
@@ -124,7 +133,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section alt" id="faq">
+        <div className="container">
+          <Reveal className="sec-head">
+            <span className="kicker">Questions</span>
+            <h2 className="display">Straight answers</h2>
+          </Reveal>
+          <div style={{ maxWidth: 760 }}>
+            {FAQS.map((f, i) => (
+              <Reveal key={f.q} delay={i * 0.05}>
+                <details className="faq-item">
+                  <summary>{f.q}</summary>
+                  <p>{f.a}</p>
+                </details>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0, marginTop: 88 }}>
         <div className="container">
           <Reveal>
             <div className="cta-band">
