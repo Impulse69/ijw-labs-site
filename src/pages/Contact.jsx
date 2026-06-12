@@ -50,7 +50,7 @@ export default function Contact() {
               <p style={{ color: "var(--ink-dim)", marginTop: 12 }}>Copy this into WhatsApp and fill the blanks — you'll get a quote faster:</p>
               <div style={{ background: "var(--paper)", border: "1px solid var(--line)", borderRadius: 10, padding: "18px 20px", marginTop: 16, fontSize: ".95rem", color: "var(--ink)" }}>
                 "Hi IJW Labs! My business is <b>______</b>.<br />
-                I need <b>a website / a system / photo editing / documents</b>.<br />
+                I need <b>a website / a system / photo editing</b>.<br />
                 My budget range is <b>______</b> and I'd like it by <b>______</b>."
               </div>
               <a className="btn btn-wa" style={{ marginTop: 22 }} href={waLink("Hi IJW Labs! My business is ____. I need ____. My budget range is ____ and I'd like it by ____.")} target="_blank" rel="noopener">

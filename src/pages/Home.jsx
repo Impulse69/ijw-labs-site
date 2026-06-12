@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
 import ImageSlot from "../components/ImageSlot";
 import { waLink, SERVICES, WORK } from "../content";
-import { IconCode, IconSystem, IconPhoto, IconDoc, IconArrow, IconWhatsApp } from "../components/Icons";
+import { IconCode, IconSystem, IconPhoto, IconArrow, IconWhatsApp } from "../components/Icons";
 
-const icons = { web: IconCode, systems: IconSystem, photo: IconPhoto, docs: IconDoc };
+const icons = { web: IconCode, systems: IconSystem, photo: IconPhoto };
 
 const stagger = {
   hidden: {},
@@ -41,7 +41,7 @@ export default function Home() {
             </motion.div>
             <motion.div className="hero-stats" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.85, duration: 0.6 }}>
               <div><strong>48h</strong><span>first response & quote</span></div>
-              <div><strong>4</strong><span>services, one team</span></div>
+              <div><strong>3</strong><span>services, one team</span></div>
               <div><strong>100%</strong><span>built around your budget</span></div>
             </motion.div>
           </div>
@@ -55,10 +55,10 @@ export default function Home() {
         <div className="container">
           <Reveal className="sec-head">
             <span className="kicker">What we do</span>
-            <h2 className="display">Four services. One standard.</h2>
+            <h2 className="display">Three services. One standard.</h2>
             <p>Everything a growing business needs to look professional and run smoothly — under one roof.</p>
           </Reveal>
-          <div className="grid-4">
+          <div className="grid-3">
             {SERVICES.map((s, i) => {
               const Icon = icons[s.slug];
               return (

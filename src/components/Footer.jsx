@@ -25,7 +25,6 @@ export default function Footer() {
             <Link to="/services">Web Development</Link>
             <Link to="/services">Systems Development</Link>
             <Link to="/services">Photo Editing</Link>
-            <Link to="/services">Documentation Works</Link>
           </div>
           <div>
             <h5>Contact</h5>

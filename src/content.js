@@ -13,19 +13,19 @@ export const SOCIALS = {
 // Photos: drop founder-1.jpg, founder-2.jpg, founder-3.jpg into public/images/
 export const FOUNDERS = [
   {
-    img: "founder-1.png",
+    img: "founder-1.jpg",
     name: "Isaac Asamoah",
     role: "Co-founder",          // ← EDIT when roles are decided, e.g. "Lead Developer"
     bio: "",                     // ← EDIT one line: what he builds + one human detail
   },
   {
-    img: "founder-2.png",
+    img: "founder-2.jpg",
     name: "Judah B. Amanor",
     role: "Co-founder",
     bio: "",
   },
   {
-    img: "founder-3.png",
+    img: "founder-3.jpg",
     name: "Wisdom Dzanado",
     role: "Co-founder",
     bio: "",
@@ -37,7 +37,7 @@ export const WORK = [
   { img: "work-1.jpg", title: "Project title", tag: "Web Development" },
   { img: "work-2.jpg", title: "Project title", tag: "Systems Development" },
   { img: "work-3.jpg", title: "Project title", tag: "Photo Editing" },
-  { img: "work-4.jpg", title: "Project title", tag: "Documentation" },
+  { img: "work-4.jpg", title: "Project title", tag: "Systems Development" },
   { img: "work-5.jpg", title: "Project title", tag: "Web Development" },
   { img: "work-6.jpg", title: "Project title", tag: "Photo Editing" },
 ];
@@ -66,13 +66,5 @@ export const SERVICES = [
     short: "Product shots, portraits and promo visuals polished to a professional standard.",
     points: ["Product photography retouch", "Portraits & headshots", "Promo & social media visuals", "Batch editing for catalogs"],
     pitch: "Look as good as you are.",
-  },
-  {
-    slug: "docs",
-    img: "service-docs.jpg",
-    title: "Documentation Works",
-    short: "Proposals, profiles, reports and presentations that read clean and look sharp.",
-    points: ["Company profiles & proposals", "Reports & presentations", "Letterheads & templates", "CVs & application documents"],
-    pitch: "Paperwork that performs.",
   },
 ];

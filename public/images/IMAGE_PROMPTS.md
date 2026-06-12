@@ -29,11 +29,6 @@ modern SaaS product shot, crisp UI details."
 dull and flat, right side vibrant and professionally color-graded, photography editing
 workspace aesthetic, light background."
 
-## service-docs.jpg (~1200×900)
-"Elegant printed business documents fanned on a light desk — company profile, proposal
-and report with navy-blue covers and clean typography, top-down flat lay photography,
-soft shadows, premium stationery look."
-
 ## team.jpg — About page (~1200×900)
 ⚠ RECOMMEND A REAL PHOTO of the three of you (phone camera + good daylight is enough).
 Real founder portraits next to an AI "team" photo will look off. If you must generate:
