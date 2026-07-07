@@ -73,6 +73,9 @@ h1, h2, h3, h4 { font-family: var(--font-display); color: var(--navy); line-heig
 }
 .nav-links a:hover { color: var(--navy); background: var(--blue-soft); }
 .nav-links a.active { color: var(--blue); font-weight: 600; }
+/* keep the nav WhatsApp button white — it's an <a> so .nav-links a would otherwise win */
+.nav-links a.btn-wa,
+.nav-links a.btn-wa:hover { color: #fff; background: var(--wa); }
 .nav-burger {
   display: none; background: none; border: 1.5px solid var(--line); border-radius: 8px;
   padding: 8px 12px; cursor: pointer; font-size: 1.1rem; color: var(--navy);
