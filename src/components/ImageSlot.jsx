@@ -1,8 +1,16 @@
 import { useState } from "react";
 
-/** Renders /images/<file> if present; otherwise a labeled drop-slot frame. */
-export default function ImageSlot({ file, alt, hint, className = "" }) {
+const WIDTHS = [480, 960, 1400];
+
+/** Renders /images/<file> responsively (WebP srcset + JPG fallback);
+ *  shows a labeled drop-slot frame when the file is missing.
+ *  `eager` marks above-the-fold images (hero): no lazy-load + high fetch priority. */
+export default function ImageSlot({ file, alt, hint, className = "", eager = false }) {
   const [missing, setMissing] = useState(false);
+  const base = `${import.meta.env.BASE_URL}images/`;
+  const stem = file.replace(/\.[^.]+$/, "");
+  const webpSrcset = WIDTHS.map((w) => `${base}${stem}-w${w}.webp ${w}w`).join(", ");
+
   return (
     <div className={`img-slot ${className}`}>
       {missing ? (
@@ -12,7 +20,21 @@ export default function ImageSlot({ file, alt, hint, className = "" }) {
           {hint && <span style={{ fontSize: "0.78rem" }}>{hint}</span>}
         </div>
       ) : (
-        <img src={`${import.meta.env.BASE_URL}images/${file}`} alt={alt} loading="lazy" onError={() => setMissing(true)} />
+        <picture>
+          <source
+            type="image/webp"
+            srcSet={webpSrcset}
+            sizes="(max-width: 680px) 92vw, (max-width: 960px) 46vw, 560px"
+          />
+          <img
+            src={`${base}${file}`}
+            alt={alt}
+            loading={eager ? "eager" : "lazy"}
+            fetchPriority={eager ? "high" : undefined}
+            decoding="async"
+            onError={() => setMissing(true)}
+          />
+        </picture>
       )}
     </div>
   );
