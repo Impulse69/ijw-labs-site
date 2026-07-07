@@ -30,9 +30,9 @@ export default function ImageSlot({ file, alt, hint, className = "", eager = fal
             src={`${base}${file}`}
             alt={alt}
             loading={eager ? "eager" : "lazy"}
-            fetchPriority={eager ? "high" : undefined}
             decoding="async"
             onError={() => setMissing(true)}
+            {...(eager ? { fetchpriority: "high" } : {})}
           />
         </picture>
       )}

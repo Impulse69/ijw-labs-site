@@ -32,15 +32,15 @@ export const FOUNDERS = [
   },
 ];
 
-// Work tiles. "Concept" = lab designs, not client deliveries — swap in real
-// projects (screenshot + honest title) as they land.
+// Work tiles — real hotel website designs built by IJW across Ghana's
+// Eastern Region. Swap in more real projects (screenshot + honest title) as they land.
 export const WORK = [
-  { img: "work-1.jpg", title: "ijwlabs.com — this very website", tag: "Web Development" },
-  { img: "work-2.jpg", title: "Concept — restaurant ordering site", tag: "Concept · Web Development" },
-  { img: "work-3.jpg", title: "Concept — inventory dashboard", tag: "Concept · Systems Development" },
-  { img: "work-4.jpg", title: "Concept — clinic booking flow", tag: "Concept · Systems Development" },
-  { img: "work-5.jpg", title: "Concept — fashion e-commerce", tag: "Concept · Web Development" },
-  { img: "work-6.jpg", title: "Concept — brand shoot retouch", tag: "Concept · Photo Editing" },
+  { img: "work-1.jpg", title: "Eastern Premier Hotel", tag: "Hotel website · Koforidua" },
+  { img: "work-2.jpg", title: "Freden Hotel", tag: "Hotel website · Koforidua" },
+  { img: "work-3.jpg", title: "Little Acre Hotel", tag: "Hotel website · Aburi" },
+  { img: "work-4.jpg", title: "Yaven Heights", tag: "Hotel website · Koforidua" },
+  { img: "work-5.jpg", title: "Dear Home Hotel", tag: "Hotel website · Koforidua" },
+  { img: "work-6.jpg", title: "Modak Royal Hotel", tag: "Hotel website · Kwahu" },
 ];
 
 export const SERVICES = [

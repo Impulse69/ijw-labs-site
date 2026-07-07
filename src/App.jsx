@@ -3,6 +3,7 @@ import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { useEffect } from "react";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import VoiceWidget from "./components/VoiceWidget";
 import { waLink } from "./content";
 import { IconWhatsApp } from "./components/Icons";
 import Home from "./pages/Home";
@@ -43,6 +44,7 @@ export default function App() {
       <a className="wa-float" href={waLink("Hi IJW Labs!")} target="_blank" rel="noopener" aria-label="Chat with IJW Labs on WhatsApp">
         <IconWhatsApp size={26} color="#fff" />
       </a>
+      <VoiceWidget />
     </MotionConfig>
   );
 }

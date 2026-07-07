@@ -1,0 +1,9 @@
+# Netlify build + functions config for ijw-labs-site.
+# The site deploys at the domain root, so the Vite base must be "/".
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  DEPLOY_BASE = "/"
