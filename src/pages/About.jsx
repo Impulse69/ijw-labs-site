@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import ImageSlot from "../components/ImageSlot";
+import WorkTile from "../components/WorkTile";
 import { waLink, FOUNDERS, WORK } from "../content";
 import { IconWhatsApp } from "../components/Icons";
 import { usePageMeta, JsonLd, ORG_JSONLD } from "../seo";
@@ -68,16 +70,20 @@ export default function About() {
           <Reveal className="sec-head">
             <span className="kicker">The lab record</span>
             <h2 className="display">Work we're proud of</h2>
+            <p>Live hotel websites we built across Ghana's Eastern Region. Tap any one to open it.</p>
           </Reveal>
           <div className="work-grid">
             {WORK.map((w, i) => (
-              <Reveal key={w.img} delay={(i % 3) * 0.08} className="work-item">
-                <ImageSlot file={w.img} alt={w.title} hint="~1200×900" />
-                <h4>{w.title}</h4>
-                <span>{w.tag}</span>
+              <Reveal key={w.slug} delay={(i % 3) * 0.08}>
+                <WorkTile item={w} />
               </Reveal>
             ))}
           </div>
+          <Reveal delay={0.15}>
+            <div style={{ marginTop: 36 }}>
+              <Link to="/work" className="btn btn-primary">See more work</Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 

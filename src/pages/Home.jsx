@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
 import ImageSlot from "../components/ImageSlot";
+import WorkTile from "../components/WorkTile";
 import { waLink, SERVICES, WORK } from "../content";
 import { IconCode, IconSystem, IconPhoto, IconArrow, IconWhatsApp } from "../components/Icons";
 import { usePageMeta, JsonLd, ORG_JSONLD, FAQ_JSONLD, FAQS } from "../seo";
@@ -94,15 +95,14 @@ export default function Home() {
           </Reveal>
           <div className="work-grid">
             {WORK.slice(0, 3).map((w, i) => (
-              <Reveal key={w.img} delay={i * 0.08} className="work-item">
-                <ImageSlot file={w.img} alt={w.title} hint="~1200×900" />
-                <h4>{w.title}</h4>
-                <span>{w.tag}</span>
+              <Reveal key={w.slug} delay={i * 0.08}>
+                <WorkTile item={w} />
               </Reveal>
             ))}
           </div>
           <Reveal delay={0.15}>
-            <div style={{ marginTop: 36 }}>
+            <div style={{ marginTop: 36, display: "flex", gap: 14, flexWrap: "wrap" }}>
+              <Link to="/work" className="btn btn-primary">See all our work</Link>
               <Link to="/about" className="btn btn-outline">Meet the team behind it</Link>
             </div>
           </Reveal>

@@ -8,6 +8,7 @@ import { waLink } from "./content";
 import { IconWhatsApp } from "./components/Icons";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import Work from "./pages/Work";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
@@ -35,6 +36,7 @@ export default function App() {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<PageWrap><Home /></PageWrap>} />
           <Route path="/services" element={<PageWrap><Services /></PageWrap>} />
+          <Route path="/work" element={<PageWrap><Work /></PageWrap>} />
           <Route path="/about" element={<PageWrap><About /></PageWrap>} />
           <Route path="/contact" element={<PageWrap><Contact /></PageWrap>} />
           <Route path="*" element={<PageWrap><Home /></PageWrap>} />

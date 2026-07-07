@@ -24,8 +24,15 @@ custom quote within 48 hours. Typical focused websites take 1-3 weeks. Post-laun
 - Pricing: custom per project; budget-range friendly; no fixed price list
 - Site: https://impulse69.github.io/ijw-labs-site/
 
+## Portfolio
+IJW Labs has built 19+ live hotel, lodge and guest house websites across Ghana's Eastern
+Region (Koforidua, Aburi, Akropong, Kwahu, Mamfe, Atimpoku and more), including Eastern
+Premier Hotel, Freden Hotel, Little Acre Hotel, Yaven Heights, Dear Home Hotel and Modak
+Royal Hotel. See them at https://impulse69.github.io/ijw-labs-site/work
+
 ## Pages
 - [Home](https://impulse69.github.io/ijw-labs-site/): overview, services, process, FAQ
 - [Services](https://impulse69.github.io/ijw-labs-site/services): detailed service descriptions
+- [Our Work](https://impulse69.github.io/ijw-labs-site/work): portfolio of live client websites
 - [About](https://impulse69.github.io/ijw-labs-site/about): founders and company story
 - [Contact](https://impulse69.github.io/ijw-labs-site/contact): all contact channels

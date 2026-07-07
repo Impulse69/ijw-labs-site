@@ -14,7 +14,8 @@ ROOT = Path(__file__).parent
 DIST = ROOT / "dist"
 _base = os.environ.get("DEPLOY_BASE", "/ijw-labs-site/").rstrip("/")
 ROUTES = {"/": "index.html", "/services": "services/index.html",
-          "/about": "about/index.html", "/contact": "contact/index.html"}
+          "/work": "work/index.html", "/about": "about/index.html",
+          "/contact": "contact/index.html"}
 
 # SPA fallback for unknown deep links: raw shell BEFORE prerender overwrites index
 shutil.copy2(DIST / "index.html", DIST / "404.html")

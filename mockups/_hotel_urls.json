@@ -1,0 +1,97 @@
+{
+ "akosombo-continental-hotel": {
+  "status": 200,
+  "live": true,
+  "url": "https://akosombo-continental-hotel.netlify.app/"
+ },
+ "bright-hotel-suites-koforidua": {
+  "status": 200,
+  "live": true,
+  "url": "https://bright-hotel-suites-koforidua.netlify.app/"
+ },
+ "dear-home-hotel-koforidua": {
+  "status": 200,
+  "live": true,
+  "url": "https://dear-home-hotel-koforidua.netlify.app/"
+ },
+ "eastern-premier-hotel": {
+  "status": 200,
+  "live": true,
+  "url": "https://eastern-premier-hotel-koforidua.netlify.app/"
+ },
+ "filifaf-hotel-koforidua": {
+  "status": 200,
+  "live": true,
+  "url": "https://filifaf-hotel-koforidua.netlify.app/"
+ },
+ "freden-hotel-koforidua": {
+  "status": 200,
+  "live": true,
+  "url": "https://freden-hotel-koforidua.netlify.app/"
+ },
+ "koforidua-guest-house": {
+  "status": 200,
+  "live": true,
+  "url": "https://koforidua-guest-house.netlify.app/"
+ },
+ "kyerewaa-hotel-akwatia": {
+  "status": 200,
+  "live": true,
+  "url": "https://kyerewaa-hotel-akwatia.netlify.app/"
+ },
+ "lasanto-hotel-larteh": {
+  "status": 200,
+  "live": true,
+  "url": "https://lasanto-hotel-larteh.netlify.app/"
+ },
+ "little-acre-hotel-aburi": {
+  "status": 404,
+  "live": false,
+  "url": "https://little-acre-hotel-aburi.netlify.app/"
+ },
+ "magjon-hotel-okorase": {
+  "status": 200,
+  "live": true,
+  "url": "https://magjon-hotel-okorase.netlify.app/"
+ },
+ "modak-royal-hotel-kwahu": {
+  "status": 200,
+  "live": true,
+  "url": "https://modak-royal-hotel-kwahu.netlify.app/"
+ },
+ "oak-guest-house-koforidua": {
+  "status": 200,
+  "live": true,
+  "url": "https://oak-guest-house-koforidua.netlify.app/"
+ },
+ "palm-hill-hotel-akropong": {
+  "status": 200,
+  "live": true,
+  "url": "https://palm-hill-hotel-akropong.netlify.app/"
+ },
+ "renes-hotel-koforidua": {
+  "status": 200,
+  "live": true,
+  "url": "https://renes-hotel-koforidua.netlify.app/"
+ },
+ "stopping-point-hotel-anyinam": {
+  "status": 200,
+  "live": true,
+  "url": "https://stopping-point-hotel-anyinam.netlify.app/"
+ },
+ "translinks-hotel-koforidua": {
+  "status": 200,
+  "live": true,
+  "url": "https://translinks-hotel-koforidua.netlify.app/"
+ },
+ "vip-lodge-mamfe": {
+  "status": 200,
+  "live": true,
+  "url": "https://vip-lodge-mamfe.netlify.app/"
+ },
+ "yaven-heights-koforidua": {
+  "status": 200,
+  "live": true,
+  "url": "https://yaven-heights-koforidua.netlify.app/"
+ }
+}
