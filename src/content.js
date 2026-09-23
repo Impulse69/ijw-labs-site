@@ -32,8 +32,8 @@ export const FOUNDERS = [
   },
 ];
 
-// Real hotel websites IJW built across Ghana's Eastern Region — each tile links
-// to the live site. `featured: true` = shown on Home + top of the About grid.
+// Published hotel website concepts — each tile links to a live design demo.
+// `featured: true` = shown on Home + top of the About grid.
 // To add a project: screenshot it into public/images/work/<slug>.jpg, run
 // mockups/portfolio_variants.py, then add a row here.
 export const PORTFOLIO = [

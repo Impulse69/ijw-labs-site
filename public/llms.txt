@@ -22,17 +22,16 @@ custom quote within 48 hours. Typical focused websites take 1-3 weeks. Post-laun
 - Founders: Isaac Asamoah, Judah B. Amanor, Wisdom Dzanado
 - Contact: WhatsApp +233 53 992 3975 (primary), Instagram @ijw_labs, X @ijwlabs, Snapchat ijwlabs
 - Pricing: custom per project; budget-range friendly; no fixed price list
-- Site: https://impulse69.github.io/ijw-labs-site/
+- Site: https://ijwlabs.com/
 
 ## Portfolio
-IJW Labs has built 19+ live hotel, lodge and guest house websites across Ghana's Eastern
-Region (Koforidua, Aburi, Akropong, Kwahu, Mamfe, Atimpoku and more), including Eastern
-Premier Hotel, Freden Hotel, Little Acre Hotel, Yaven Heights, Dear Home Hotel and Modak
-Royal Hotel. See them at https://impulse69.github.io/ijw-labs-site/work
+IJW Labs has published 19 hotel, lodge and guest house website design concepts based on
+businesses in Ghana's Eastern Region. These are demos, not official websites of the named
+businesses. Explore them at https://ijwlabs.com/work
 
 ## Pages
-- [Home](https://impulse69.github.io/ijw-labs-site/): overview, services, process, FAQ
-- [Services](https://impulse69.github.io/ijw-labs-site/services): detailed service descriptions
-- [Our Work](https://impulse69.github.io/ijw-labs-site/work): portfolio of live client websites
-- [About](https://impulse69.github.io/ijw-labs-site/about): founders and company story
-- [Contact](https://impulse69.github.io/ijw-labs-site/contact): all contact channels
+- [Home](https://ijwlabs.com/): overview, services, process, FAQ
+- [Services](https://ijwlabs.com/services): detailed service descriptions
+- [Our Work](https://ijwlabs.com/work): published hospitality website concepts
+- [About](https://ijwlabs.com/about): founders and company story
+- [Contact](https://ijwlabs.com/contact): all contact channels

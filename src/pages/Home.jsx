@@ -6,6 +6,7 @@ import WorkTile from "../components/WorkTile";
 import { waLink, SERVICES, WORK } from "../content";
 import { IconCode, IconSystem, IconPhoto, IconArrow, IconWhatsApp } from "../components/Icons";
 import { usePageMeta, JsonLd, ORG_JSONLD, FAQ_JSONLD, FAQS } from "../seo";
+import { PAGE_META } from "../page-metadata";
 
 const icons = { web: IconCode, systems: IconSystem, photo: IconPhoto };
 
@@ -19,12 +20,7 @@ const line = {
 };
 
 export default function Home() {
-  usePageMeta({
-    title: "IJW Labs — Web Development & Digital Solutions in Accra, Ghana",
-    description:
-      "IJW Labs builds websites, custom business systems and professional photo edits for growing businesses. Based in Accra, working worldwide. WhatsApp +233 53 992 3975 for a free quote within 48 hours.",
-    path: "/",
-  });
+  usePageMeta(PAGE_META["/"]);
   return (
     <>
       <JsonLd data={ORG_JSONLD} />
@@ -89,9 +85,9 @@ export default function Home() {
       <section className="section alt">
         <div className="container">
           <Reveal className="sec-head">
-            <span className="kicker">Recent work</span>
-            <h2 className="display">Proof beats promises</h2>
-            <p>A look at what leaves our lab.</p>
+            <span className="kicker">Design demos</span>
+            <h2 className="display">See what we can build</h2>
+            <p>Published hotel website concepts from our lab.</p>
           </Reveal>
           <div className="work-grid">
             {WORK.slice(0, 3).map((w, i) => (
@@ -102,7 +98,7 @@ export default function Home() {
           </div>
           <Reveal delay={0.15}>
             <div style={{ marginTop: 36, display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Link to="/work" className="btn btn-primary">See all our work</Link>
+              <Link to="/work" className="btn btn-primary">Explore all demos</Link>
               <Link to="/about" className="btn btn-outline">Meet the team behind it</Link>
             </div>
           </Reveal>

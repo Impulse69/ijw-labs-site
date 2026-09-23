@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const SITE_URL = "https://impulse69.github.io/ijw-labs-site";
+export const SITE_URL = "https://ijwlabs.com";
 
 function setMeta(attr, key, content) {
   let el = document.head.querySelector(`meta[${attr}="${key}"]`);
@@ -21,7 +21,10 @@ export function usePageMeta({ title, description, path }) {
     setMeta("property", "og:description", description);
     setMeta("property", "og:url", SITE_URL + path);
     setMeta("property", "og:type", "website");
+    setMeta("property", "og:image", SITE_URL + "/images/hero.jpg");
+    setMeta("property", "og:image:alt", "IJW Labs digital solutions showcase");
     setMeta("name", "twitter:card", "summary_large_image");
+    setMeta("name", "twitter:image", SITE_URL + "/images/hero.jpg");
     let link = document.head.querySelector('link[rel="canonical"]');
     if (!link) {
       link = document.createElement("link");

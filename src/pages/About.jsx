@@ -5,14 +5,10 @@ import WorkTile from "../components/WorkTile";
 import { waLink, FOUNDERS, WORK } from "../content";
 import { IconWhatsApp } from "../components/Icons";
 import { usePageMeta, JsonLd, ORG_JSONLD } from "../seo";
+import { PAGE_META } from "../page-metadata";
 
 export default function About() {
-  usePageMeta({
-    title: "About IJW Labs — Isaac, Judah & Wisdom | Digital Agency in Accra",
-    description:
-      "IJW Labs was founded in Accra by Isaac Asamoah, Judah B. Amanor and Wisdom Dzanado — three friends fixing bad digital presence for good businesses. Meet the team behind the work.",
-    path: "/about",
-  });
+  usePageMeta(PAGE_META["/about"]);
   return (
     <>
       <JsonLd data={ORG_JSONLD} />
@@ -39,7 +35,9 @@ export default function About() {
               </p>
             </Reveal>
             <Reveal delay={0.1}>
-              <ImageSlot file="team.jpg" alt="The IJW Labs founders" hint="Suggested: photo of the three of you, ~1200×900" />
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8 }}>
+                {FOUNDERS.map((founder) => <ImageSlot key={founder.img} file={founder.img} alt={founder.name} />)}
+              </div>
             </Reveal>
           </div>
         </div>
@@ -70,7 +68,7 @@ export default function About() {
           <Reveal className="sec-head">
             <span className="kicker">The lab record</span>
             <h2 className="display">Work we're proud of</h2>
-            <p>Live hotel websites we built across Ghana's Eastern Region. Tap any one to open it.</p>
+            <p>Published hotel website concepts for businesses across Ghana's Eastern Region. Open a demo to explore the design.</p>
           </Reveal>
           <div className="work-grid">
             {WORK.map((w, i) => (
@@ -81,7 +79,7 @@ export default function About() {
           </div>
           <Reveal delay={0.15}>
             <div style={{ marginTop: 36 }}>
-              <Link to="/work" className="btn btn-primary">See more work</Link>
+              <Link to="/work" className="btn btn-primary">See more demos</Link>
             </div>
           </Reveal>
         </div>

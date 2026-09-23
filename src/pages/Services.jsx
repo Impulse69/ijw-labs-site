@@ -3,21 +3,17 @@ import ImageSlot from "../components/ImageSlot";
 import { waLink, SERVICES } from "../content";
 import { IconCheck, IconWhatsApp } from "../components/Icons";
 import { usePageMeta, JsonLd, ORG_JSONLD } from "../seo";
+import { PAGE_META } from "../page-metadata";
 
 export default function Services() {
-  usePageMeta({
-    title: "Web Development, Business Systems & Photo Editing in Ghana | IJW Labs",
-    description:
-      "IJW Labs services: mobile-first websites and online stores, custom inventory/booking/billing systems, and professional photo editing. Clear quotes on WhatsApp within 48 hours.",
-    path: "/services",
-  });
+  usePageMeta(PAGE_META["/services"]);
   return (
     <>
       <section className="page-hero">
         <div className="container">
           <span className="kicker">Our services</span>
           <h1 className="display">What we build for you</h1>
-          <p>Four ways IJW Labs makes your business look sharper and run smoother. Every project starts with a free WhatsApp conversation and a clear quote.</p>
+          <p>Three ways IJW Labs makes your business look sharper and run smoother. Every project starts with a free WhatsApp conversation and a clear quote.</p>
         </div>
       </section>
 

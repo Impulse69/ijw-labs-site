@@ -3,23 +3,20 @@ import WorkTile from "../components/WorkTile";
 import { waLink, PORTFOLIO } from "../content";
 import { IconWhatsApp } from "../components/Icons";
 import { usePageMeta, JsonLd, ORG_JSONLD } from "../seo";
+import { PAGE_META } from "../page-metadata";
 
 export default function Work() {
-  usePageMeta({
-    title: "Our Work — Hotel Websites Across Ghana | IJW Labs",
-    description:
-      "See the real websites IJW Labs has built — a growing portfolio of hotel, lodge and guest house sites across Ghana's Eastern Region. Tap any project to open the live site.",
-    path: "/work",
-  });
+  usePageMeta(PAGE_META["/work"]);
   return (
     <>
       <JsonLd data={ORG_JSONLD} />
       <section className="page-hero">
         <div className="container">
           <span className="kicker">Our work</span>
-          <h1 className="display">{PORTFOLIO.length} sites and counting</h1>
-          <p>Real, live websites we've built for hotels, lodges and guest houses across Ghana's
-             Eastern Region. Tap any one to open the live site in a new tab.</p>
+          <h1 className="display">{PORTFOLIO.length} website concepts</h1>
+          <p>Published design demos for hotels, lodges and guest houses across Ghana's
+             Eastern Region. These are concept sites, not official websites for the named businesses.
+             Open any demo to see the design in action.</p>
         </div>
       </section>
 
