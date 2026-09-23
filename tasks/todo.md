@@ -14,3 +14,14 @@
 - IndexNow accepted all five canonical URLs (HTTP 200 on final submission). The former GitHub Pages routes now direct browsers to the new domain and declare its canonical URLs.
 - Unrelated local `VoiceWidget.jsx` edits and the untracked Retell webhook were excluded from the published build.
 - Cloudflare registration is active through September 23, 2027, with auto renewal already enabled. Custom domain email has no MX provider configured.
+
+## Founder profiles and contact update
+
+- [x] Publish separate, linked, prerendered profiles for Isaac Asamoah, Judah B. Amanor, and Wisdom Dzanado.
+- [x] Generate the eight-page sitemap from route metadata and queue all founder pages for Google indexing.
+- [x] Route general calls to action through Contact and deliver contact form notifications to juniorike69@gmail.com.
+- [x] Verify the live deployment, structured data, sitemap, and an actual contact form email.
+
+### Review
+
+See `tasks/founder-contact-update.md` for the verification details. Google's sitemap report remains `Couldn't fetch` on September 23, 2026; the live file is valid and a daily monitor is active.
