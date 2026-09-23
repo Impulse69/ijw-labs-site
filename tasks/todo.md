@@ -65,3 +65,17 @@ See `tasks/founder-contact-update.md` for the verification details. Google's sit
 - Gallery now has 17 cards, each with a complete image set. Removed fixed portfolio counts from the search description and `llms.txt` to avoid future drift.
 - Final production deploy `6ab4390cd4ea3a62725bcb99` was built from clean commit `9b952fb`. The live work page shows 17 cards and neither removed exhibit; sampled refreshed images return as images with HTTP 200. Removed asset paths fall through to the site's SPA HTML rather than serving old image files.
 - Unrelated local VoiceWidget and Retell webhook changes were excluded from the published build.
+
+## Curate gallery and add Nonna Lodge
+
+- [x] Remove Oak Guest House, Translinks, Stopping Point, Akosombo Continental, and Dear Home from gallery data and published image assets.
+- [x] Capture the live Nonna Lodge landing page and add responsive gallery images.
+- [x] Distinguish the live Nonna Lodge project from concept demos in cards and page copy.
+- [x] Build, deploy clean source, and verify the live work page and images.
+
+### Review
+
+- Nonna Lodge returned HTTP 200 and displayed a complete hotel homepage. Captured its current landing page as a JPEG and 480/960/1400 WebP variants.
+- The portfolio now has 13 cards. Nonna Lodge is first and featured on Home and About, with a live website label; the other cards remain marked as concepts. Removed the five requested cards and their 20 image files.
+- Production deploy `6ab43c59a00bc2c88df7aafe` was built from clean commit `936788a`. The live work page shows 13 entries, lists Nonna first, and contains none of the retired names. Home and About show Nonna. Its WebP image returns HTTP 200 with image/webp content type.
+- Unrelated local VoiceWidget and Retell webhook changes were excluded from the published build.
