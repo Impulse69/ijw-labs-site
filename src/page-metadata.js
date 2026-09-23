@@ -11,7 +11,7 @@ export const PAGE_META = {
   },
   "/work": {
     title: "Our Work — Hotel Website Concepts in Ghana | IJW Labs",
-    description: "Explore 19 published hotel, lodge and guest house website concepts by IJW Labs. See how a modern hospitality website could look and work for your business.",
+    description: "Explore published hotel, lodge and guest house website concepts by IJW Labs. See how a modern hospitality website could look and work for your business.",
     path: "/work/",
   },
   "/about": {
