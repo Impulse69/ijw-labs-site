@@ -1,5 +1,6 @@
 // ─── Edit this file to update site content (no code knowledge needed) ───────
 export const WHATSAPP = "233539923975";
+export const CONTACT_EMAIL = "juniorike69@gmail.com";
 export const waLink = (text) =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
 
@@ -9,22 +10,23 @@ export const SOCIALS = {
   snapchat: "https://www.snapchat.com/add/ijwlabs",
 };
 
-// Founders — replace names/roles/bios with the real ones.
-// Photos: drop founder-1.jpg, founder-2.jpg, founder-3.jpg into public/images/
 export const FOUNDERS = [
   {
+    slug: "isaac-asamoah",
     img: "founder-1.jpg",
     name: "Isaac Asamoah",
     role: "Co-founder & CEO",
     bio: "Sets the vision and owns every client relationship — the first voice you hear at IJW.",
   },
   {
+    slug: "judah-b-amanor",
     img: "founder-2.jpg",
     name: "Judah B. Amanor",
     role: "Co-founder & COO",
     bio: "Runs the engine room — timelines, delivery and quality control on every project.",
   },
   {
+    slug: "wisdom-dzanado",
     img: "founder-3.jpg",
     name: "Wisdom Dzanado",
     role: "Co-founder & Creative Director",

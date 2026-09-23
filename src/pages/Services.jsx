@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import ImageSlot from "../components/ImageSlot";
-import { waLink, SERVICES } from "../content";
-import { IconCheck, IconWhatsApp } from "../components/Icons";
+import { SERVICES } from "../content";
+import { IconCheck } from "../components/Icons";
 import { usePageMeta, JsonLd, ORG_JSONLD } from "../seo";
 import { PAGE_META } from "../page-metadata";
 
@@ -13,7 +14,7 @@ export default function Services() {
         <div className="container">
           <span className="kicker">Our services</span>
           <h1 className="display">What we build for you</h1>
-          <p>Three ways IJW Labs makes your business look sharper and run smoother. Every project starts with a free WhatsApp conversation and a clear quote.</p>
+          <p>Three ways IJW Labs makes your business look sharper and run smoother. Tell us what you need and we'll put together a clear quote.</p>
         </div>
       </section>
 
@@ -36,9 +37,7 @@ export default function Services() {
                 <p style={{ marginTop: 20, fontFamily: "var(--font-display)", fontWeight: 700, color: "var(--blue)", textTransform: "uppercase", fontSize: ".85rem", letterSpacing: ".08em" }}>
                   {s.pitch}
                 </p>
-                <a className="btn btn-wa" style={{ marginTop: 22 }} href={waLink(`Hi IJW Labs! I'm interested in ${s.title}.`)} target="_blank" rel="noopener">
-                  <IconWhatsApp size={17} /> Get a quote
-                </a>
+                <Link className="btn btn-primary" style={{ marginTop: 22 }} to="/contact/">Reach us</Link>
               </Reveal>
               <Reveal delay={0.1}>
                 <ImageSlot file={s.img} alt={`${s.title} example`} hint="Suggested: real project screenshot/photo, ~1200×900" />

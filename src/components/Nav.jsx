@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { waLink } from "../content";
-import { IconWhatsApp } from "./Icons";
 
 const links = [
   { to: "/", label: "Home", end: true },
@@ -26,9 +24,7 @@ export default function Nav() {
               {l.label}
             </NavLink>
           ))}
-          <a className="btn btn-wa" style={{ padding: "10px 18px", marginLeft: 10 }} href={waLink("Hi IJW Labs! I'd like to talk about a project.")} target="_blank" rel="noopener">
-            <IconWhatsApp size={16} /> WhatsApp Us
-          </a>
+          <Link className="btn btn-primary" style={{ padding: "10px 18px", marginLeft: 10 }} to="/contact/">Reach us</Link>
         </div>
         <button className="nav-burger" aria-label="Toggle menu" aria-expanded={open} onClick={() => setOpen(!open)}>
           {open ? "✕" : "☰"}
@@ -40,9 +36,6 @@ export default function Nav() {
             {l.label}
           </NavLink>
         ))}
-        <a href={waLink("Hi IJW Labs!")} target="_blank" rel="noopener" style={{ color: "var(--wa)", fontWeight: 600 }}>
-          WhatsApp: +233 53 992 3975
-        </a>
       </div>
     </nav>
   );

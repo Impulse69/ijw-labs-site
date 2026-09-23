@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import ImageSlot from "../components/ImageSlot";
 import WorkTile from "../components/WorkTile";
-import { waLink, FOUNDERS, WORK } from "../content";
-import { IconWhatsApp } from "../components/Icons";
+import { FOUNDERS, WORK } from "../content";
 import { usePageMeta, JsonLd, ORG_JSONLD } from "../seo";
 import { PAGE_META } from "../page-metadata";
 
@@ -31,7 +30,7 @@ export default function About() {
                 We're not a faceless agency — when you work with IJW, you talk directly to the people doing the work.
               </p>
               <p style={{ marginTop: 12, color: "var(--ink-dim)" }}>
-                We keep our pricing honest, our timelines short, and our WhatsApp open. The goal is simple: when your business grows, you come back — and you bring your friends.
+                We keep our pricing honest and our timelines clear. The goal is simple: when your business grows, you come back — and you bring your friends.
               </p>
             </Reveal>
             <Reveal delay={0.1}>
@@ -48,15 +47,16 @@ export default function About() {
           <Reveal className="sec-head">
             <span className="kicker">The founders</span>
             <h2 className="display">The people behind the work</h2>
-            <p>The I, the J and the W. When you message IJW Labs, one of these three replies.</p>
+            <p>The I, the J and the W. Meet the people behind IJW Labs.</p>
           </Reveal>
           <div className="grid-3">
             {FOUNDERS.map((f, i) => (
               <Reveal key={f.img} delay={i * 0.1} className="founder-card">
                 <ImageSlot file={f.img} alt={`${f.name}, ${f.role}`} hint="Portrait ~900×1000" />
-                <h3>{f.name}</h3>
+                <h3><Link to={`/founders/${f.slug}/`}>{f.name}</Link></h3>
                 <div className="role">{f.role}</div>
                 {f.bio && <p>{f.bio}</p>}
+                <Link className="card-link" to={`/founders/${f.slug}/`}>Read profile →</Link>
               </Reveal>
             ))}
           </div>
@@ -92,9 +92,7 @@ export default function About() {
               <h2 className="display">Want us in <em>your</em> corner?</h2>
               <p>Tell us what you're building. We'll tell you how we can help — straight answers, no jargon.</p>
               <div className="row">
-                <a className="btn btn-wa" href={waLink("Hi IJW Labs! I just read your About page.")} target="_blank" rel="noopener">
-                  <IconWhatsApp size={18} /> Talk to the founders
-                </a>
+                <Link className="btn btn-primary" to="/contact/">Reach us</Link>
               </div>
             </div>
           </Reveal>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { waLink, SOCIALS } from "../content";
+import { CONTACT_EMAIL, SOCIALS } from "../content";
 
 export default function Footer() {
   return (
@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
           <div>
             <h5>Contact</h5>
-            <a href={waLink("Hi IJW Labs!")} target="_blank" rel="noopener">WhatsApp: +233 53 992 3975</a>
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             <a href={SOCIALS.instagram} target="_blank" rel="noopener">Instagram: @ijw_labs</a>
             <a href={SOCIALS.x} target="_blank" rel="noopener">X: @ijwlabs</a>
             <a href={SOCIALS.snapchat} target="_blank" rel="noopener">Snapchat: ijwlabs</a>

@@ -1,12 +1,12 @@
 export const PAGE_META = {
   "/": {
     title: "IJW Labs — Web Development & Digital Solutions in Accra, Ghana",
-    description: "IJW Labs builds websites, custom business systems and professional photo edits for growing businesses. Based in Accra, working worldwide. WhatsApp +233 53 992 3975 for a free quote within 48 hours.",
+    description: "IJW Labs builds websites, custom business systems and professional photo edits for growing businesses. Based in Accra, working worldwide. Reach us through our contact page.",
     path: "/",
   },
   "/services": {
     title: "Web Development, Business Systems & Photo Editing in Ghana | IJW Labs",
-    description: "IJW Labs services: mobile-first websites and online stores, custom inventory/booking/billing systems, and professional photo editing. Clear quotes on WhatsApp within 48 hours.",
+    description: "IJW Labs services: mobile-first websites and online stores, custom inventory/booking/billing systems, and professional photo editing. Contact us for a clear quote.",
     path: "/services/",
   },
   "/work": {
@@ -20,8 +20,32 @@ export const PAGE_META = {
     path: "/about/",
   },
   "/contact": {
-    title: "Contact IJW Labs — WhatsApp +233 53 992 3975 | Accra, Ghana",
-    description: "Reach IJW Labs on WhatsApp (+233 53 992 3975), Instagram @ijw_labs or X @ijwlabs. A founder replies within 48 hours with a plan and a clear quote. Based in Accra, working everywhere.",
+    title: "Contact IJW Labs — Email, WhatsApp & Social | Accra, Ghana",
+    description: "Email IJW Labs at juniorike69@gmail.com, send an inquiry through our contact form, or choose WhatsApp and social channels. Based in Accra, working everywhere.",
     path: "/contact/",
+  },
+  "/contact/sent": {
+    title: "Message Sent | IJW Labs",
+    description: "Thank you for contacting IJW Labs.",
+    path: "/contact/sent/",
+    noindex: true,
+  },
+  "/founders/isaac-asamoah": {
+    title: "Isaac Asamoah — Co-founder & CEO of IJW Labs",
+    description: "Meet Isaac Asamoah, co-founder and CEO of IJW Labs, a digital solutions studio based in Accra, Ghana.",
+    path: "/founders/isaac-asamoah/",
+    image: "/images/founder-1.jpg",
+  },
+  "/founders/judah-b-amanor": {
+    title: "Judah B. Amanor — Co-founder & COO of IJW Labs",
+    description: "Meet Judah B. Amanor, co-founder and COO of IJW Labs, a digital solutions studio based in Accra, Ghana.",
+    path: "/founders/judah-b-amanor/",
+    image: "/images/founder-2.jpg",
+  },
+  "/founders/wisdom-dzanado": {
+    title: "Wisdom Dzanado — Co-founder & Creative Director of IJW Labs",
+    description: "Meet Wisdom Dzanado, co-founder and creative director of IJW Labs, a digital solutions studio based in Accra, Ghana.",
+    path: "/founders/wisdom-dzanado/",
+    image: "/images/founder-3.jpg",
   },
 };

@@ -4,13 +4,13 @@ import { useEffect } from "react";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import VoiceWidget from "./components/VoiceWidget";
-import { waLink } from "./content";
-import { IconWhatsApp } from "./components/Icons";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Work from "./pages/Work";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import ContactSent from "./pages/ContactSent";
+import Founder from "./pages/Founder";
 
 function PageWrap({ children }) {
   return (
@@ -39,13 +39,12 @@ export default function App() {
           <Route path="/work" element={<PageWrap><Work /></PageWrap>} />
           <Route path="/about" element={<PageWrap><About /></PageWrap>} />
           <Route path="/contact" element={<PageWrap><Contact /></PageWrap>} />
+          <Route path="/contact/sent" element={<PageWrap><ContactSent /></PageWrap>} />
+          <Route path="/founders/:slug" element={<PageWrap><Founder /></PageWrap>} />
           <Route path="*" element={<PageWrap><Home /></PageWrap>} />
         </Routes>
       </AnimatePresence>
       <Footer />
-      <a className="wa-float" href={waLink("Hi IJW Labs!")} target="_blank" rel="noopener" aria-label="Chat with IJW Labs on WhatsApp">
-        <IconWhatsApp size={26} color="#fff" />
-      </a>
       <VoiceWidget />
     </MotionConfig>
   );

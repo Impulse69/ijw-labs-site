@@ -1,7 +1,7 @@
+import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import WorkTile from "../components/WorkTile";
-import { waLink, PORTFOLIO } from "../content";
-import { IconWhatsApp } from "../components/Icons";
+import { PORTFOLIO } from "../content";
 import { usePageMeta, JsonLd, ORG_JSONLD } from "../seo";
 import { PAGE_META } from "../page-metadata";
 
@@ -37,11 +37,9 @@ export default function Work() {
           <Reveal>
             <div className="cta-band">
               <h2 className="display">Your business could be <em>next</em>.</h2>
-              <p>Hotel, shop, clinic, school — if it needs a website that brings customers, we build it. Message us for a free quote.</p>
+              <p>Hotel, shop, clinic, school — if it needs a website that brings customers, we build it. Reach us for a quote.</p>
               <div className="row">
-                <a className="btn btn-wa" href={waLink("Hi IJW Labs! I saw your portfolio and want a website for my business.")} target="_blank" rel="noopener">
-                  <IconWhatsApp size={18} /> Start your project
-                </a>
+                <Link className="btn btn-primary" to="/contact/">Reach us</Link>
               </div>
             </div>
           </Reveal>

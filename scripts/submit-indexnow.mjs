@@ -13,8 +13,8 @@ const response = await fetch("https://api.indexnow.org/indexnow", {
     host,
     key,
     keyLocation: `https://${host}/${key}.txt`,
-    urlList: Object.values(PAGE_META).map(({ path }) => `https://${host}${path}`),
+    urlList: Object.values(PAGE_META).filter(({ noindex }) => !noindex).map(({ path }) => `https://${host}${path}`),
   }),
 });
 if (!response.ok) throw new Error(`IndexNow rejected the URLs: ${response.status} ${await response.text()}`);
-console.log(`IndexNow accepted ${Object.keys(PAGE_META).length} URLs (${response.status})`);
+console.log(`IndexNow accepted ${Object.values(PAGE_META).filter(({ noindex }) => !noindex).length} URLs (${response.status})`);

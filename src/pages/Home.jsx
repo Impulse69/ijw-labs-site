@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
 import ImageSlot from "../components/ImageSlot";
 import WorkTile from "../components/WorkTile";
-import { waLink, SERVICES, WORK } from "../content";
-import { IconCode, IconSystem, IconPhoto, IconArrow, IconWhatsApp } from "../components/Icons";
+import { SERVICES, WORK } from "../content";
+import { IconCode, IconSystem, IconPhoto, IconArrow } from "../components/Icons";
 import { usePageMeta, JsonLd, ORG_JSONLD, FAQ_JSONLD, FAQS } from "../seo";
 import { PAGE_META } from "../page-metadata";
 
@@ -40,9 +40,7 @@ export default function Home() {
               IJW Labs builds the websites, systems and digital assets that make your business impossible to ignore — without the agency price tag.
             </motion.p>
             <motion.div className="hero-ctas" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.65, duration: 0.5 }}>
-              <a className="btn btn-wa" href={waLink("Hi IJW Labs! I'd like a website for my business.")} target="_blank" rel="noopener">
-                <IconWhatsApp size={18} /> Start your project
-              </a>
+              <Link className="btn btn-primary" to="/contact/">Reach us</Link>
               <Link className="btn btn-outline" to="/services/">See what we build</Link>
             </motion.div>
             <motion.div className="hero-stats" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.85, duration: 0.6 }}>
@@ -113,7 +111,7 @@ export default function Home() {
           </Reveal>
           <div className="steps">
             {[
-              ["Talk", "Message us on WhatsApp. We reply within 48 hours with a plan and a clear price."],
+              ["Talk", "Reach us through the contact page. Tell us about your project and we’ll reply with the next steps."],
               ["Build", "We design and build, showing you progress along the way. No disappearing acts."],
               ["Launch", "We put it live and walk you through everything you need to run it."],
               ["Support", "We stay reachable after launch. Updates, fixes, questions — part of the deal."],
@@ -155,10 +153,7 @@ export default function Home() {
               <h2 className="display">Let's build something <em>amazing</em> together.</h2>
               <p>One message is all it takes. Tell us about your business — quote included, no obligation.</p>
               <div className="row">
-                <a className="btn btn-wa" href={waLink("Hi IJW Labs! Let's build something amazing.")} target="_blank" rel="noopener">
-                  <IconWhatsApp size={18} /> +233 53 992 3975
-                </a>
-                <Link className="btn btn-light" to="/contact/">All contact options</Link>
+                <Link className="btn btn-light" to="/contact/">Reach us</Link>
               </div>
             </div>
           </Reveal>
