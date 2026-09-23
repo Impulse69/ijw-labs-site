@@ -68,14 +68,16 @@ See `tasks/founder-contact-update.md` for the verification details. Google's sit
 
 ## Corporate About page and founder profiles
 
-- [ ] Verify Isaac's portfolio and Judah's LinkedIn details; use only confirmed claims.
-- [ ] Replace Wisdom's portrait with the supplied photo and responsive variants.
-- [ ] Rewrite About and individual founder profiles in a corporate voice, keeping metadata and structured data consistent.
-- [ ] Build from clean source, deploy, and verify live pages and portrait assets.
+- [x] Verify Isaac's portfolio; keep Judah's LinkedIn details out until his exact profile is confirmed.
+- [x] Replace Wisdom's portrait with the supplied photo and responsive variants.
+- [x] Rewrite About and individual founder profiles in a corporate voice, keeping metadata and structured data consistent.
+- [x] Build from clean source, deploy, and verify live pages and portrait assets.
 
 ### Review
 
-Pending.
+- Isaac's portfolio supports the technical profile and is linked from his page and structured data. Public search and LinkedIn sign-in did not establish a confident Judah profile match; his existing confirmed name and role remain.
+- Production deploy `6ab43fd53a633988a1449e4f` was built from clean commit `2cb1632`. About and all three founder routes return HTTP 200, the sitemap returns XML, and Wisdom's live 960px WebP exactly matches the build asset by SHA-256.
+- Local visual review confirmed the corporate layout and updated portraits. Unrelated VoiceWidget and Retell webhook changes were excluded from the published build.
 
 ## Curate gallery and add Nonna Lodge
 
