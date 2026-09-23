@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="IJW Labs">
+  <rect width="64" height="64" rx="12" fill="#0b1f3f"/>
+  <path d="M9 49h46" stroke="#1d5cff" stroke-width="4"/>
+  <text x="32" y="40" fill="#ffffff" font-family="Arial, sans-serif" font-size="23" font-weight="900" letter-spacing="-2" text-anchor="middle">IJW</text>
+</svg>

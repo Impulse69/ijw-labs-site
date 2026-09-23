@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
 import ImageSlot from "../components/ImageSlot";
 import WorkTile from "../components/WorkTile";
@@ -10,15 +9,6 @@ import { PAGE_META } from "../page-metadata";
 
 const icons = { web: IconCode, systems: IconSystem, photo: IconPhoto };
 
-const stagger = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
-};
-const line = {
-  hidden: { opacity: 0, y: 34 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.2, 0.7, 0.2, 1] } },
-};
-
 export default function Home() {
   usePageMeta(PAGE_META["/"]);
   return (
@@ -28,30 +18,30 @@ export default function Home() {
       <section className="hero">
         <div className="container hero-grid">
           <div>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+            <div>
               <span className="kicker">Accra, Ghana — taking projects now</span>
-            </motion.div>
-            <motion.h1 className="display" variants={stagger} initial="hidden" animate="show">
-              <motion.span variants={line} style={{ display: "block" }}>Smart solutions.</motion.span>
-              <motion.span variants={line} style={{ display: "block" }} className="blue">Stronger presence.</motion.span>
-              <motion.span variants={line} style={{ display: "block" }}>Real growth.</motion.span>
-            </motion.h1>
-            <motion.p className="lede" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.6 }}>
+            </div>
+            <h1 className="display">
+              <span style={{ display: "block" }}>Smart solutions.</span>
+              <span style={{ display: "block" }} className="blue">Stronger presence.</span>
+              <span style={{ display: "block" }}>Real growth.</span>
+            </h1>
+            <p className="lede">
               IJW Labs builds the websites, systems and digital assets that make your business impossible to ignore — without the agency price tag.
-            </motion.p>
-            <motion.div className="hero-ctas" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.65, duration: 0.5 }}>
+            </p>
+            <div className="hero-ctas">
               <Link className="btn btn-primary" to="/contact/">Reach us</Link>
               <Link className="btn btn-outline" to="/services/">See what we build</Link>
-            </motion.div>
-            <motion.div className="hero-stats" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.85, duration: 0.6 }}>
+            </div>
+            <div className="hero-stats">
               <div><strong>48h</strong><span>first response & quote</span></div>
               <div><strong>3</strong><span>services, one team</span></div>
               <div><strong>100%</strong><span>built around your budget</span></div>
-            </motion.div>
+            </div>
           </div>
-          <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3, duration: 0.7, ease: [0.2, 0.7, 0.2, 1] }}>
+          <div>
             <ImageSlot file="hero.jpg" alt="IJW Labs work showcase" hint="Suggested: device mockup or team-at-work photo, ~1200×1400" className="hero-img" eager />
-          </motion.div>
+          </div>
         </div>
       </section>
 

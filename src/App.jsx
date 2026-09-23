@@ -1,5 +1,4 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { useEffect } from "react";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -12,40 +11,27 @@ import Contact from "./pages/Contact";
 import ContactSent from "./pages/ContactSent";
 import Founder from "./pages/Founder";
 
-function PageWrap({ children }) {
-  return (
-    <motion.main
-      initial={{ opacity: 0, y: 14 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
-      transition={{ duration: 0.32, ease: [0.2, 0.7, 0.2, 1] }}
-    >
-      {children}
-    </motion.main>
-  );
-}
-
 export default function App() {
   const location = useLocation();
   useEffect(() => { window.scrollTo(0, 0); }, [location.pathname]);
 
   return (
-    <MotionConfig reducedMotion="user">
+    <>
       <Nav />
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<PageWrap><Home /></PageWrap>} />
-          <Route path="/services" element={<PageWrap><Services /></PageWrap>} />
-          <Route path="/work" element={<PageWrap><Work /></PageWrap>} />
-          <Route path="/about" element={<PageWrap><About /></PageWrap>} />
-          <Route path="/contact" element={<PageWrap><Contact /></PageWrap>} />
-          <Route path="/contact/sent" element={<PageWrap><ContactSent /></PageWrap>} />
-          <Route path="/founders/:slug" element={<PageWrap><Founder /></PageWrap>} />
-          <Route path="*" element={<PageWrap><Home /></PageWrap>} />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/work" element={<Work />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact/sent" element={<ContactSent />} />
+          <Route path="/founders/:slug" element={<Founder />} />
+          <Route path="*" element={<Home />} />
         </Routes>
-      </AnimatePresence>
+      </main>
       <Footer />
       <VoiceWidget />
-    </MotionConfig>
+    </>
   );
 }
