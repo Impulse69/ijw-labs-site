@@ -34,8 +34,8 @@ try {
       `<meta property="og:image:alt" content="IJW Labs digital solutions showcase" />`,
       `<meta name="twitter:card" content="summary_large_image" />`,
       `<meta name="twitter:image" content="${origin}/images/hero.jpg" />`,
-      ...(path === "/contact" ? [] : [`<script type="application/ld+json">${jsonScript(ORG_JSONLD)}</script>`]),
-      ...(path === "/" ? [`<script type="application/ld+json">${jsonScript(FAQ_JSONLD)}</script>`] : []),
+      ...(path === "/contact" ? [] : [`<script type="application/ld+json" data-prerendered-jsonld>${jsonScript(ORG_JSONLD)}</script>`]),
+      ...(path === "/" ? [`<script type="application/ld+json" data-prerendered-jsonld>${jsonScript(FAQ_JSONLD)}</script>`] : []),
     ].join("\n    ");
     const html = template
       .replace(/<title>[^<]*<\/title>/, head)

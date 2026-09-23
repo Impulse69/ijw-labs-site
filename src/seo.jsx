@@ -38,6 +38,7 @@ export function usePageMeta({ title, description, path }) {
 /** Inject JSON-LD structured data for the current page. */
 export function JsonLd({ data }) {
   useEffect(() => {
+    document.head.querySelectorAll('script[data-prerendered-jsonld]').forEach((script) => script.remove());
     const el = document.createElement("script");
     el.type = "application/ld+json";
     el.text = JSON.stringify(data);
