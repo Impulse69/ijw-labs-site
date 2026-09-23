@@ -68,13 +68,15 @@ See `tasks/founder-contact-update.md` for the verification details. Google's sit
 
 ## Founder profile buttons and Judah identity
 
-- [ ] Style founder profile links as clear buttons with accessible hover and focus states.
-- [ ] Use Judah's verified LinkedIn name and URL across visible copy, metadata and structured data.
-- [ ] Build clean source, deploy, and verify live founder cards and profile links.
+- [x] Style founder profile links as clear buttons with accessible hover and focus states.
+- [x] Use Judah's verified LinkedIn name and URL across visible copy, metadata and structured data.
+- [x] Build clean source, deploy, and verify live founder cards and profile links.
 
 ### Review
 
-Pending.
+- LinkedIn's public page identifies Judah Amanor Tetteh in Accra and lists Takoradi Technical University; further experience is gated, so no additional career claims were added.
+- Production deploy `6ab44ab44bc7bf9bf7f5a8b8` built from clean commit `2a433c1`. The live About page has outlined profile buttons; Judah's card opens his live profile, which links to the supplied LinkedIn URL. HTML includes the name and `sameAs` URL, with no old name or private email.
+- Unrelated VoiceWidget and Retell webhook changes were excluded from the deployed build.
 
 ## Corporate About page and founder profiles
 
