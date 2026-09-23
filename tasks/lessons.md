@@ -4,3 +4,4 @@
 - For a Netlify form, verify that form detection is enabled and test a real submission through to the destination inbox before claiming email delivery.
 - For founder search visibility, create a distinct crawlable page for each person and verify sitemap inclusion, canonical metadata, and structured data. Describe indexing as pending until Search Console confirms it.
 - Keep public contact identity separate from internal notification recipients. Check rendered HTML, metadata, machine-readable files, and built assets for private addresses after an email change.
+- For a request to remove decorative effects, inspect CSS and component motion together; removing shadows alone leaves page fades, lifts, and scroll reveals. Keep functional loading feedback and visible keyboard focus.

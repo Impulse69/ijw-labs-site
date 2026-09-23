@@ -38,3 +38,16 @@ See `tasks/founder-contact-update.md` for the verification details. Google's sit
 - The homepage, Contact page, and `llms.txt` respond HTTP 200 and show the IJW email without the private address. No built asset contains the private address.
 - Netlify form detection remains enabled. The project inquiry form has two enabled submission email hooks, one for each inbox. Delivery to the new IJW inbox was not directly observed because that inbox was not opened in this task.
 - Unrelated local VoiceWidget and Retell webhook changes were excluded from the deploy.
+
+## Remove decorative effects and add favicon
+
+- [x] Remove glow shadows, lift/zoom hover motion, scroll reveal motion, and the blurred navigation treatment.
+- [x] Add a branded favicon file and link it from the HTML head.
+- [x] Build, inspect the output, deploy from clean source, and verify live assets and styles.
+
+### Review
+
+- Published commit `94f9674` from a clean worktree as Netlify deploy `6ab42fe96b97118346a226f8`.
+- Build prerendered all nine routes and generated the eight-page public sitemap. Decorative motion and shadow patterns are absent from source. The voice connection spinner remains to indicate loading.
+- Live homepage, favicon SVG, and stylesheet all returned HTTP 200. The homepage links `/favicon.svg`; the stylesheet contains no box-shadow or backdrop-blur declarations. The live homepage was visually reviewed.
+- Unrelated local VoiceWidget and Retell webhook changes were excluded from the build.
