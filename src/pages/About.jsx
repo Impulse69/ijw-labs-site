@@ -68,7 +68,7 @@ export default function About() {
           <Reveal className="sec-head">
             <span className="kicker">The lab record</span>
             <h2 className="display">Work we're proud of</h2>
-            <p>Published hotel website concepts for businesses across Ghana's Eastern Region. Open a demo to explore the design.</p>
+            <p>A live hotel website and published concepts for businesses across Ghana's Eastern Region. Open a card to explore the work.</p>
           </Reveal>
           <div className="work-grid">
             {WORK.map((w, i) => (
@@ -79,7 +79,7 @@ export default function About() {
           </div>
           <Reveal delay={0.15}>
             <div style={{ marginTop: 36 }}>
-              <Link to="/work/" className="btn btn-primary">See more demos</Link>
+              <Link to="/work/" className="btn btn-primary">See more work</Link>
             </div>
           </Reveal>
         </div>

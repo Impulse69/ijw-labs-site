@@ -10,8 +10,8 @@ export const PAGE_META = {
     path: "/services/",
   },
   "/work": {
-    title: "Our Work — Hotel Website Concepts in Ghana | IJW Labs",
-    description: "Explore published hotel, lodge and guest house website concepts by IJW Labs. See how a modern hospitality website could look and work for your business.",
+    title: "Our Work — Nonna Lodge Website & Hotel Concepts | IJW Labs",
+    description: "Explore the live Nonna Lodge website and published hotel, lodge and guest house design concepts by IJW Labs.",
     path: "/work/",
   },
   "/about": {

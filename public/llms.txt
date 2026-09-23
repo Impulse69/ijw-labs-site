@@ -25,9 +25,10 @@ or through WhatsApp and social channels. Typical focused websites take 1-3 weeks
 - Site: https://ijwlabs.com/
 
 ## Portfolio
-IJW Labs has published hotel, lodge and guest house website design concepts based on
-businesses in Ghana's Eastern Region. These are demos, not official websites of the named
-businesses. Explore them at https://ijwlabs.com/work/
+IJW Labs built the live Nonna Lodge website at https://nonna-lodge-site.vercel.app/.
+The studio also publishes hotel, lodge and guest house website design concepts based on
+businesses in Ghana's Eastern Region. Those demos are not official websites of the named
+businesses. Explore the work at https://ijwlabs.com/work/
 
 ## Pages
 - [Home](https://ijwlabs.com/): overview, services, process, FAQ

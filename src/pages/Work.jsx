@@ -13,10 +13,10 @@ export default function Work() {
       <section className="page-hero">
         <div className="container">
           <span className="kicker">Our work</span>
-          <h1 className="display">{PORTFOLIO.length} website concepts</h1>
-          <p>Published design demos for hotels, lodges and guest houses across Ghana's
-             Eastern Region. These are concept sites, not official websites for the named businesses.
-             Open any demo to see the design in action.</p>
+          <h1 className="display">{PORTFOLIO.length} websites &amp; concepts</h1>
+          <p>Explore our live Nonna Lodge website and published design demos for hotels, lodges
+             and guest houses. The demos are concepts, not official websites for the named businesses.
+             Open a card to see the work in action.</p>
         </div>
       </section>
 

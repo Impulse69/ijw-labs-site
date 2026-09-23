@@ -73,9 +73,9 @@ export default function Home() {
       <section className="section alt">
         <div className="container">
           <Reveal className="sec-head">
-            <span className="kicker">Design demos</span>
+            <span className="kicker">Selected work</span>
             <h2 className="display">See what we can build</h2>
-            <p>Published hotel website concepts from our lab.</p>
+            <p>Our live Nonna Lodge website and published hotel website concepts.</p>
           </Reveal>
           <div className="work-grid">
             {WORK.slice(0, 3).map((w, i) => (
@@ -86,7 +86,7 @@ export default function Home() {
           </div>
           <Reveal delay={0.15}>
             <div style={{ marginTop: 36, display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Link to="/work/" className="btn btn-primary">Explore all demos</Link>
+              <Link to="/work/" className="btn btn-primary">Explore all work</Link>
               <Link to="/about/" className="btn btn-outline">Meet the team behind it</Link>
             </div>
           </Reveal>

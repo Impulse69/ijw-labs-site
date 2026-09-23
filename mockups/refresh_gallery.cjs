@@ -15,7 +15,9 @@ const rows = [...content.matchAll(/\{ slug: "([^"]+)", title: "([^"]+)", tag: "[
   .map((match) => ({ slug: match[1], title: match[2], url: match[3] }));
 const start = rows.findIndex(({ slug }) => slug === "yaven-heights-koforidua");
 if (start < 0) throw new Error("Yaven Heights is missing from the portfolio");
-const targets = rows.slice(start);
+const requestedSlug = process.argv.find((arg) => arg.startsWith("--slug="))?.slice(7);
+const targets = requestedSlug ? rows.filter(({ slug }) => slug === requestedSlug) : rows.slice(start);
+if (!targets.length) throw new Error(`No portfolio entry for ${requestedSlug}`);
 const staging = path.join(__dirname, "gallery-refresh");
 fs.mkdirSync(staging, { recursive: true });
 
@@ -36,6 +38,7 @@ fs.mkdirSync(staging, { recursive: true });
         });
         await Promise.all(visible.map((image) => image.decode().catch(() => {})));
       });
+      await page.evaluate(() => window.scrollTo(0, 0));
       await page.waitForTimeout(800);
       const heading = (await page.locator("h1").first().innerText({ timeout: 5000 })).trim();
       if (!heading) throw new Error("No visible heading");
