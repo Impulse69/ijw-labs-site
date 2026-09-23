@@ -25,3 +25,16 @@
 ### Review
 
 See `tasks/founder-contact-update.md` for the verification details. Google's sitemap report remains `Couldn't fetch` on September 23, 2026; the live file is valid and a daily monitor is active.
+
+## Public email and private delivery
+
+- [x] Replace the public email address in site content and metadata with ijwlabs2026@gmail.com.
+- [x] Add ijwlabs2026@gmail.com to Netlify form notifications while retaining private delivery to the owner.
+- [x] Deploy clean source and verify the published address and notification settings.
+
+### Review
+
+- Source commit `efaade2` was published as Netlify deploy `6ab429274267a55bf3f2facb` from a clean worktree.
+- The homepage, Contact page, and `llms.txt` respond HTTP 200 and show the IJW email without the private address. No built asset contains the private address.
+- Netlify form detection remains enabled. The project inquiry form has two enabled submission email hooks, one for each inbox. Delivery to the new IJW inbox was not directly observed because that inbox was not opened in this task.
+- Unrelated local VoiceWidget and Retell webhook changes were excluded from the deploy.
