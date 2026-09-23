@@ -50,14 +50,12 @@ export const PORTFOLIO = [
   { slug: "bright-hotel-suites-koforidua", title: "Bright Hotel & Suites", tag: "Hotel · Effiduase", url: "https://bright-hotel-suites-koforidua.netlify.app/" },
   { slug: "vip-lodge-mamfe", title: "VIP Lodge", tag: "Lodge · Mamfe", url: "https://vip-lodge-mamfe.netlify.app/" },
   { slug: "kyerewaa-hotel-akwatia", title: "Kyerewaa Hotel", tag: "Hotel · Akwatia", url: "https://kyerewaa-hotel-akwatia.netlify.app/" },
-  { slug: "filifaf-hotel-koforidua", title: "FilifaF Hotel", tag: "Hotel · Koforidua", url: "https://filifaf-hotel-koforidua.netlify.app/" },
   { slug: "koforidua-guest-house", title: "Koforidua Guest Hotel", tag: "Guest house · Old Estate", url: "https://koforidua-guest-house.netlify.app/" },
   { slug: "translinks-hotel-koforidua", title: "Translinks Hotel", tag: "Hotel · Koforidua", url: "https://translinks-hotel-koforidua.netlify.app/" },
   { slug: "lasanto-hotel-larteh", title: "Lasanto Hotel", tag: "Hotel · Larteh", url: "https://lasanto-hotel-larteh.netlify.app/" },
   { slug: "magjon-hotel-okorase", title: "MagJohn Hotel", tag: "Hotel · Okorase", url: "https://magjon-hotel-okorase.netlify.app/" },
   { slug: "oak-guest-house-koforidua", title: "Oak Guest House", tag: "Guest house · Asokore", url: "https://oak-guest-house-koforidua.netlify.app/" },
   { slug: "stopping-point-hotel-anyinam", title: "Stopping Point Hotel", tag: "Hotel · Anyinam", url: "https://stopping-point-hotel-anyinam.netlify.app/" },
-  { slug: "renes-hotel-koforidua", title: "Rene's Hotel", tag: "Hotel · Koforidua", url: "https://renes-hotel-koforidua.netlify.app/" },
 ].map((p) => ({ ...p, img: `work/${p.slug}.jpg` }));
 
 // Featured tiles (Home "recent work" + top of About grid).
