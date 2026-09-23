@@ -26,18 +26,18 @@ export default function Founder() {
       <section className="section">
         <div className="container founder-profile">
           <Reveal>
-            <ImageSlot file={founder.img} alt={`${founder.name}, ${founder.role} of IJW Labs`} eager />
+            <ImageSlot file={founder.img} alt={`${founder.name}, ${founder.role} of IJW Labs`} className={founder.slug === "wisdom-dzanado" ? "founder-portrait-wisdom" : ""} eager />
           </Reveal>
           <Reveal delay={0.1}>
-            <span className="kicker">About {founder.name.split(" ")[0]}</span>
+            <span className="kicker">Professional profile</span>
             <h2 className="display" style={{ fontSize: "clamp(1.7rem,3.4vw,2.5rem)", marginTop: 12 }}>{founder.role}</h2>
             <p style={{ marginTop: 18, color: "var(--ink-dim)", fontSize: "1.08rem" }}>
               {founder.name} is {founder.role} of IJW Labs, a digital solutions studio based in Accra, Ghana.
             </p>
             <p style={{ marginTop: 14, color: "var(--ink-dim)" }}>{founder.bio}</p>
+            {founder.profileUrl && <p style={{ marginTop: 14 }}><a href={founder.profileUrl} target="_blank" rel="noopener noreferrer">{founder.profileLabel} ↗</a></p>}
             <p style={{ marginTop: 14, color: "var(--ink-dim)" }}>
-              IJW Labs helps businesses with websites, custom systems and professional photo editing.
-              Learn more about <Link to="/services/">the services</Link> or meet the <Link to="/about/">other founders</Link>.
+              Explore <Link to="/services/">IJW Labs services</Link> or meet the <Link to="/about/">other founders</Link>.
             </p>
             <Link to="/contact/" className="btn btn-primary" style={{ marginTop: 24 }}>Reach us</Link>
           </Reveal>

@@ -87,7 +87,8 @@ export function founderJsonLd(founder) {
     url,
     image: `${SITE_URL}/images/${founder.img}`,
     jobTitle: founder.role,
-    description: `${founder.name} is ${founder.role} of IJW Labs, a digital solutions studio based in Accra, Ghana.`,
+    description: founder.bio,
+    ...(founder.profileUrl ? { sameAs: [founder.profileUrl] } : {}),
     worksFor: { "@id": ORG_JSONLD["@id"] },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
   };

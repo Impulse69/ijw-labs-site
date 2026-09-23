@@ -14,23 +14,25 @@ export const FOUNDERS = [
   {
     slug: "isaac-asamoah",
     img: "founder-1.jpg",
-    name: "Isaac Asamoah",
+    name: "Isaac Asamoah Junior",
     role: "Co-founder & CEO",
-    bio: "Sets the vision and owns every client relationship — the first voice you hear at IJW.",
+    bio: "Isaac leads technical direction and development at IJW Labs. His work spans responsive websites, full-stack applications and interactive web experiences.",
+    profileUrl: "https://asamoahisaac.netlify.app/",
+    profileLabel: "View Isaac's portfolio",
   },
   {
     slug: "judah-b-amanor",
     img: "founder-2.jpg",
     name: "Judah B. Amanor",
     role: "Co-founder & COO",
-    bio: "Runs the engine room — timelines, delivery and quality control on every project.",
+    bio: "Judah oversees operations and project delivery at IJW Labs, coordinating timelines and maintaining delivery standards across client engagements.",
   },
   {
     slug: "wisdom-dzanado",
     img: "founder-3.jpg",
     name: "Wisdom Dzanado",
     role: "Co-founder & Creative Director",
-    bio: "Owns the visuals — media, brand and everything that makes IJW work look the part.",
+    bio: "Wisdom leads creative direction and visual production at IJW Labs, shaping how client work is presented across digital channels.",
   },
 ];
 

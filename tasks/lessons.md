@@ -5,3 +5,4 @@
 - For founder search visibility, create a distinct crawlable page for each person and verify sitemap inclusion, canonical metadata, and structured data. Describe indexing as pending until Search Console confirms it.
 - Keep public contact identity separate from internal notification recipients. Check rendered HTML, metadata, machine-readable files, and built assets for private addresses after an email change.
 - For a request to remove decorative effects, inspect CSS and component motion together; removing shadows alone leaves page fades, lifts, and scroll reveals. Keep functional loading feedback and visible keyboard focus.
+- For founder and About copy, use a restrained corporate voice and only source-backed biographical claims. Ask for an exact profile URL when a social search cannot establish a confident identity match.

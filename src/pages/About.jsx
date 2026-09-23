@@ -14,8 +14,8 @@ export default function About() {
       <section className="page-hero">
         <div className="container">
           <span className="kicker">About us</span>
-          <h1 className="display">Three founders. One lab.</h1>
-          <p>IJW Labs was started by three friends in Accra who kept watching good businesses lose customers to bad digital presence — and decided to fix it ourselves.</p>
+          <h1 className="display">Digital solutions built around business needs.</h1>
+          <p>IJW Labs is an Accra-based team delivering websites, custom business systems and visual content for organisations seeking a stronger digital presence.</p>
         </div>
       </section>
 
@@ -23,19 +23,20 @@ export default function About() {
         <div className="container">
           <div className="grid-2" style={{ alignItems: "center", gap: 48 }}>
             <Reveal>
-              <span className="kicker">Our story</span>
-              <h2 className="display" style={{ fontSize: "clamp(1.7rem,3.4vw,2.4rem)", marginTop: 12 }}>Why "Labs"?</h2>
+              <span className="kicker">Our company</span>
+              <h2 className="display" style={{ fontSize: "clamp(1.7rem,3.4vw,2.4rem)", marginTop: 12 }}>A practical approach to digital delivery.</h2>
               <p style={{ marginTop: 14, color: "var(--ink-dim)" }}>
-                Because we treat every project like an experiment with a measurable result: more calls, more orders, more trust in your brand.
-                We're not a faceless agency — when you work with IJW, you talk directly to the people doing the work.
+                We work with clients to understand the requirements behind each project, then develop digital tools and visual assets suited to their goals and operating context.
               </p>
               <p style={{ marginTop: 12, color: "var(--ink-dim)" }}>
-                We keep our pricing honest and our timelines clear. The goal is simple: when your business grows, you come back — and you bring your friends.
+                The founding team is directly involved in planning and delivery. This keeps communication clear and gives each engagement a defined scope from the outset.
               </p>
             </Reveal>
             <Reveal delay={0.1}>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8 }}>
-                {FOUNDERS.map((founder) => <ImageSlot key={founder.img} file={founder.img} alt={founder.name} />)}
+              <div className="about-focus">
+                <div><strong>Web development</strong><p>Business websites and digital experiences built for performance and usability.</p></div>
+                <div><strong>Business systems</strong><p>Custom software that supports day-to-day operations and service delivery.</p></div>
+                <div><strong>Creative production</strong><p>Visual content that presents businesses consistently across digital channels.</p></div>
               </div>
             </Reveal>
           </div>
@@ -45,14 +46,14 @@ export default function About() {
       <section className="section alt">
         <div className="container">
           <Reveal className="sec-head">
-            <span className="kicker">The founders</span>
-            <h2 className="display">The people behind the work</h2>
-            <p>The I, the J and the W. Meet the people behind IJW Labs.</p>
+            <span className="kicker">Leadership</span>
+            <h2 className="display">Our founding team</h2>
+            <p>Our founders lead technical development, operations and creative direction.</p>
           </Reveal>
           <div className="grid-3">
             {FOUNDERS.map((f, i) => (
               <Reveal key={f.img} delay={i * 0.1} className="founder-card">
-                <ImageSlot file={f.img} alt={`${f.name}, ${f.role}`} hint="Portrait ~900×1000" />
+                <ImageSlot file={f.img} alt={`${f.name}, ${f.role}`} className={f.slug === "wisdom-dzanado" ? "founder-portrait-wisdom" : ""} />
                 <h3><Link to={`/founders/${f.slug}/`}>{f.name}</Link></h3>
                 <div className="role">{f.role}</div>
                 {f.bio && <p>{f.bio}</p>}
@@ -66,9 +67,9 @@ export default function About() {
       <section className="section">
         <div className="container">
           <Reveal className="sec-head">
-            <span className="kicker">The lab record</span>
-            <h2 className="display">Work we're proud of</h2>
-            <p>A live hotel website and published concepts for businesses across Ghana's Eastern Region. Open a card to explore the work.</p>
+            <span className="kicker">Selected work</span>
+            <h2 className="display">Projects and design concepts</h2>
+            <p>Explore the live Nonna Lodge website and published hospitality design concepts. Concept sites are identified as demonstrations.</p>
           </Reveal>
           <div className="work-grid">
             {WORK.map((w, i) => (
@@ -89,8 +90,8 @@ export default function About() {
         <div className="container">
           <Reveal>
             <div className="cta-band">
-              <h2 className="display">Want us in <em>your</em> corner?</h2>
-              <p>Tell us what you're building. We'll tell you how we can help — straight answers, no jargon.</p>
+              <h2 className="display">Discuss your <em>project</em> with us.</h2>
+              <p>Share your requirements and we will help define a practical next step.</p>
               <div className="row">
                 <Link className="btn btn-primary" to="/contact/">Reach us</Link>
               </div>

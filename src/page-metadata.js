@@ -15,8 +15,8 @@ export const PAGE_META = {
     path: "/work/",
   },
   "/about": {
-    title: "About IJW Labs — Isaac, Judah & Wisdom | Digital Agency in Accra",
-    description: "IJW Labs was founded in Accra by Isaac Asamoah, Judah B. Amanor and Wisdom Dzanado — three friends helping businesses build a stronger digital presence.",
+    title: "About IJW Labs — Leadership & Digital Solutions in Accra",
+    description: "Meet the founding team of IJW Labs, an Accra-based digital solutions studio delivering websites, custom business systems and visual content.",
     path: "/about/",
   },
   "/contact": {
@@ -31,20 +31,20 @@ export const PAGE_META = {
     noindex: true,
   },
   "/founders/isaac-asamoah": {
-    title: "Isaac Asamoah — Co-founder & CEO of IJW Labs",
-    description: "Meet Isaac Asamoah, co-founder and CEO of IJW Labs, a digital solutions studio based in Accra, Ghana.",
+    title: "Isaac Asamoah Junior — Co-founder & CEO of IJW Labs",
+    description: "Isaac Asamoah Junior leads technical direction and development at IJW Labs, with experience in responsive websites, full-stack applications and interactive web experiences.",
     path: "/founders/isaac-asamoah/",
     image: "/images/founder-1.jpg",
   },
   "/founders/judah-b-amanor": {
     title: "Judah B. Amanor — Co-founder & COO of IJW Labs",
-    description: "Meet Judah B. Amanor, co-founder and COO of IJW Labs, a digital solutions studio based in Accra, Ghana.",
+    description: "Judah B. Amanor is co-founder and COO of IJW Labs, overseeing operations and project delivery.",
     path: "/founders/judah-b-amanor/",
     image: "/images/founder-2.jpg",
   },
   "/founders/wisdom-dzanado": {
     title: "Wisdom Dzanado — Co-founder & Creative Director of IJW Labs",
-    description: "Meet Wisdom Dzanado, co-founder and creative director of IJW Labs, a digital solutions studio based in Accra, Ghana.",
+    description: "Wisdom Dzanado is co-founder and creative director of IJW Labs, leading visual production and creative direction.",
     path: "/founders/wisdom-dzanado/",
     image: "/images/founder-3.jpg",
   },

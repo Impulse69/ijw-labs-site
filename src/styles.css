@@ -156,8 +156,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); color: var(--navy); line-heig
 .work-item:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: var(--radius); }
 
 /* ---------- founders ---------- */
+.about-focus { border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
+.about-focus > div { padding: 22px 26px; }
+.about-focus > div + div { border-top: 1px solid var(--line); }
+.about-focus strong { display: block; color: var(--navy); font-family: var(--font-display); font-size: 1rem; }
+.about-focus p { margin-top: 6px; color: var(--ink-dim); font-size: 0.95rem; }
 .founder-card { text-align: left; }
 .founder-card .img-slot { aspect-ratio: 3 / 3.4; }
+.founder-portrait-wisdom img { object-position: center top; }
 .founder-card h3 { margin-top: 18px; font-size: 1.25rem; }
 .founder-card .role { color: var(--blue); font-weight: 600; font-size: 0.88rem; letter-spacing: 0.05em; text-transform: uppercase; }
 .founder-card p { margin-top: 10px; color: var(--ink-dim); font-size: 0.95rem; }

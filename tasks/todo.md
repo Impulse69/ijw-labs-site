@@ -66,6 +66,17 @@ See `tasks/founder-contact-update.md` for the verification details. Google's sit
 - Final production deploy `6ab4390cd4ea3a62725bcb99` was built from clean commit `9b952fb`. The live work page shows 17 cards and neither removed exhibit; sampled refreshed images return as images with HTTP 200. Removed asset paths fall through to the site's SPA HTML rather than serving old image files.
 - Unrelated local VoiceWidget and Retell webhook changes were excluded from the published build.
 
+## Corporate About page and founder profiles
+
+- [ ] Verify Isaac's portfolio and Judah's LinkedIn details; use only confirmed claims.
+- [ ] Replace Wisdom's portrait with the supplied photo and responsive variants.
+- [ ] Rewrite About and individual founder profiles in a corporate voice, keeping metadata and structured data consistent.
+- [ ] Build from clean source, deploy, and verify live pages and portrait assets.
+
+### Review
+
+Pending.
+
 ## Curate gallery and add Nonna Lodge
 
 - [x] Remove Oak Guest House, Translinks, Stopping Point, Akosombo Continental, and Dear Home from gallery data and published image assets.

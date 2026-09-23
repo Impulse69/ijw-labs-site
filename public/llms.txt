@@ -1,7 +1,7 @@
 # IJW Labs
 
-> IJW Labs is a digital agency based in Accra, Ghana, founded by Isaac Asamoah, Judah B. Amanor
-> and Wisdom Dzanado (the I, J and W). It builds websites, custom business systems and
+> IJW Labs is a digital agency based in Accra, Ghana, founded by Isaac Asamoah Junior, Judah B. Amanor
+> and Wisdom Dzanado. It builds websites, custom business systems and
 > professional photo edits for small and growing businesses, working remotely with clients worldwide.
 
 ## Services
@@ -19,7 +19,7 @@ or through WhatsApp and social channels. Typical focused websites take 1-3 weeks
 
 ## Facts
 - Founded: 2026, Accra, Ghana
-- Founders: Isaac Asamoah, Judah B. Amanor, Wisdom Dzanado
+- Founders: Isaac Asamoah Junior, Judah B. Amanor, Wisdom Dzanado
 - Contact: ijwlabs2026@gmail.com (email), WhatsApp +233 53 992 3975, Instagram @ijw_labs, X @ijwlabs, Snapchat ijwlabs
 - Pricing: custom per project; budget-range friendly; no fixed price list
 - Site: https://ijwlabs.com/
@@ -35,7 +35,7 @@ businesses. Explore the work at https://ijwlabs.com/work/
 - [Services](https://ijwlabs.com/services/): detailed service descriptions
 - [Our Work](https://ijwlabs.com/work/): published hospitality website concepts
 - [About](https://ijwlabs.com/about/): founders and company story
-- [Isaac Asamoah](https://ijwlabs.com/founders/isaac-asamoah/): co-founder and CEO
+- [Isaac Asamoah Junior](https://ijwlabs.com/founders/isaac-asamoah/): co-founder and CEO; personal portfolio at https://asamoahisaac.netlify.app/
 - [Judah B. Amanor](https://ijwlabs.com/founders/judah-b-amanor/): co-founder and COO
 - [Wisdom Dzanado](https://ijwlabs.com/founders/wisdom-dzanado/): co-founder and creative director
 - [Contact](https://ijwlabs.com/contact/): all contact channels
