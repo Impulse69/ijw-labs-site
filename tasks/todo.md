@@ -68,13 +68,15 @@ See `tasks/founder-contact-update.md` for the verification details. Google's sit
 
 ## Search favicon support
 
-- [ ] Publish a square branded PNG favicon and root ICO file in supported image formats.
-- [ ] Point the homepage favicon link to the PNG and verify crawl access and content types.
-- [ ] Build from clean source, deploy, and check the live favicon and homepage markup.
+- [x] Publish a square branded PNG favicon and root ICO file in supported image formats.
+- [x] Point the homepage favicon link to the PNG and verify crawl access and content types.
+- [x] Build from clean source, deploy, and check the live favicon and homepage markup.
 
 ### Review
 
-Pending.
+- Google Search documents PNG and ICO as supported favicon formats and recommends a square icon larger than 48×48. The site previously linked only SVG; `/favicon.ico` and `/favicon.png` served SPA HTML.
+- Deployed clean commit `c17416a` as production deploy `6ab45b63d9544257b6e5d192`. Live `/favicon.png` is `image/png` (256×256), `/favicon.ico` is `image/vnd.microsoft.icon`, and `/apple-touch-icon.png` is `image/png` (180×180); each returns HTTP 200. The homepage links to `/favicon.png`; its live SHA-256 matches the build asset.
+- Google Search Console in the available browser requires sign-in, so a manual recrawl request could not be submitted there. Google will choose when to recrawl and may take several days to several weeks to update its search result icon.
 
 ## Founder profile buttons and Judah identity
 
