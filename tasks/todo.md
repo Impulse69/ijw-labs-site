@@ -51,3 +51,17 @@ See `tasks/founder-contact-update.md` for the verification details. Google's sit
 - Build prerendered all nine routes and generated the eight-page public sitemap. Decorative motion and shadow patterns are absent from source. The voice connection spinner remains to indicate loading.
 - Live homepage, favicon SVG, and stylesheet all returned HTTP 200. The homepage links `/favicon.svg`; the stylesheet contains no box-shadow or backdrop-blur declarations. The live homepage was visually reviewed.
 - Unrelated local VoiceWidget and Retell webhook changes were excluded from the build.
+
+## Refresh concept gallery screenshots
+
+- [x] Check the published demos from Yaven Heights onward and capture their current landing pages.
+- [x] Replace gallery JPEGs and responsive WebP variants for those concepts; remove Rene's Hotel from the exhibition data.
+- [x] Build, review image and link integrity, publish from clean source, and verify the live gallery.
+
+### Review
+
+- Captured and reviewed 14 live concept landing pages from Yaven Heights through Stopping Point. Each source returned HTTP 200 with a visible heading. Replaced each JPEG and its 480/960/1400 WebP variants.
+- Removed Rene's Hotel from the gallery and deleted its image assets. FilifaF's demo returned HTTP 404, so its card and assets were temporarily removed after the user chose that option.
+- Gallery now has 17 cards, each with a complete image set. Removed fixed portfolio counts from the search description and `llms.txt` to avoid future drift.
+- Final production deploy `6ab4390cd4ea3a62725bcb99` was built from clean commit `9b952fb`. The live work page shows 17 cards and neither removed exhibit; sampled refreshed images return as images with HTTP 200. Removed asset paths fall through to the site's SPA HTML rather than serving old image files.
+- Unrelated local VoiceWidget and Retell webhook changes were excluded from the published build.
