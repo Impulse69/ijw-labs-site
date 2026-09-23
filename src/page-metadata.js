@@ -21,7 +21,7 @@ export const PAGE_META = {
   },
   "/contact": {
     title: "Contact IJW Labs — Email, WhatsApp & Social | Accra, Ghana",
-    description: "Email IJW Labs at juniorike69@gmail.com, send an inquiry through our contact form, or choose WhatsApp and social channels. Based in Accra, working everywhere.",
+    description: "Email IJW Labs at ijwlabs2026@gmail.com, send an inquiry through our contact form, or choose WhatsApp and social channels. Based in Accra, working everywhere.",
     path: "/contact/",
   },
   "/contact/sent": {

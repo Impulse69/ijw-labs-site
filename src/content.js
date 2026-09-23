@@ -1,6 +1,6 @@
 // ─── Edit this file to update site content (no code knowledge needed) ───────
 export const WHATSAPP = "233539923975";
-export const CONTACT_EMAIL = "juniorike69@gmail.com";
+export const CONTACT_EMAIL = "ijwlabs2026@gmail.com";
 export const waLink = (text) =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
 
