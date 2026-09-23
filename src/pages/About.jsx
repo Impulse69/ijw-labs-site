@@ -79,7 +79,7 @@ export default function About() {
           </div>
           <Reveal delay={0.15}>
             <div style={{ marginTop: 36 }}>
-              <Link to="/work" className="btn btn-primary">See more demos</Link>
+              <Link to="/work/" className="btn btn-primary">See more demos</Link>
             </div>
           </Reveal>
         </div>

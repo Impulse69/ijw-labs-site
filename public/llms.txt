@@ -27,11 +27,11 @@ custom quote within 48 hours. Typical focused websites take 1-3 weeks. Post-laun
 ## Portfolio
 IJW Labs has published 19 hotel, lodge and guest house website design concepts based on
 businesses in Ghana's Eastern Region. These are demos, not official websites of the named
-businesses. Explore them at https://ijwlabs.com/work
+businesses. Explore them at https://ijwlabs.com/work/
 
 ## Pages
 - [Home](https://ijwlabs.com/): overview, services, process, FAQ
-- [Services](https://ijwlabs.com/services): detailed service descriptions
-- [Our Work](https://ijwlabs.com/work): published hospitality website concepts
-- [About](https://ijwlabs.com/about): founders and company story
-- [Contact](https://ijwlabs.com/contact): all contact channels
+- [Services](https://ijwlabs.com/services/): detailed service descriptions
+- [Our Work](https://ijwlabs.com/work/): published hospitality website concepts
+- [About](https://ijwlabs.com/about/): founders and company story
+- [Contact](https://ijwlabs.com/contact/): all contact channels

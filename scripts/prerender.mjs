@@ -17,8 +17,8 @@ try {
   const { default: App } = await vite.ssrLoadModule("/src/App.jsx");
   const { ORG_JSONLD, FAQ_JSONLD } = await vite.ssrLoadModule("/src/seo.jsx");
   for (const [path, meta] of Object.entries(PAGE_META)) {
-    const canonical = origin + path;
-    const content = renderToString(React.createElement(StaticRouter, { location: path }, React.createElement(App)))
+    const canonical = origin + meta.path;
+    const content = renderToString(React.createElement(StaticRouter, { location: meta.path }, React.createElement(App)))
       .replaceAll("opacity:0", "opacity:1")
       .replace(/;transform:translate[XY]\([^)]*\)/g, "");
     const head = [

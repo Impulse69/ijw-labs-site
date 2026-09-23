@@ -16,16 +16,16 @@ export default function Footer() {
           <div>
             <h5>Pages</h5>
             <Link to="/">Home</Link>
-            <Link to="/services">Services</Link>
-            <Link to="/work">Our Work</Link>
-            <Link to="/about">About Us</Link>
-            <Link to="/contact">Contact</Link>
+            <Link to="/services/">Services</Link>
+            <Link to="/work/">Our Work</Link>
+            <Link to="/about/">About Us</Link>
+            <Link to="/contact/">Contact</Link>
           </div>
           <div>
             <h5>Services</h5>
-            <Link to="/services">Web Development</Link>
-            <Link to="/services">Systems Development</Link>
-            <Link to="/services">Photo Editing</Link>
+            <Link to="/services/">Web Development</Link>
+            <Link to="/services/">Systems Development</Link>
+            <Link to="/services/">Photo Editing</Link>
           </div>
           <div>
             <h5>Contact</h5>

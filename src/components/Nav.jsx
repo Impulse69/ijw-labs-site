@@ -5,10 +5,10 @@ import { IconWhatsApp } from "./Icons";
 
 const links = [
   { to: "/", label: "Home", end: true },
-  { to: "/services", label: "Services" },
-  { to: "/work", label: "Our Work" },
-  { to: "/about", label: "About Us" },
-  { to: "/contact", label: "Contact" },
+  { to: "/services/", label: "Services" },
+  { to: "/work/", label: "Our Work" },
+  { to: "/about/", label: "About Us" },
+  { to: "/contact/", label: "Contact" },
 ];
 
 export default function Nav() {

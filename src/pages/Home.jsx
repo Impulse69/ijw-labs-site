@@ -43,7 +43,7 @@ export default function Home() {
               <a className="btn btn-wa" href={waLink("Hi IJW Labs! I'd like a website for my business.")} target="_blank" rel="noopener">
                 <IconWhatsApp size={18} /> Start your project
               </a>
-              <Link className="btn btn-outline" to="/services">See what we build</Link>
+              <Link className="btn btn-outline" to="/services/">See what we build</Link>
             </motion.div>
             <motion.div className="hero-stats" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.85, duration: 0.6 }}>
               <div><strong>48h</strong><span>first response & quote</span></div>
@@ -73,7 +73,7 @@ export default function Home() {
                     <div className="icon-tile"><Icon /></div>
                     <h3>{s.title}</h3>
                     <p>{s.short}</p>
-                    <Link to="/services" className="card-link">Learn more <IconArrow /></Link>
+                    <Link to="/services/" className="card-link">Learn more <IconArrow /></Link>
                   </div>
                 </Reveal>
               );
@@ -98,8 +98,8 @@ export default function Home() {
           </div>
           <Reveal delay={0.15}>
             <div style={{ marginTop: 36, display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Link to="/work" className="btn btn-primary">Explore all demos</Link>
-              <Link to="/about" className="btn btn-outline">Meet the team behind it</Link>
+              <Link to="/work/" className="btn btn-primary">Explore all demos</Link>
+              <Link to="/about/" className="btn btn-outline">Meet the team behind it</Link>
             </div>
           </Reveal>
         </div>
@@ -158,7 +158,7 @@ export default function Home() {
                 <a className="btn btn-wa" href={waLink("Hi IJW Labs! Let's build something amazing.")} target="_blank" rel="noopener">
                   <IconWhatsApp size={18} /> +233 53 992 3975
                 </a>
-                <Link className="btn btn-light" to="/contact">All contact options</Link>
+                <Link className="btn btn-light" to="/contact/">All contact options</Link>
               </div>
             </div>
           </Reveal>
