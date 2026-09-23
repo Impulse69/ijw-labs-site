@@ -6,3 +6,4 @@
 - Keep public contact identity separate from internal notification recipients. Check rendered HTML, metadata, machine-readable files, and built assets for private addresses after an email change.
 - For a request to remove decorative effects, inspect CSS and component motion together; removing shadows alone leaves page fades, lifts, and scroll reveals. Keep functional loading feedback and visible keyboard focus.
 - For founder and About copy, use a restrained corporate voice and only source-backed biographical claims. Ask for an exact profile URL when a social search cannot establish a confident identity match.
+- Profile actions should have visible button boundaries, padding and interaction states, especially on mobile cards. When a founder provides an exact public profile URL, update their display name and identity metadata from that page while leaving gated career details unclaimed.

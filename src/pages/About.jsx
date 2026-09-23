@@ -57,7 +57,7 @@ export default function About() {
                 <h3><Link to={`/founders/${f.slug}/`}>{f.name}</Link></h3>
                 <div className="role">{f.role}</div>
                 {f.bio && <p>{f.bio}</p>}
-                <Link className="card-link" to={`/founders/${f.slug}/`}>Read profile →</Link>
+                <Link className="btn btn-outline" to={`/founders/${f.slug}/`} aria-label={`Read ${f.name}'s profile`}>Read profile <span aria-hidden="true">→</span></Link>
               </Reveal>
             ))}
           </div>

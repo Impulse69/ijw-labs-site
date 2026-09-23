@@ -23,9 +23,11 @@ export const FOUNDERS = [
   {
     slug: "judah-b-amanor",
     img: "founder-2.jpg",
-    name: "Judah B. Amanor",
+    name: "Judah Amanor Tetteh",
     role: "Co-founder & COO",
     bio: "Judah oversees operations and project delivery at IJW Labs, coordinating timelines and maintaining delivery standards across client engagements.",
+    profileUrl: "https://gh.linkedin.com/in/judah-amanor-tetteh-3bb979411",
+    profileLabel: "View Judah's LinkedIn profile",
   },
   {
     slug: "wisdom-dzanado",

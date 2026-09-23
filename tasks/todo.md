@@ -66,6 +66,16 @@ See `tasks/founder-contact-update.md` for the verification details. Google's sit
 - Final production deploy `6ab4390cd4ea3a62725bcb99` was built from clean commit `9b952fb`. The live work page shows 17 cards and neither removed exhibit; sampled refreshed images return as images with HTTP 200. Removed asset paths fall through to the site's SPA HTML rather than serving old image files.
 - Unrelated local VoiceWidget and Retell webhook changes were excluded from the published build.
 
+## Founder profile buttons and Judah identity
+
+- [ ] Style founder profile links as clear buttons with accessible hover and focus states.
+- [ ] Use Judah's verified LinkedIn name and URL across visible copy, metadata and structured data.
+- [ ] Build clean source, deploy, and verify live founder cards and profile links.
+
+### Review
+
+Pending.
+
 ## Corporate About page and founder profiles
 
 - [x] Verify Isaac's portfolio; keep Judah's LinkedIn details out until his exact profile is confirmed.

@@ -37,8 +37,8 @@ export const PAGE_META = {
     image: "/images/founder-1.jpg",
   },
   "/founders/judah-b-amanor": {
-    title: "Judah B. Amanor — Co-founder & COO of IJW Labs",
-    description: "Judah B. Amanor is co-founder and COO of IJW Labs, overseeing operations and project delivery.",
+    title: "Judah Amanor Tetteh — Co-founder & COO of IJW Labs",
+    description: "Judah Amanor Tetteh is co-founder and COO of IJW Labs, overseeing operations and project delivery.",
     path: "/founders/judah-b-amanor/",
     image: "/images/founder-2.jpg",
   },

@@ -35,7 +35,7 @@ export default function Founder() {
               {founder.name} is {founder.role} of IJW Labs, a digital solutions studio based in Accra, Ghana.
             </p>
             <p style={{ marginTop: 14, color: "var(--ink-dim)" }}>{founder.bio}</p>
-            {founder.profileUrl && <p style={{ marginTop: 14 }}><a href={founder.profileUrl} target="_blank" rel="noopener noreferrer">{founder.profileLabel} ↗</a></p>}
+            {founder.profileUrl && <p style={{ marginTop: 18 }}><a className="btn btn-outline" href={founder.profileUrl} target="_blank" rel="noopener noreferrer">{founder.profileLabel} <span aria-hidden="true">↗</span></a></p>}
             <p style={{ marginTop: 14, color: "var(--ink-dim)" }}>
               Explore <Link to="/services/">IJW Labs services</Link> or meet the <Link to="/about/">other founders</Link>.
             </p>
