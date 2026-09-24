@@ -68,13 +68,15 @@ See `tasks/founder-contact-update.md` for the verification details. Google's sit
 
 ## Founder identity coverage for all three
 
-- [ ] Audit all founder pages and shared organization markup for clear, consistent identity details.
-- [ ] Make each founder page answer the name query directly, using confirmed roles and existing public profile links.
-- [ ] Build clean source, deploy, and verify all three live pages and organization data.
+- [x] Audit all founder pages and shared organization markup for clear, consistent identity details.
+- [x] Make each founder page answer the name query directly, using confirmed roles and existing public profile links.
+- [x] Build clean source, deploy, and verify all three live pages and organization data.
 
 ### Review
 
-Pending.
+- Each founder page now has a direct "Who is [name]?" heading, followed by the confirmed IJW role and existing bio. The shared organization Person entries include matching portrait, role and bio, plus verified external URLs for Isaac and Judah. Wisdom has no external profile yet by the user's confirmation.
+- Clean commit `b604bd5` was built and deployed as `6ab47556a818cbdfed4b4f39`. All three live pages return HTTP 200 with direct answer text, route-specific metadata and Person data; About contains the enriched founder identities and robots.txt allows the founder paths.
+- IndexNow accepted all eight public URLs (HTTP 200). The existing daily search watch now checks public results and visible AI Overviews for all three names. No AI answer change or Google recrawl is claimed.
 
 ## Founder answer visibility and prerender metadata
 
