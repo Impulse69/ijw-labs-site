@@ -68,13 +68,15 @@ See `tasks/founder-contact-update.md` for the verification details. Google's sit
 
 ## Founder answer visibility and prerender metadata
 
-- [ ] Correct the prerender order so each public route emits its own description in raw HTML.
-- [ ] Verify Wisdom's live page remains crawlable, indexed in visible search results, and carries matching title, description, canonical and Person data.
-- [ ] Deploy clean source and explain Google AI Overview timing and correction options without promising placement.
+- [x] Correct the prerender order so each public route emits its own description in raw HTML.
+- [x] Verify Wisdom's live page remains crawlable, indexed in visible search results, and carries matching title, description, canonical and Person data.
+- [x] Deploy clean source and explain Google AI Overview timing and correction options without promising placement.
 
 ### Review
 
-Pending.
+- The user's September 24 Google screenshot shows Wisdom's IJW page as an organic result below an inaccurate AI Overview. The page returns HTTP 200, is in the sitemap, has a canonical URL and Person structured data, and robots.txt allows crawling.
+- Fixed the prerender ordering bug that removed route-specific descriptions. Built from clean commit `73568c3` as production deploy `6ab47360d6ba04bcd711f025`; all public routes now serve exactly one matching description in raw HTML, including Wisdom's.
+- Google's AI feature guidance says there is no special markup or guaranteed inclusion. Search Console was not available without sign-in in this environment; no recrawl request or AI Overview change was claimed.
 
 ## Search favicon support
 
