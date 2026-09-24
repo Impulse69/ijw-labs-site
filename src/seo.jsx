@@ -68,6 +68,10 @@ export const ORG_JSONLD = {
     "@id": `${SITE_URL}/founders/${founder.slug}/#person`,
     name: founder.name,
     url: `${SITE_URL}/founders/${founder.slug}/`,
+    image: `${SITE_URL}/images/${founder.img}`,
+    jobTitle: founder.role,
+    description: founder.bio,
+    ...(founder.profileUrl ? { sameAs: [founder.profileUrl] } : {}),
   })),
   sameAs: ["https://www.instagram.com/ijw_labs", "https://x.com/ijwlabs"],
   makesOffer: [

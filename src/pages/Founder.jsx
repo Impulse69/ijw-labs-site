@@ -30,7 +30,7 @@ export default function Founder() {
           </Reveal>
           <Reveal delay={0.1}>
             <span className="kicker">Professional profile</span>
-            <h2 className="display" style={{ fontSize: "clamp(1.7rem,3.4vw,2.5rem)", marginTop: 12 }}>{founder.role}</h2>
+            <h2 className="display" style={{ fontSize: "clamp(1.7rem,3.4vw,2.5rem)", marginTop: 12 }}>Who is {founder.name}?</h2>
             <p style={{ marginTop: 18, color: "var(--ink-dim)", fontSize: "1.08rem" }}>
               {founder.name} is {founder.role} of IJW Labs, a digital solutions studio based in Accra, Ghana.
             </p>

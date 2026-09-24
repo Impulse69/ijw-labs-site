@@ -66,6 +66,16 @@ See `tasks/founder-contact-update.md` for the verification details. Google's sit
 - Final production deploy `6ab4390cd4ea3a62725bcb99` was built from clean commit `9b952fb`. The live work page shows 17 cards and neither removed exhibit; sampled refreshed images return as images with HTTP 200. Removed asset paths fall through to the site's SPA HTML rather than serving old image files.
 - Unrelated local VoiceWidget and Retell webhook changes were excluded from the published build.
 
+## Founder identity coverage for all three
+
+- [ ] Audit all founder pages and shared organization markup for clear, consistent identity details.
+- [ ] Make each founder page answer the name query directly, using confirmed roles and existing public profile links.
+- [ ] Build clean source, deploy, and verify all three live pages and organization data.
+
+### Review
+
+Pending.
+
 ## Founder answer visibility and prerender metadata
 
 - [x] Correct the prerender order so each public route emits its own description in raw HTML.
