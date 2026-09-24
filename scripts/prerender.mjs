@@ -41,8 +41,8 @@ try {
       ...(path.startsWith("/founders/") ? [`<script type="application/ld+json" data-prerendered-jsonld>${jsonScript(founderJsonLd(FOUNDERS.find((founder) => path.endsWith(founder.slug))))}</script>`] : []),
     ].join("\n    ");
     const html = template
-      .replace(/<title>[^<]*<\/title>/, head)
       .replace(/\s*<meta name="description"[^>]*>/, "")
+      .replace(/<title>[^<]*<\/title>/, head)
       .replace('<div id="root"></div>', `<div id="root">${content}</div>`);
     const directory = join("dist", path === "/" ? "" : path.slice(1));
     await mkdir(directory, { recursive: true });
