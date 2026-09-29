@@ -10,8 +10,8 @@ export const PAGE_META = {
     path: "/services/",
   },
   "/work": {
-    title: "Our Work — Nonna Lodge Website & Hotel Concepts | IJW Labs",
-    description: "Explore the live Nonna Lodge website and published hotel, lodge and guest house design concepts by IJW Labs.",
+    title: "Our Work — Business Systems & Websites | IJW Labs",
+    description: "Explore IJW Labs systems for inventory and invoicing, lodge management and school administration, alongside live website work and hospitality design concepts.",
     path: "/work/",
   },
   "/about": {

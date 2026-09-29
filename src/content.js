@@ -62,6 +62,36 @@ export const PORTFOLIO = [
 // Featured tiles (Home "recent work" + top of About grid).
 export const WORK = PORTFOLIO.filter((p) => p.featured);
 
+export const SYSTEMS = [
+  {
+    slug: "odg-erp",
+    title: "ODG ERP",
+    category: "Business operations",
+    summary: "A connected system for managing customers, stock and billing without scattering the work across separate records.",
+    workflow: ["Quote", "Invoice", "Track stock"],
+    features: ["Client records, quotations and invoices", "Inventory and stock movements", "Service jobs and subscription management", "Accounting workflows"],
+    fit: "Teams managing products, customer accounts and ongoing services.",
+  },
+  {
+    slug: "ijw-stay",
+    title: "IJW Stay",
+    category: "Hospitality management",
+    summary: "A desktop hotel management system that connects front-desk bookings, guest accounts and restaurant operations.",
+    workflow: ["Book", "Manage stay", "Close day"],
+    features: ["Rooms and reservation management", "Guest folios and billing", "Restaurant orders and point of sale", "Night audit, reports and backups"],
+    fit: "Hotels and lodges coordinating accommodation and on-site services.",
+  },
+  {
+    slug: "ijw-school-management",
+    title: "IJW School Management",
+    category: "School administration",
+    summary: "An administration platform that brings admissions, school fees and everyday records into a consistent workflow.",
+    workflow: ["Admit", "Bill", "Record payment"],
+    features: ["Admissions and student records", "Term billing and payment receipts", "Feeding records", "School reporting"],
+    fit: "School teams handling student administration and fee collection.",
+  },
+];
+
 export const SERVICES = [
   {
     slug: "web",
@@ -75,8 +105,8 @@ export const SERVICES = [
     slug: "systems",
     img: "service-systems.jpg",
     title: "Systems Development",
-    short: "Custom tools that kill the paperwork — software shaped around how your business actually runs.",
-    points: ["Inventory & stock systems", "Bookings, records & billing", "Dashboards & reporting", "Automation of repetitive work"],
+    short: "Custom business software that connects your records, workflows and reporting — built around how your team operates.",
+    points: ["Inventory, quotations & invoicing", "Hotel bookings, guest accounts & billing", "School administration & fee collection", "Dashboards, reporting & workflow automation"],
     pitch: "Less admin, more business.",
   },
   {

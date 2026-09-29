@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import ImageSlot from "../components/ImageSlot";
 import WorkTile from "../components/WorkTile";
+import SystemsShowcase from "../components/SystemsShowcase";
 import { SERVICES, WORK } from "../content";
 import { IconCode, IconSystem, IconPhoto, IconArrow } from "../components/Icons";
 import { usePageMeta, JsonLd, ORG_JSONLD, FAQ_JSONLD, FAQS } from "../seo";
@@ -70,11 +71,13 @@ export default function Home() {
         </div>
       </section>
 
+      <SystemsShowcase compact />
+
       <section className="section alt">
         <div className="container">
           <Reveal className="sec-head">
-            <span className="kicker">Selected work</span>
-            <h2 className="display">See what we can build</h2>
+            <span className="kicker">Websites &amp; concepts</span>
+            <h2 className="display">A stronger presence online</h2>
             <p>Our live Nonna Lodge website and published hotel website concepts.</p>
           </Reveal>
           <div className="work-grid">

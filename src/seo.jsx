@@ -103,6 +103,10 @@ export function founderJsonLd(founder) {
 // Visible on Home + emitted as FAQPage JSON-LD: this is the AEO surface.
 export const FAQS = [
   {
+    q: "What business systems does IJW Labs build?",
+    a: "We build software for inventory and invoicing, hotel reservations and guest accounts, and school administration and fee collection. Explore ODG ERP, IJW Stay and IJW School Management on our Work page, then contact us to discuss a system for your business.",
+  },
+  {
     q: "How much does a website cost in Ghana?",
     a: "Every IJW Labs quote is custom — a one-page business site costs far less than an online store. Reach us through the contact page with your budget range and we'll tell you honestly what it gets you. No obligation.",
   },

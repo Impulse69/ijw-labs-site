@@ -38,9 +38,10 @@ export default function Services() {
                   {s.pitch}
                 </p>
                 <Link className="btn btn-primary" style={{ marginTop: 22 }} to="/contact/">Reach us</Link>
+                {s.slug === "systems" && <Link className="btn btn-outline" style={{ marginTop: 12, marginLeft: 12 }} to="/work/#systems">Explore our systems</Link>}
               </Reveal>
               <Reveal delay={0.1}>
-                <ImageSlot file={s.img} alt={`${s.title} example`} hint="Suggested: real project screenshot/photo, ~1200×900" />
+                {s.slug === "systems" ? <figure className="systems-art"><img src="/images/systems-operations.webp" alt="Illustration of connected inventory, invoicing and records" width="1200" height="800" loading="lazy" /><figcaption>Workflow illustration · not a product screenshot</figcaption></figure> : <ImageSlot file={s.img} alt={`${s.title} example`} hint="Suggested: real project screenshot/photo, ~1200×900" />}
               </Reveal>
             </div>
           </div>
