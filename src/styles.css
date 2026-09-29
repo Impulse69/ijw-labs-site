@@ -332,6 +332,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); color: var(--navy); line-heig
 .service-system-preview > span { padding: 14px 20px 14px 0; font-family: var(--font-display); font-weight: 700; line-height: 1.35; }
 .service-system-preview:hover { border-color: var(--blue); color: var(--blue); }
 .system-illustration-note { color: var(--ink-dim); font-size: .75rem; }
+.service-photo-visual .system-illustration-note { margin-top: 10px; }
 @media (max-width: 960px) { .systems-grid { grid-template-columns: 1fr; } .systems-stories .system-card { grid-template-columns: 1fr; } .systems-stories .system-card:nth-child(even) .system-visual { order: 0; } .systems-stories .system-copy { padding: 28px; } }
 @media (max-width: 640px) { .systems-stories .system-visual { margin: 16px 16px 0; } .system-copy, .systems-stories .system-copy { padding: 24px; } .service-system-preview { gap: 12px; } }
 @media (max-width: 960px) {

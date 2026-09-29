@@ -47,7 +47,7 @@ export default function Services() {
                     <span>{system.title}<span aria-hidden="true"> ↗</span></span>
                   </Link>)}
                   <p className="system-illustration-note">Illustrative interface concepts</p>
-                </div> : <ImageSlot file={s.img} alt={`${s.title} example`} hint="Suggested: real project screenshot/photo, ~1200×900" />}
+                </div> : s.slug === "photo" ? <div className="service-photo-visual"><ImageSlot file={s.img} alt="Illustrative Photoshop-style editing workspace with a watch retouch, tools and layers" /><p className="system-illustration-note">Illustrative editing interface</p></div> : <ImageSlot file={s.img} alt={`${s.title} example`} hint="Suggested: real project screenshot/photo, ~1200×900" />}
               </Reveal>
             </div>
           </div>

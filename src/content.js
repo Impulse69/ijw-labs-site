@@ -117,7 +117,7 @@ export const SERVICES = [
   },
   {
     slug: "photo",
-    img: "service-photo.jpg",
+    img: "service-photo-editor.jpg",
     title: "Photo Editing",
     short: "Product shots, portraits and promo visuals polished to a professional standard.",
     points: ["Product photography retouch", "Portraits & headshots", "Promo & social media visuals", "Batch editing for catalogs"],
