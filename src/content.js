@@ -64,8 +64,10 @@ export const WORK = PORTFOLIO.filter((p) => p.featured);
 
 export const SYSTEMS = [
   {
-    slug: "odg-erp",
-    title: "ODG ERP",
+    slug: "enterprise-resource-planning",
+    title: "Enterprise Resource Planning Systems",
+    image: "/images/system-erp.webp",
+    imageAlt: "Illustrative enterprise software interface for inventory, invoices and business records",
     category: "Business operations",
     summary: "A connected system for managing customers, stock and billing without scattering the work across separate records.",
     workflow: ["Quote", "Invoice", "Track stock"],
@@ -73,8 +75,10 @@ export const SYSTEMS = [
     fit: "Teams managing products, customer accounts and ongoing services.",
   },
   {
-    slug: "ijw-stay",
-    title: "IJW Stay",
+    slug: "hotel-management",
+    title: "Hotel Management Systems",
+    image: "/images/system-hotel.webp",
+    imageAlt: "Illustrative hotel software interface for room reservations and guest accounts",
     category: "Hospitality management",
     summary: "A desktop hotel management system that connects front-desk bookings, guest accounts and restaurant operations.",
     workflow: ["Book", "Manage stay", "Close day"],
@@ -82,8 +86,10 @@ export const SYSTEMS = [
     fit: "Hotels and lodges coordinating accommodation and on-site services.",
   },
   {
-    slug: "ijw-school-management",
-    title: "IJW School Management",
+    slug: "school-management",
+    title: "School Management Systems",
+    image: "/images/system-school.webp",
+    imageAlt: "Illustrative school software interface for admissions, fee payments and student records",
     category: "School administration",
     summary: "An administration platform that brings admissions, school fees and everyday records into a consistent workflow.",
     workflow: ["Admit", "Bill", "Record payment"],

@@ -104,7 +104,7 @@ export function founderJsonLd(founder) {
 export const FAQS = [
   {
     q: "What business systems does IJW Labs build?",
-    a: "We build software for inventory and invoicing, hotel reservations and guest accounts, and school administration and fee collection. Explore ODG ERP, IJW Stay and IJW School Management on our Work page, then contact us to discuss a system for your business.",
+    a: "We build Enterprise Resource Planning Systems, Hotel Management Systems and School Management Systems. These connect inventory and invoicing, hotel reservations and guest accounts, or school administration and fee collection. Explore the systems on our Work page, then contact us to discuss your requirements.",
   },
   {
     q: "How much does a website cost in Ghana?",

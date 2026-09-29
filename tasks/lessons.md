@@ -1,5 +1,7 @@
 # Lessons
 
+- Sell systems through clear category names rather than exposing client or internal project identities. Each category needs its own substantial visual, not just a text card under one generic illustration.
+
 - A portfolio for multiple development services must show evidence for each service. Pair systems development with verified workflows and clearly labelled illustrative visuals when real product screenshots are unavailable.
 
 - When a visitor can choose among contact channels, make the main sitewide call to action open the Contact page. Keep channel-specific links on that page instead of repeating them throughout the site.

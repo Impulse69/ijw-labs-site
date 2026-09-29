@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import ImageSlot from "../components/ImageSlot";
-import { SERVICES } from "../content";
+import { SERVICES, SYSTEMS } from "../content";
 import { IconCheck } from "../components/Icons";
 import { usePageMeta, JsonLd, ORG_JSONLD } from "../seo";
 import { PAGE_META } from "../page-metadata";
@@ -41,7 +41,13 @@ export default function Services() {
                 {s.slug === "systems" && <Link className="btn btn-outline" style={{ marginTop: 12, marginLeft: 12 }} to="/work/#systems">Explore our systems</Link>}
               </Reveal>
               <Reveal delay={0.1}>
-                {s.slug === "systems" ? <figure className="systems-art"><img src="/images/systems-operations.webp" alt="Illustration of connected inventory, invoicing and records" width="1200" height="800" loading="lazy" /><figcaption>Workflow illustration · not a product screenshot</figcaption></figure> : <ImageSlot file={s.img} alt={`${s.title} example`} hint="Suggested: real project screenshot/photo, ~1200×900" />}
+                {s.slug === "systems" ? <div className="service-system-previews">
+                  {SYSTEMS.map(system => <Link key={system.slug} to={`/work/#${system.slug}`} className="service-system-preview">
+                    <img src={system.image} alt={system.imageAlt} width="1536" height="1024" loading="lazy" />
+                    <span>{system.title}<span aria-hidden="true"> ↗</span></span>
+                  </Link>)}
+                  <p className="system-illustration-note">Illustrative interface concepts</p>
+                </div> : <ImageSlot file={s.img} alt={`${s.title} example`} hint="Suggested: real project screenshot/photo, ~1200×900" />}
               </Reveal>
             </div>
           </div>
