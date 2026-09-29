@@ -304,7 +304,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); color: var(--navy); line-heig
 .systems-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .system-card { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--white); display: flex; flex-direction: column; scroll-margin-top: 100px; }
 .system-visual { margin: 0; min-width: 0; background: #eef2f6; }
-.system-visual img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.system-visual img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: contain; }
 .system-visual figcaption { padding: 10px 20px; font-size: .75rem; color: var(--ink-dim); border-top: 1px solid var(--line); }
 .system-copy { padding: 28px; display: flex; flex-direction: column; flex: 1; min-width: 0; }
 .systems-stories { display: grid; gap: 40px; }

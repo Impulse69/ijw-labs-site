@@ -1,5 +1,7 @@
 # Lessons
 
+- Images with HTML width/height attributes need explicit CSS height:auto when CSS changes their width. Verify rendered width/height ratios and inspect Home, Work and Services at desktop and narrow widths; loaded images and zero overflow do not prove correct scaling.
+
 - Sell systems through clear category names rather than exposing client or internal project identities. Each category needs its own substantial visual, not just a text card under one generic illustration.
 
 - A portfolio for multiple development services must show evidence for each service. Pair systems development with verified workflows and clearly labelled illustrative visuals when real product screenshots are unavailable.
