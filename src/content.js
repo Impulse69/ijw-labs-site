@@ -13,7 +13,7 @@ export const SOCIALS = {
 export const FOUNDERS = [
   {
     slug: "isaac-asamoah",
-    img: "founder-1.jpg",
+    img: "founder-isaac-20260930.jpg",
     name: "Isaac Asamoah Junior",
     alternateNames: ["Isaac Asamoah", "Asamoah Isaac"],
     role: "Co-founder & CEO",
