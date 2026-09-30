@@ -53,7 +53,7 @@ export default function About() {
           <div className="grid-3">
             {FOUNDERS.map((f, i) => (
               <Reveal key={f.img} delay={i * 0.1} className="founder-card">
-                <ImageSlot file={f.img} alt={`${f.name}, ${f.role}`} className={f.slug === "wisdom-dzanado" ? "founder-portrait-wisdom" : ""} />
+                <ImageSlot file={f.img} alt={`${f.name}, ${f.role}`} className={f.slug === "wisdom-dzanado" ? "founder-portrait-wisdom" : f.slug === "isaac-asamoah" ? "founder-portrait-isaac" : ""} />
                 <h3><Link to={`/founders/${f.slug}/`}>{f.name}</Link></h3>
                 <div className="role">{f.role}</div>
                 {f.bio && <p>{f.bio}</p>}

@@ -164,6 +164,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); color: var(--navy); line-heig
 .founder-card { text-align: left; }
 .founder-card .img-slot { aspect-ratio: 3 / 3.4; }
 .founder-portrait-wisdom img { object-position: center top; }
+.founder-portrait-isaac img { transform: scale(1.8); transform-origin: 35% 90%; }
 .founder-card h3 { margin-top: 18px; font-size: 1.25rem; }
 .founder-card .role { color: var(--blue); font-weight: 600; font-size: 0.88rem; letter-spacing: 0.05em; text-transform: uppercase; }
 .founder-card p { margin-top: 10px; color: var(--ink-dim); font-size: 0.95rem; }

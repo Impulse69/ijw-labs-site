@@ -26,7 +26,7 @@ export default function Founder() {
       <section className="section">
         <div className="container founder-profile">
           <Reveal>
-            <ImageSlot file={founder.img} alt={`${founder.name}, ${founder.role} of IJW Labs`} className={founder.slug === "wisdom-dzanado" ? "founder-portrait-wisdom" : ""} eager />
+            <ImageSlot file={founder.img} alt={`${founder.name}, ${founder.role} of IJW Labs`} className={founder.slug === "wisdom-dzanado" ? "founder-portrait-wisdom" : founder.slug === "isaac-asamoah" ? "founder-portrait-isaac" : ""} eager />
           </Reveal>
           <Reveal delay={0.1}>
             <span className="kicker">Professional profile</span>
