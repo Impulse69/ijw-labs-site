@@ -3,7 +3,7 @@ import Reveal from "../components/Reveal";
 import ImageSlot from "../components/ImageSlot";
 import WorkTile from "../components/WorkTile";
 import SystemsShowcase from "../components/SystemsShowcase";
-import { SERVICES, WORK } from "../content";
+import { SERVICES, WORK, FOUNDERS } from "../content";
 import { IconCode, IconSystem, IconPhoto, IconArrow } from "../components/Icons";
 import { usePageMeta, JsonLd, ORG_JSONLD, FAQ_JSONLD, FAQS } from "../seo";
 import { PAGE_META } from "../page-metadata";
@@ -28,7 +28,7 @@ export default function Home() {
               <span style={{ display: "block" }}>Real growth.</span>
             </h1>
             <p className="lede">
-              IJW Labs builds the websites, systems and digital assets that make your business impossible to ignore — without the agency price tag.
+              IJW Labs is a web and business software development company based in Accra, Ghana. We build websites, custom business systems and professional photo edits for organisations in Ghana and worldwide.
             </p>
             <div className="hero-ctas">
               <Link className="btn btn-primary" to="/contact/">Reach us</Link>
@@ -42,6 +42,21 @@ export default function Home() {
           </div>
           <div>
             <ImageSlot file="hero.jpg" alt="IJW Labs work showcase" hint="Suggested: device mockup or team-at-work photo, ~1200×1400" className="hero-img" eager />
+          </div>
+        </div>
+      </section>
+
+      <section className="section alt">
+        <div className="container">
+          <div className="sec-head">
+            <span className="kicker">About IJW Labs</span>
+            <h2 className="display">Digital solutions. Built in Accra.</h2>
+            <p>IJW Labs is led by three co-founders: Isaac Asamoah Junior, CEO; Judah Amanor Tetteh, COO; and Wisdom Dzanado, Creative Director. Together, we lead technical development, operations and creative production.</p>
+          </div>
+          <div className="hero-ctas">
+            {FOUNDERS.map((founder) => (
+              <Link key={founder.slug} className="btn btn-outline" to={`/founders/${founder.slug}/`}>{founder.name}</Link>
+            ))}
           </div>
         </div>
       </section>

@@ -58,7 +58,7 @@ export const ORG_JSONLD = {
   name: "IJW Labs",
   slogan: "Smart Solutions. Stronger Presence. Real Growth.",
   description:
-    "IJW Labs is a digital agency in Accra, Ghana offering web development, systems development and professional photo editing for growing businesses.",
+    "IJW Labs is a web and business software development company based in Accra, Ghana, offering websites, custom business systems and professional photo editing. Its co-founders are Isaac Asamoah Junior, Judah Amanor Tetteh and Wisdom Dzanado.",
   url: SITE_URL + "/",
   telephone: "+233539923975",
   address: { "@type": "PostalAddress", addressLocality: "Accra", addressCountry: "GH" },
@@ -102,6 +102,14 @@ export function founderJsonLd(founder) {
 
 // Visible on Home + emitted as FAQPage JSON-LD: this is the AEO surface.
 export const FAQS = [
+  {
+    q: "What is IJW Labs?",
+    a: "IJW Labs is a web and business software development company based in Accra, Ghana. We provide websites, custom business systems and professional photo editing for organisations in Ghana and worldwide. Our official website is ijwlabs.com.",
+  },
+  {
+    q: "Who founded IJW Labs?",
+    a: "IJW Labs has three co-founders: Isaac Asamoah Junior, CEO; Judah Amanor Tetteh, COO; and Wisdom Dzanado, Creative Director. They lead technical development, operations and creative production respectively.",
+  },
   {
     q: "What business systems does IJW Labs build?",
     a: "We build Enterprise Resource Planning Systems, Hotel Management Systems and School Management Systems. These connect inventory and invoicing, hotel reservations and guest accounts, or school administration and fee collection. Explore the systems on our Work page, then contact us to discuss your requirements.",

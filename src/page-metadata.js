@@ -1,7 +1,7 @@
 export const PAGE_META = {
   "/": {
     title: "IJW Labs — Web Development & Digital Solutions in Accra, Ghana",
-    description: "IJW Labs builds websites, custom business systems and professional photo edits for growing businesses. Based in Accra, working worldwide. Reach us through our contact page.",
+    description: "IJW Labs is a web and business software development company in Accra, Ghana. We build websites, custom business systems and professional photo edits.",
     path: "/",
   },
   "/services": {
