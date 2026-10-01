@@ -46,21 +46,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section alt">
-        <div className="container">
-          <div className="sec-head">
-            <span className="kicker">About IJW Labs</span>
-            <h2 className="display">Digital solutions. Built in Accra.</h2>
-            <p>IJW Labs is led by three co-founders: Isaac Asamoah Junior, CEO; Judah Amanor Tetteh, COO; and Wisdom Dzanado, Creative Director. Together, we lead technical development, operations and creative production.</p>
-          </div>
-          <div className="hero-ctas">
-            {FOUNDERS.map((founder) => (
-              <Link key={founder.slug} className="btn btn-outline" to={`/founders/${founder.slug}/`}>{founder.name}</Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section">
         <div className="container">
           <Reveal className="sec-head">
@@ -132,6 +117,18 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="home-team" aria-labelledby="home-team-heading">
+        <div className="container">
+          <h2 id="home-team-heading">Our team</h2>
+          <p>Based in Accra, our co-founders lead technical development, operations and creative production.</p>
+          <ul>
+            {FOUNDERS.map((founder) => (
+              <li key={founder.slug}><Link to={`/founders/${founder.slug}/`}>{founder.name}</Link><span>{founder.role}</span></li>
+            ))}
+          </ul>
         </div>
       </section>
 
