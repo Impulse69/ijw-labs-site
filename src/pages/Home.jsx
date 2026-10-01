@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
-import ImageSlot from "../components/ImageSlot";
+import HeroMotion from "../components/HeroMotion";
 import WorkTile from "../components/WorkTile";
 import SystemsShowcase from "../components/SystemsShowcase";
 import { SERVICES, WORK, FOUNDERS } from "../content";
@@ -16,17 +16,20 @@ export default function Home() {
     <>
       <JsonLd data={ORG_JSONLD} />
       <JsonLd data={FAQ_JSONLD} />
-      <section className="hero">
-        <div className="container hero-grid">
-          <div>
-            <div>
+      <section className="hero hero-with-motion">
+        <div className="container hero-motion-layout">
+          <div className="hero-mobile-intro">
+            <div className="hero-mobile-only">
               <span className="kicker">Accra, Ghana — taking projects now</span>
             </div>
-            <h1 className="display">
+            <h1 className="display hero-accessible-heading">
               <span style={{ display: "block" }}>Smart solutions.</span>
               <span style={{ display: "block" }} className="blue">Stronger presence.</span>
               <span style={{ display: "block" }}>Real growth.</span>
             </h1>
+          </div>
+          <HeroMotion />
+          <div className="hero-motion-copy">
             <p className="lede">
               IJW Labs is a web and business software development company based in Accra, Ghana. We build websites, custom business systems and professional photo edits for organisations in Ghana and worldwide.
             </p>
@@ -34,14 +37,11 @@ export default function Home() {
               <Link className="btn btn-primary" to="/contact/">Reach us</Link>
               <Link className="btn btn-outline" to="/services/">See what we build</Link>
             </div>
-            <div className="hero-stats">
+            <div className="hero-stats hero-mobile-only">
               <div><strong>48h</strong><span>first response & quote</span></div>
               <div><strong>3</strong><span>services, one team</span></div>
               <div><strong>100%</strong><span>built around your budget</span></div>
             </div>
-          </div>
-          <div>
-            <ImageSlot file="hero.jpg" alt="IJW Labs work showcase" hint="Suggested: device mockup or team-at-work photo, ~1200×1400" className="hero-img" eager />
           </div>
         </div>
       </section>

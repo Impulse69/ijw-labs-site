@@ -104,6 +104,32 @@ h1, h2, h3, h4 { font-family: var(--font-display); color: var(--navy); line-heig
 .hero-stats span { font-size: 0.85rem; color: var(--ink-dim); }
 
 /* ---------- image slots ---------- */
+.hero-with-motion { padding: 20px 0 56px; background: var(--paper); }
+.hero-motion-layout { display: flex; flex-direction: column; }
+.hero-mobile-only { display: none; }
+.hero-accessible-heading { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px !important; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.hero-motion { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; }
+.hero-motion > img { width: 100%; height: auto; display: block; }
+.hero-motion iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; opacity: 0; pointer-events: none; }
+.hero-motion iframe.is-ready { opacity: 1; }
+.hero-motion-toggle { position: absolute; bottom: 12px; right: 12px; padding: 7px 14px; color: var(--navy); background: var(--paper); border: 1px solid var(--line); border-radius: 6px; cursor: pointer; font: inherit; font-size: 0.85rem; }
+.hero-motion-toggle:hover { background: var(--blue-soft); }
+.hero-motion-toggle:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.hero-motion-copy { display: flex; gap: 36px; align-items: center; padding: 0 7.3%; }
+.hero-motion-copy .lede { margin: 0; max-width: 580px; flex: 1; font-size: 1.05rem; }
+.hero-motion-copy .hero-ctas { margin: 0; flex-shrink: 0; }
+@media (max-width: 960px) {
+  .hero-with-motion { padding-top: 56px; }
+  .hero-mobile-only { display: flex; }
+  .hero-accessible-heading { position: static; width: auto; height: auto; margin: 18px 0 0 !important; overflow: visible; clip: auto; white-space: normal; }
+  .hero-mobile-intro { order: 0; }
+  .hero-motion-copy { order: 1; display: block; padding: 0; margin-top: 22px; }
+  .hero-motion-copy .lede { max-width: 640px; }
+  .hero-motion-copy .hero-ctas { margin-top: 28px; }
+  .hero-motion-copy .hero-stats { margin-top: 28px; }
+  .hero-motion { order: 2; margin-top: 32px; }
+}
+
 .img-slot { position: relative; border-radius: var(--radius); overflow: hidden; background: var(--blue-soft); }
 .img-slot img { width: 100%; height: 100%; object-fit: cover; }
 .img-slot .placeholder {

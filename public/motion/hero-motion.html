@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>IJW Labs Hero Motion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+<!--
+  IJW Labs hero motion graphic: 1920x1080, 15 s seamless loop.
+
+  Playback controls:
+    Space        pause / play
+    Left/Right   step one frame (hold Shift for one second)
+    ?t=6.2       open paused at 6.2 s
+    ?render      open paused; drive frames with window.seek(seconds)
+
+  Every animation is driven from a single clock, so seek(t) is frame-accurate
+  and the loop point (15 s -> 0 s) is seamless.
+-->
+<style>
+  :root {
+    --navy: #0b1f3f;
+    --navy-deep: #071630;
+    --blue: #1d5cff;
+    --blue-soft: #e8eeff;
+    --paper: #f6f7f9;
+    --ink: #13203a;
+    --ink-dim: #5a6880;
+    --line: #dfe4ec;
+    --wa: #1fad53;
+    --amber: #f5a524;
+    --display: "Archivo", sans-serif;
+    --body: "Source Sans 3", sans-serif;
+    --out: cubic-bezier(.16, 1, .3, 1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; overflow: hidden; background: var(--paper); }
+  body { font-family: var(--body); color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+  #stage {
+    position: absolute; left: 50%; top: 50%;
+    width: 1920px; height: 1080px;
+    transform-origin: 0 0;
+    background: var(--paper);
+    overflow: hidden;
+  }
+  .abs { position: absolute; }
+
+  /* ---------- backdrop ---------- */
+  .grid {
+    inset: -60px;
+    background-image:
+      linear-gradient(to right, rgba(11, 31, 63, .055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(11, 31, 63, .055) 1px, transparent 1px);
+    background-size: 60px 60px;
+    -webkit-mask-image: radial-gradient(ellipse 75% 70% at 62% 50%, #000 30%, transparent 85%);
+            mask-image: radial-gradient(ellipse 75% 70% at 62% 50%, #000 30%, transparent 85%);
+  }
+  .glow {
+    width: 1100px; height: 1100px; left: 880px; top: -40px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(29, 92, 255, .20) 0%, rgba(29, 92, 255, .07) 40%, transparent 68%);
+  }
+
+  /* ---------- left column: headline ---------- */
+  .kicker { left: 140px; top: 196px; display: flex; align-items: center; gap: 18px; }
+  .k-line { width: 56px; height: 3px; background: var(--blue); transform-origin: left; }
+  .k-text {
+    font-family: var(--display); font-weight: 700; font-size: 19px;
+    letter-spacing: .22em; text-transform: uppercase; color: var(--blue);
+  }
+  .hl { left: 134px; top: 240px; }
+  .ln { display: block; overflow: hidden; padding: 0 6px .02em; }
+  .ln > span { display: inline-block; will-change: transform; }
+  .hl .ln {
+    font-family: var(--display); font-weight: 900; font-size: 106px;
+    line-height: .98; letter-spacing: -.02em; text-transform: uppercase; color: var(--navy);
+  }
+  .hl .blue { color: var(--blue); }
+
+  .stats { left: 140px; top: 846px; display: flex; gap: 76px; }
+  .stat strong {
+    display: block; font-family: var(--display); font-weight: 800; font-size: 54px;
+    color: var(--navy); line-height: 1; font-variant-numeric: tabular-nums;
+  }
+  .stat span { display: block; margin-top: 10px; font-size: 22px; color: var(--ink-dim); }
+
+  /* ---------- right column: device window ---------- */
+  .hud { left: 1060px; top: 140px; width: 740px; height: 40px; }
+  .chip {
+    position: absolute; left: 0; top: 0; height: 40px; width: 380px;
+  }
+  .chip-lab {
+    position: absolute; left: 0; top: 0; height: 40px; display: flex; align-items: center; gap: 12px;
+    font-family: var(--display); font-weight: 700; font-size: 19px; color: var(--navy); white-space: nowrap;
+  }
+  .chip-lab b {
+    display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+    background: var(--navy); color: #fff; font-size: 15px; letter-spacing: .02em;
+  }
+  .segs { position: absolute; right: 0; top: 18px; display: flex; gap: 8px; }
+  .seg { width: 64px; height: 4px; border-radius: 4px; background: var(--line); overflow: hidden; }
+  .seg i { display: block; height: 100%; background: var(--blue); transform-origin: left; }
+
+  .win {
+    left: 1060px; top: 210px; width: 740px; height: 600px;
+    background: #fff; border-radius: 18px;
+    box-shadow: 0 2px 0 rgba(11, 31, 63, .04), 0 40px 90px -30px rgba(11, 31, 63, .38), 0 0 0 1px rgba(11, 31, 63, .07);
+    overflow: hidden;
+  }
+  .chrome {
+    height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 18px;
+    background: #f1f3f7; border-bottom: 1px solid var(--line);
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; background: #d6dbe4; }
+  .url {
+    position: relative; margin-left: 18px; flex: 1; height: 26px; border-radius: 8px; background: #fff;
+    border: 1px solid var(--line);
+  }
+  .url span {
+    position: absolute; left: 12px; top: 0; height: 24px; display: flex; align-items: center; gap: 7px;
+    font-size: 14px; color: var(--ink-dim); white-space: nowrap;
+  }
+  .url svg { width: 11px; height: 11px; }
+  .content { position: absolute; left: 0; top: 44px; width: 740px; height: 556px; overflow: hidden; }
+  .scene { position: absolute; inset: 0; }
+
+  /* scene 1: website build */
+  .bar { display: block; height: 8px; border-radius: 4px; background: var(--line); transform-origin: left; }
+  .w-nav { position: absolute; left: 28px; right: 28px; top: 20px; height: 28px; display: flex; align-items: center; gap: 22px; }
+  .w-logo { font-family: var(--display); font-weight: 900; font-size: 15px; color: var(--navy); letter-spacing: .01em; margin-right: auto; }
+  .w-logo em { font-style: normal; color: var(--blue); }
+  .w-nav .bar { width: 42px; height: 7px; }
+  .w-nav .pill { width: 70px; height: 26px; border-radius: 7px; background: var(--blue); }
+  .w-kick { position: absolute; left: 28px; top: 86px; width: 110px; height: 7px; background: var(--blue); }
+  .w-h { position: absolute; left: 22px; top: 104px; }
+  .w-h .ln { font-family: var(--display); font-weight: 800; font-size: 35px; line-height: 1.06; letter-spacing: -.015em; color: var(--navy); }
+  .w-h .ln.blue { color: var(--blue); }
+  .w-p { position: absolute; left: 28px; top: 200px; display: grid; gap: 8px; }
+  .w-btns { position: absolute; left: 28px; top: 252px; display: flex; gap: 10px; }
+  .w-btn {
+    position: relative; height: 38px; padding: 0 18px; border-radius: 8px; overflow: hidden;
+    display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 14px;
+  }
+  .w-btn.primary { background: var(--blue); color: #fff; }
+  .w-btn.ghost { border: 1.5px solid var(--navy); color: var(--navy); }
+  .w-ripple { position: absolute; left: 50%; top: 50%; width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%; background: rgba(255, 255, 255, .55); }
+  .w-img {
+    position: absolute; left: 392px; top: 74px; width: 320px; height: 226px; border-radius: 14px; overflow: hidden;
+    background: linear-gradient(140deg, #1d5cff 0%, #4f7dff 55%, #9db4ff 100%);
+  }
+  .w-img .c1 { position: absolute; width: 210px; height: 210px; border-radius: 50%; right: -50px; top: -60px; background: rgba(255, 255, 255, .16); }
+  .w-img .c2 { position: absolute; width: 120px; height: 120px; border-radius: 50%; left: 34px; bottom: -40px; border: 14px solid rgba(255, 255, 255, .22); }
+  .w-img .card {
+    position: absolute; left: 92px; top: 52px; width: 150px; height: 118px; border-radius: 12px; background: #fff;
+    box-shadow: 0 18px 30px -12px rgba(7, 22, 48, .45); padding: 14px;
+  }
+  .w-img .card i { display: block; height: 8px; border-radius: 4px; background: var(--line); margin-top: 8px; }
+  .w-img .card i:first-child { margin-top: 0; width: 46px; height: 46px; border-radius: 10px; background: var(--blue-soft); }
+  .w-cards { position: absolute; left: 28px; top: 332px; display: flex; gap: 14px; }
+  .w-card { width: 218px; height: 150px; border-radius: 12px; border: 1px solid var(--line); background: #fff; padding: 18px; }
+  .w-card .ic { width: 36px; height: 36px; border-radius: 9px; background: var(--blue-soft); margin-bottom: 16px; position: relative; }
+  .w-card .ic::after { content: ""; position: absolute; inset: 11px; border-radius: 3px; background: var(--blue); }
+  .w-card .bar { margin-top: 9px; }
+  .w-foot { position: absolute; left: 0; right: 0; bottom: 0; height: 52px; background: var(--paper); border-top: 1px solid var(--line); }
+
+  .toast {
+    position: absolute; right: 20px; bottom: 20px; height: 48px; padding: 0 18px 0 12px; border-radius: 12px;
+    display: flex; align-items: center; gap: 10px; background: var(--navy); color: #fff;
+    font-weight: 600; font-size: 16px; box-shadow: 0 16px 30px -12px rgba(7, 22, 48, .5); white-space: nowrap;
+  }
+  .toast .ok { width: 26px; height: 26px; border-radius: 50%; background: var(--wa); display: grid; place-items: center; }
+  .toast .ok svg { width: 13px; height: 13px; }
+  .toast small { color: #9fb0cc; font-size: 15px; font-weight: 400; }
+
+  .cursor { position: absolute; left: 0; top: 0; width: 28px; height: 34px; z-index: 5; }
+
+  /* scene 2: business system */
+  .s-side { position: absolute; left: 0; top: 0; bottom: 0; width: 150px; background: var(--navy); padding: 22px 16px; }
+  .s-brand { font-family: var(--display); font-weight: 900; font-size: 15px; color: #fff; margin: 0 0 28px 6px; letter-spacing: .04em; }
+  .s-nav { display: grid; gap: 8px; }
+  .s-nav i { display: flex; align-items: center; gap: 10px; height: 32px; padding: 0 10px; border-radius: 8px; }
+  .s-nav i::before { content: ""; width: 12px; height: 12px; border-radius: 3px; background: rgba(255, 255, 255, .35); }
+  .s-nav i::after { content: ""; height: 6px; width: 58px; border-radius: 3px; background: rgba(255, 255, 255, .22); }
+  .s-nav i.on { background: var(--blue); }
+  .s-nav i.on::before, .s-nav i.on::after { background: #fff; }
+  .s-title { position: absolute; left: 172px; top: 18px; right: 22px; display: flex; align-items: center; justify-content: space-between; }
+  .s-title b { font-family: var(--display); font-weight: 800; font-size: 22px; color: var(--navy); }
+  .s-title span { font-size: 14px; color: var(--ink-dim); padding: 5px 12px; border: 1px solid var(--line); border-radius: 20px; }
+  .s-kpis { position: absolute; left: 172px; top: 64px; display: flex; gap: 12px; }
+  .s-kpi { width: 174px; height: 82px; border-radius: 12px; border: 1px solid var(--line); padding: 12px 16px; }
+  .s-kpi small { display: block; font-size: 13px; color: var(--ink-dim); font-weight: 600; }
+  .s-kpi strong { display: block; margin-top: 4px; font-family: var(--display); font-weight: 800; font-size: 28px; color: var(--navy); font-variant-numeric: tabular-nums; }
+  .s-kpi.warn strong { color: var(--amber); }
+  .s-kpi strong { white-space: nowrap; }
+  .s-kpi strong[data-kpi="rev"] { font-size: 25px; line-height: 34px; }
+  .s-card { position: absolute; border-radius: 12px; border: 1px solid var(--line); background: #fff; padding: 14px 16px; }
+  .s-card h6 { font-family: var(--display); font-weight: 700; font-size: 14px; color: var(--navy); }
+  .s-chart { left: 172px; top: 160px; width: 360px; height: 196px; }
+  .s-bars { position: absolute; left: 16px; right: 16px; bottom: 16px; height: 130px; display: flex; align-items: flex-end; gap: 14px; }
+  .s-bar { flex: 1; border-radius: 5px 5px 2px 2px; background: var(--blue-soft); transform-origin: bottom; }
+  .s-bar.hi { background: var(--blue); }
+  .s-stock { left: 546px; top: 160px; width: 172px; height: 196px; }
+  .s-st { margin-top: 14px; }
+  .s-st small { display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-dim); }
+  .s-st .track { height: 7px; border-radius: 4px; background: var(--paper); margin-top: 6px; overflow: hidden; }
+  .s-st .track i { display: block; height: 100%; border-radius: 4px; background: var(--blue); transform-origin: left; }
+  .s-st .track i.low { background: var(--amber); }
+  .s-table { left: 172px; top: 370px; width: 546px; height: 166px; padding: 12px 16px; }
+  .s-row {
+    display: grid; grid-template-columns: 70px 1fr 110px 84px; align-items: center; height: 35px;
+    font-size: 15px; color: var(--ink); border-top: 1px solid var(--line);
+  }
+  .s-row:first-child { border-top: 0; }
+  .s-row .id { color: var(--ink-dim); font-variant-numeric: tabular-nums; }
+  .s-row .amt { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .pill {
+    position: relative; justify-self: start; height: 24px; padding: 0 10px; border-radius: 12px;
+    display: inline-grid; place-items: center; font-size: 13px; font-weight: 600;
+  }
+  .pill.paid { background: #e3f6ea; color: #157a3b; }
+  .pill.pend { background: #fff3dc; color: #a36400; }
+  .pill-flip { position: relative; width: 74px; height: 24px; }
+  .pill-flip .pill { position: absolute; left: 0; top: 0; }
+
+  /* scene 3: photo edit */
+  .p-layer { position: absolute; inset: 0; }
+  .p-layer svg { display: block; width: 740px; height: 556px; }
+  .p-before { filter: saturate(.18) brightness(.72) contrast(.82); }
+  .p-before::after { content: ""; position: absolute; inset: 0; background: rgba(120, 128, 140, .18); }
+  .p-handle { position: absolute; left: 0; top: 0; bottom: 0; width: 0; }
+  .p-handle::before { content: ""; position: absolute; left: -1.5px; top: 0; bottom: 0; width: 3px; background: #fff; box-shadow: 0 0 12px rgba(0, 0, 0, .25); }
+  .p-knob {
+    position: absolute; left: -22px; top: 256px; width: 44px; height: 44px; border-radius: 50%;
+    background: #fff; box-shadow: 0 6px 18px rgba(7, 22, 48, .35); display: grid; place-items: center;
+  }
+  .p-knob svg { width: 22px; height: 22px; }
+  .p-lab {
+    position: absolute; top: 18px; height: 30px; padding: 0 12px; border-radius: 8px; display: grid; place-items: center;
+    font-family: var(--display); font-weight: 700; font-size: 13px; letter-spacing: .14em; color: #fff;
+    background: rgba(7, 22, 48, .55); backdrop-filter: blur(6px);
+  }
+  .p-lab.l { left: 18px; } .p-lab.r { right: 18px; background: rgba(29, 92, 255, .85); }
+
+  .p-panel {
+    left: 1084px; top: 604px; width: 280px; padding: 18px 20px 20px; border-radius: 16px; background: #fff;
+    box-shadow: 0 30px 60px -24px rgba(11, 31, 63, .45), 0 0 0 1px rgba(11, 31, 63, .06);
+  }
+  .p-panel h6 { font-family: var(--display); font-weight: 800; font-size: 15px; color: var(--navy); margin-bottom: 4px; }
+  .p-row { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; font-size: 15px; color: var(--ink); }
+  .p-row .track { width: 96px; height: 6px; border-radius: 3px; background: var(--paper); overflow: hidden; }
+  .p-row .track i { display: block; height: 100%; background: var(--blue); transform-origin: left; }
+  .p-check { width: 22px; height: 22px; border-radius: 50%; background: var(--wa); display: grid; place-items: center; }
+  .p-check svg { width: 11px; height: 11px; }
+
+  /* ---------- closing lockup ---------- */
+  .logo { left: 0; right: 0; top: 380px; display: flex; flex-direction: column; align-items: center; }
+  .lg-word { display: flex; font-family: var(--display); font-weight: 900; font-size: 190px; line-height: 1; letter-spacing: -.02em; color: var(--navy); }
+  .lg-word .ln { padding: 0 2px .04em; }
+  .lg-word .blue { color: var(--blue); }
+  .lg-line { width: 640px; height: 4px; background: var(--blue); margin: 22px 0 26px; }
+  .lg-sub { font-family: var(--display); font-weight: 700; font-size: 30px; letter-spacing: .5em; text-transform: uppercase; color: var(--navy); padding-left: .5em; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b3a9c" />
+      <stop offset=".45" stop-color="#6d5fd0" />
+      <stop offset=".75" stop-color="#ff8a5b" />
+      <stop offset="1" stop-color="#ffcf7a" />
+    </linearGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffb26b" />
+      <stop offset=".35" stop-color="#7a5bc4" />
+      <stop offset="1" stop-color="#14286b" />
+    </linearGradient>
+    <radialGradient id="sunglow">
+      <stop offset="0" stop-color="#fff4cf" stop-opacity=".95" />
+      <stop offset=".35" stop-color="#ffd27a" stop-opacity=".55" />
+      <stop offset="1" stop-color="#ff8a5b" stop-opacity="0" />
+    </radialGradient>
+    <g id="landscape">
+      <rect width="740" height="556" fill="url(#sky)" />
+      <circle cx="470" cy="318" r="190" fill="url(#sunglow)" />
+      <circle cx="470" cy="318" r="56" fill="#fff1c4" />
+      <path d="M0 330 L90 262 L170 300 L262 220 L360 296 L450 250 L560 312 L640 268 L740 300 L740 380 L0 380Z" fill="#5a4aa8" opacity=".75" />
+      <path d="M0 360 L120 300 L210 336 L320 286 L420 340 L520 316 L620 350 L740 322 L740 380 L0 380Z" fill="#2b2f7a" />
+      <rect y="378" width="740" height="178" fill="url(#lake)" />
+      <rect x="430" y="392" width="80" height="4" rx="2" fill="#fff1c4" opacity=".75" />
+      <rect x="445" y="408" width="50" height="3" rx="1.5" fill="#fff1c4" opacity=".55" />
+      <rect x="456" y="422" width="28" height="3" rx="1.5" fill="#fff1c4" opacity=".4" />
+      <path d="M0 400 Q150 360 300 392 L300 420 L0 430Z" fill="#101c4d" />
+      <g transform="translate(118 340)">
+        <path d="M0 40 L44 10 L88 40Z" fill="#0b1438" />
+        <rect x="8" y="38" width="72" height="36" fill="#0e1a45" />
+        <rect x="18" y="48" width="14" height="12" fill="#ffd27a" />
+        <rect x="40" y="48" width="14" height="12" fill="#ffd27a" />
+        <rect x="62" y="52" width="10" height="22" fill="#ffb84d" />
+      </g>
+      <g fill="#0b1438">
+        <path d="M232 404 l10 -46 l10 46z" /><path d="M252 400 l8 -34 l8 34z" /><path d="M30 410 l12 -54 l12 54z" />
+      </g>
+    </g>
+  </defs>
+</svg>
+
+<div id="stage">
+  <div class="abs grid" id="grid"></div>
+  <div class="abs glow" id="glow"></div>
+
+  <!-- left: headline -->
+  <div class="abs kicker">
+    <span class="k-line"></span>
+    <span class="k-text">Accra, Ghana &mdash; taking projects now</span>
+  </div>
+  <h1 class="abs hl">
+    <span class="ln"><span>Smart</span></span>
+    <span class="ln"><span>Solutions.</span></span>
+    <span class="ln blue"><span>Stronger</span></span>
+    <span class="ln blue"><span>Presence.</span></span>
+    <span class="ln"><span>Real growth.</span></span>
+  </h1>
+  <div class="abs stats">
+    <div class="stat"><strong data-count="48" data-suffix="h">48h</strong><span>first response &amp; quote</span></div>
+    <div class="stat"><strong data-count="3">3</strong><span>services, one team</span></div>
+    <div class="stat"><strong data-count="100" data-suffix="%">100%</strong><span>built around your budget</span></div>
+  </div>
+
+  <!-- right: device -->
+  <div class="abs hud">
+    <div class="chip">
+      <div class="chip-lab"><b>01</b>Websites that win customers</div>
+      <div class="chip-lab"><b>02</b>Custom business systems</div>
+      <div class="chip-lab"><b>03</b>Professional photo edits</div>
+    </div>
+    <div class="segs">
+      <div class="seg"><i></i></div><div class="seg"><i></i></div><div class="seg"><i></i></div>
+    </div>
+  </div>
+
+  <div class="abs win">
+    <div class="chrome">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <div class="url">
+        <span><svg viewBox="0 0 12 12"><rect x="2" y="5" width="8" height="6" rx="1.5" fill="#5a6880"/><path d="M4 5V3.6a2 2 0 0 1 4 0V5" stroke="#5a6880" stroke-width="1.4" fill="none"/></svg>yourbusiness.com</span>
+        <span><svg viewBox="0 0 12 12"><rect x="2" y="5" width="8" height="6" rx="1.5" fill="#5a6880"/><path d="M4 5V3.6a2 2 0 0 1 4 0V5" stroke="#5a6880" stroke-width="1.4" fill="none"/></svg>app.yourbusiness.com/dashboard</span>
+        <span><svg viewBox="0 0 12 12"><rect x="1.5" y="2.5" width="9" height="7" rx="1.5" stroke="#5a6880" stroke-width="1.3" fill="none"/><circle cx="6" cy="6" r="1.8" fill="#5a6880"/></svg>studio / lodge-exterior.jpg</span>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- 01 website -->
+      <div class="scene scene-web">
+        <div class="w-nav">
+          <span class="w-logo">YOUR<em>BRAND</em></span>
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="pill"></span>
+        </div>
+        <span class="w-kick bar"></span>
+        <div class="w-h">
+          <span class="ln"><span>Your business,</span></span>
+          <span class="ln blue"><span>open 24/7.</span></span>
+        </div>
+        <div class="w-p"><span class="bar" style="width:290px"></span><span class="bar" style="width:262px"></span><span class="bar" style="width:180px"></span></div>
+        <div class="w-btns">
+          <div class="w-btn primary">Book now<span class="w-ripple"></span></div>
+          <div class="w-btn ghost">Our menu</div>
+        </div>
+        <div class="w-img"><span class="c1"></span><span class="c2"></span><div class="card"><i></i><i style="width:96px"></i><i style="width:70px"></i></div></div>
+        <div class="w-cards">
+          <div class="w-card"><div class="ic"></div><span class="bar" style="width:120px;height:10px;background:#c9d2e0"></span><span class="bar" style="width:170px"></span><span class="bar" style="width:140px"></span></div>
+          <div class="w-card"><div class="ic"></div><span class="bar" style="width:100px;height:10px;background:#c9d2e0"></span><span class="bar" style="width:170px"></span><span class="bar" style="width:120px"></span></div>
+          <div class="w-card"><div class="ic"></div><span class="bar" style="width:130px;height:10px;background:#c9d2e0"></span><span class="bar" style="width:160px"></span><span class="bar" style="width:136px"></span></div>
+        </div>
+        <div class="w-foot"></div>
+        <div class="toast w-toast"><span class="ok"><svg viewBox="0 0 12 12"><path d="M2.5 6.5l2.3 2.3L9.5 3.8" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Site published <small>&middot; live in 48h</small></div>
+        <svg class="cursor w-cursor" viewBox="0 0 28 34"><path d="M3 2 L3 27 L9.5 21 L14 31.5 L18.5 29.5 L14 19.5 L23 19.5Z" fill="#0b1f3f" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/></svg>
+      </div>
+
+      <!-- 02 business system -->
+      <div class="scene scene-sys">
+        <div class="s-side">
+          <div class="s-brand">OPS</div>
+          <div class="s-nav"><i></i><i class="on"></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="s-title"><b>Today&rsquo;s overview</b><span>Accra branch</span></div>
+        <div class="s-kpis">
+          <div class="s-kpi"><small>Orders this month</small><strong data-kpi="orders">1,284</strong></div>
+          <div class="s-kpi"><small>Revenue</small><strong data-kpi="rev">GH₵ 84.2k</strong></div>
+          <div class="s-kpi warn"><small>Low-stock alerts</small><strong data-kpi="stock">3</strong></div>
+        </div>
+        <div class="s-card s-chart">
+          <h6>Weekly sales</h6>
+          <div class="s-bars">
+            <i class="s-bar" style="height:42%"></i><i class="s-bar" style="height:58%"></i><i class="s-bar" style="height:50%"></i>
+            <i class="s-bar" style="height:70%"></i><i class="s-bar" style="height:64%"></i><i class="s-bar" style="height:82%"></i>
+            <i class="s-bar hi" style="height:100%"></i>
+          </div>
+        </div>
+        <div class="s-card s-stock">
+          <h6>Stock levels</h6>
+          <div class="s-st"><small><span>Rice 25kg</span><span>82%</span></small><div class="track"><i style="width:82%"></i></div></div>
+          <div class="s-st"><small><span>Cooking oil</span><span>64%</span></small><div class="track"><i style="width:64%"></i></div></div>
+          <div class="s-st"><small><span>Tomato paste</span><span>12%</span></small><div class="track"><i class="low" style="width:12%"></i></div></div>
+        </div>
+        <div class="s-card s-table">
+          <div class="s-row"><span class="id">#0412</span><span>Ama Mensah</span><span class="amt">GH₵ 1,250</span>
+            <span class="pill-flip"><span class="pill pend s-pend">Pending</span><span class="pill paid s-paid">Paid</span></span></div>
+          <div class="s-row"><span class="id">#0411</span><span>Kwame Boateng</span><span class="amt">GH₵ 640</span><span class="pill paid">Paid</span></div>
+          <div class="s-row"><span class="id">#0410</span><span>Efua Owusu</span><span class="amt">GH₵ 2,980</span><span class="pill paid">Paid</span></div>
+          <div class="s-row"><span class="id">#0409</span><span>Yaw Asante</span><span class="amt">GH₵ 415</span><span class="pill paid">Paid</span></div>
+        </div>
+        <div class="toast s-toast"><span class="ok"><svg viewBox="0 0 12 12"><path d="M2.5 6.5l2.3 2.3L9.5 3.8" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Invoice #0412 paid <small>&middot; receipt sent</small></div>
+      </div>
+
+      <!-- 03 photo edit -->
+      <div class="scene scene-photo">
+        <div class="p-layer p-before"><svg viewBox="0 0 740 556"><use href="#landscape" /></svg></div>
+        <div class="p-layer p-after"><svg viewBox="0 0 740 556"><use href="#landscape" /></svg></div>
+        <span class="p-lab l">BEFORE</span>
+        <span class="p-lab r">AFTER</span>
+        <div class="p-handle"><div class="p-knob"><svg viewBox="0 0 22 22"><path d="M8 6 L3 11 L8 16 M14 6 L19 11 L14 16" stroke="#0b1f3f" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="abs p-panel">
+    <h6>Edit stack</h6>
+    <div class="p-row"><span>Exposure</span><span class="track"><i class="p-fill" style="width:62%"></i></span></div>
+    <div class="p-row"><span>Colour &amp; tone</span><span class="track"><i class="p-fill" style="width:78%"></i></span></div>
+    <div class="p-row"><span>Sky &amp; light</span><span class="p-check"><svg viewBox="0 0 12 12"><path d="M2.5 6.5l2.3 2.3L9.5 3.8" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+    <div class="p-row"><span>Clean-up &amp; retouch</span><span class="p-check"><svg viewBox="0 0 12 12"><path d="M2.5 6.5l2.3 2.3L9.5 3.8" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  </div>
+
+  <!-- closing lockup -->
+  <div class="abs logo">
+    <div class="lg-word"><span class="ln"><span>IJW</span></span><span class="ln blue"><span>LABS</span></span></div>
+    <div class="lg-line"></div>
+    <div class="lg-sub">Digital Solutions</div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const DUR = 15;               // loop length, seconds
+  const L = DUR * 1000;
+  const OUT = "cubic-bezier(.16,1,.3,1)";   // expo-out: entrances
+  const IO = "cubic-bezier(.65,0,.35,1)";   // in-out: moves
+  const IN = "cubic-bezier(.7,0,.84,0)";    // expo-in: exits
+  const $ = (s) => document.querySelector(s);
+  const $$ = (s) => [...document.querySelectorAll(s)];
+  const anims = [];
+
+  // tl(target, [[seconds, {css}, easing?], ...], {stagger, ease})
+  // Each frame's easing shapes the segment that starts at it. Values hold
+  // before the first and after the last frame, so the 15 s loop is seamless.
+  function tl(target, frames, opts = {}) {
+    const els = typeof target === "string" ? $$(target) : [target];
+    els.forEach((el, i) => {
+      const shift = (opts.stagger || 0) * i;
+      const kf = frames.map(([t, css, ease]) => ({
+        ...css,
+        offset: Math.min(1, Math.max(0, (t + shift) / DUR)),
+        easing: ease || opts.ease || OUT,
+      }));
+      const plain = ({ offset, easing, ...css }) => css;
+      if (kf[0].offset > 0) kf.unshift({ ...plain(kf[0]), offset: 0, easing: "linear" });
+      if (kf[kf.length - 1].offset < 1) kf.push({ ...plain(kf[kf.length - 1]), offset: 1 });
+      const a = el.animate(kf, { duration: L, fill: "both" });
+      a.pause();
+      anims.push(a);
+    });
+  }
+  const T = (x = 0, y = 0, s = 1) => ({ transform: `translate(${x}px, ${y}px) scale(${s})` });
+  const fade = (o, x = 0, y = 0, s = 1) => ({ opacity: o, ...T(x, y, s) });
+  const up = (pct) => ({ transform: `translateY(${pct}%)` });
+
+  /* ---- headline column ---- */
+  tl(".k-line", [[0.1, { transform: "scaleX(0)" }], [0.8, { transform: "scaleX(1)" }], [12.9, { transform: "scaleX(1)" }, IN], [13.35, { transform: "scaleX(0)" }]]);
+  tl(".k-text", [[0.3, fade(0, -12)], [0.9, fade(1)], [12.9, fade(1), IN], [13.3, fade(0, 0, -8)]]);
+  tl(".hl .ln > span", [[0.25, up(108)], [1.15, up(0)], [12.8, up(0), IN], [13.3, up(-108)]], { stagger: 0.11 });
+  tl(".stat", [[1.35, fade(0, 0, 22)], [2.0, fade(1)], [12.75, fade(1), IN], [13.15, fade(0, 0, -12)]], { stagger: 0.1 });
+
+  /* ---- device frame + HUD ---- */
+  tl(".win", [[0.45, fade(0, 0, 50, .95)], [1.35, fade(1)], [12.55, fade(1), IN], [13.1, fade(0, 0, -30, .96)]]);
+  tl(".hud", [[0.8, fade(0, 0, 12)], [1.4, fade(1)], [12.55, fade(1), IN], [12.95, fade(0, 0, -10)]]);
+  const labs = $$(".chip-lab"), urls = $$(".url span");
+  const sceneSpans = [[1.2, 4.95], [5.1, 8.75], [8.95, 13.2]];
+  sceneSpans.forEach(([a, b], i) => {
+    [labs[i], urls[i]].forEach((el) =>
+      tl(el, [[a, fade(0, 0, 14)], [a + 0.45, fade(1)], [b, fade(1), IN], [b + 0.3, fade(0, 0, -14)]]));
+  });
+  $$(".seg i").forEach((el, i) => {
+    const [a, b] = [[1.35, 5.0], [5.0, 8.85], [8.85, 12.4]][i];
+    tl(el, [[a, { transform: "scaleX(0)" }, "linear"], [b, { transform: "scaleX(1)" }]]);
+  });
+
+  /* ---- 01 website build ---- */
+  tl(".scene-web", [[4.95, fade(1), IN], [5.35, fade(0, -50)]]);
+  tl(".w-nav > *", [[1.35, fade(0, 0, -10)], [1.8, fade(1)]], { stagger: 0.05 });
+  tl(".w-kick", [[1.6, { transform: "scaleX(0)" }], [2.05, { transform: "scaleX(1)" }]]);
+  tl(".w-h .ln > span", [[1.7, up(110)], [2.35, up(0)]], { stagger: 0.12 });
+  tl(".w-p .bar", [[2.0, { transform: "scaleX(0)" }], [2.55, { transform: "scaleX(1)" }]], { stagger: 0.07 });
+  tl(".w-img", [[1.85, fade(0, 0, 0, .9)], [2.6, fade(1)]]);
+  tl(".w-img .card", [[2.2, fade(0, 0, 26)], [2.8, fade(1)]]);
+  tl(".w-btn", [[2.3, fade(0, 0, 0, .8)], [2.75, fade(1)], [4.0, fade(1), "cubic-bezier(.3,0,.5,1)"], [4.08, fade(1, 0, 0, .94)], [4.25, fade(1)]], { stagger: 0.08 });
+  tl(".w-card", [[2.6, fade(0, 0, 34)], [3.25, fade(1)]], { stagger: 0.1 });
+  tl(".w-foot", [[2.9, fade(0)], [3.3, fade(1)]]);
+  tl(".w-cursor", [[3.0, fade(0, 690, 520)], [3.25, fade(1, 676, 500), IO], [3.95, fade(1, 92, 268)], [4.0, fade(1, 92, 268, .82)], [4.14, fade(1, 92, 268)], [4.55, fade(1, 92, 268), IN], [4.85, fade(0, 120, 300)]]);
+  tl(".w-ripple", [[4.02, { opacity: .7, transform: "scale(0)" }], [4.6, { opacity: 0, transform: "scale(4)" }]]);
+  tl(".w-toast", [[4.15, fade(0, 0, 20)], [4.5, fade(1)]]);
+
+  /* ---- 02 business system ---- */
+  tl(".scene-sys", [[5.0, fade(0, 50)], [5.4, fade(1)], [8.6, fade(1), IN], [9.0, fade(0, -50)]]);
+  tl(".s-side", [[5.15, T(-150)], [5.7, T(0)]]);
+  tl(".s-nav i", [[5.45, fade(0, -10)], [5.85, fade(1)]], { stagger: 0.05 });
+  tl(".s-title", [[5.4, fade(0, 0, 10)], [5.85, fade(1)]]);
+  tl(".s-kpi", [[5.5, fade(0, 0, 18)], [6.0, fade(1)]], { stagger: 0.1 });
+  tl(".s-card", [[5.7, fade(0, 0, 18)], [6.25, fade(1)]], { stagger: 0.1 });
+  tl(".s-bar", [[5.95, { transform: "scaleY(0)" }], [6.7, { transform: "scaleY(1)" }]], { stagger: 0.06 });
+  tl(".s-st .track i", [[6.2, { transform: "scaleX(0)" }], [7.0, { transform: "scaleX(1)" }]], { stagger: 0.1 });
+  tl(".s-row", [[6.3, fade(0, 24)], [6.8, fade(1)]], { stagger: 0.09 });
+  tl(".s-pend", [[7.45, fade(1), IN], [7.65, fade(0, 0, 0, .7)]]);
+  tl(".s-paid", [[7.55, fade(0, 0, 0, .5)], [7.9, fade(1)]]);
+  tl(".s-toast", [[7.8, fade(0, 0, 20)], [8.15, fade(1)]]);
+
+  /* ---- 03 photo edit ---- */
+  tl(".scene-photo", [[8.8, fade(0, 0, 0, 1.05)], [9.35, fade(1)]]);
+  tl(".p-after", [[9.55, { clipPath: "inset(0 0 0 100%)" }, IO], [11.0, { clipPath: "inset(0 0 0 0%)" }, IO], [11.7, { clipPath: "inset(0 0 0 50%)" }]]);
+  tl(".p-handle", [[9.3, fade(0, 740)], [9.55, fade(1, 740), IO], [11.0, fade(1, 0), IO], [11.7, fade(1, 370)]]);
+  tl(".p-lab", [[9.5, fade(0, 0, -10)], [9.9, fade(1)]], { stagger: 0.1 });
+  tl(".p-panel", [[9.35, fade(0, 0, 36)], [9.9, fade(1)], [12.45, fade(1), IN], [12.85, fade(0, 0, 24)]]);
+  tl(".p-fill", [[9.85, { transform: "scaleX(0)" }], [10.7, { transform: "scaleX(1)" }]], { stagger: 0.15 });
+  tl(".p-check", [[10.4, { transform: "scale(0)" }], [10.8, { transform: "scale(1)" }]], { stagger: 0.18 });
+
+  /* ---- closing lockup ---- */
+  tl(".lg-word .ln > span", [[13.3, up(110)], [14.05, up(0)], [14.5, up(0), IN], [14.9, up(-110)]], { stagger: 0.08 });
+  tl(".lg-line", [[13.55, { transform: "scaleX(0)" }], [14.2, { transform: "scaleX(1)" }], [14.5, { transform: "scaleX(1)" }, IN], [14.85, { transform: "scaleX(0)" }]]);
+  tl(".lg-sub", [[13.7, { opacity: 0, letterSpacing: ".9em" }], [14.3, { opacity: 1, letterSpacing: ".5em" }], [14.5, { opacity: 1, letterSpacing: ".5em" }, IN], [14.85, { opacity: 0, letterSpacing: ".4em" }]]);
+
+  /* ---- time-driven values (counters, ambient drift) ---- */
+  const ease = (x) => 1 - Math.pow(1 - Math.min(1, Math.max(0, x)), 3);
+  const prog = (t, a, b) => ease((t - a) / (b - a));
+  const stats = $$(".stat strong");
+  const kpi = { orders: $('[data-kpi="orders"]'), rev: $('[data-kpi="rev"]'), stock: $('[data-kpi="stock"]') };
+  const glow = $("#glow"), grid = $("#grid");
+
+  function values(t) {
+    stats.forEach((el, i) => {
+      const p = prog(t, 1.5 + i * 0.1, 2.7 + i * 0.1);
+      el.textContent = Math.round(p * +el.dataset.count) + (el.dataset.suffix || "");
+    });
+    const k = prog(t, 5.6, 6.9);
+    kpi.orders.textContent = Math.round(k * 1284).toLocaleString("en-US");
+    kpi.rev.textContent = "GH₵ " + (k * 84.2).toFixed(1) + "k";
+    kpi.stock.textContent = Math.round(prog(t, 5.8, 6.6) * 3);
+    const w = (t / DUR) * Math.PI * 2;  // one full cycle per loop: seamless
+    glow.style.transform = `translate(${Math.sin(w) * 40}px, ${Math.cos(w) * 30}px)`;
+    grid.style.transform = `translate(${Math.sin(w) * -12}px, ${Math.cos(w) * -8}px)`;
+  }
+
+  /* ---- clock ---- */
+  let cur = 0, paused = false, origin = 0;
+  function seek(sec) {
+    cur = (((sec * 1000) % L) + L) % L;
+    anims.forEach((a) => (a.currentTime = cur));
+    values(cur / 1000);
+  }
+  function loop(now) {
+    if (!paused) seek((now - origin) / 1000);
+    requestAnimationFrame(loop);
+  }
+  function fit() {
+    const s = Math.min(innerWidth / 1920, innerHeight / 1080);
+    $("#stage").style.transform = `scale(${s}) translate(-50%, -50%)`;
+  }
+  addEventListener("resize", fit);
+  fit();
+
+  const params = new URLSearchParams(location.search);
+  window.seek = (sec) => { paused = true; seek(sec); };
+  window.DURATION = DUR;
+  addEventListener("message", (event) => {
+    if (event.source !== parent || event.data?.type !== "hero-playback") return;
+    paused = !event.data.playing;
+    if (!paused) origin = performance.now() - cur;
+  });
+
+  addEventListener("keydown", (e) => {
+    if (e.code === "Space") {
+      paused = !paused;
+      if (!paused) origin = performance.now() - cur;
+      e.preventDefault();
+    } else if (e.code === "ArrowRight" || e.code === "ArrowLeft") {
+      paused = true;
+      const step = e.shiftKey ? 1 : 1 / 60;
+      seek(cur / 1000 + (e.code === "ArrowRight" ? step : -step));
+    }
+  });
+
+  document.fonts.ready.then(() => {
+    window.ready = true;
+    if (params.has("render") || params.has("t")) {
+      paused = true;
+      seek(parseFloat(params.get("t")) || 0);
+    } else {
+      origin = performance.now();
+    }
+    requestAnimationFrame(loop);
+    parent.postMessage({ type: "hero-ready" }, "*");
+  });
+  seek(0);
+})();
+</script>
+</body>
+</html>
