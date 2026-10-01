@@ -19,9 +19,6 @@ export default function Home() {
       <section className="hero hero-with-motion hero-fullscreen">
         <div className="container hero-motion-layout">
           <div className="hero-mobile-intro">
-            <div className="hero-mobile-only">
-              <span className="kicker">Accra, Ghana — taking projects now</span>
-            </div>
             <h1 className="display hero-accessible-heading">
               <span style={{ display: "block" }}>Smart solutions.</span>
               <span style={{ display: "block" }} className="blue">Stronger presence.</span>
@@ -33,22 +30,6 @@ export default function Home() {
       </section>
 
       <section className="section" id="home-services">
-        <div className="container">
-          <div className="hero-motion-copy">
-            <p className="lede">
-              IJW Labs is a web and business software development company based in Accra, Ghana. We build websites, custom business systems and professional photo edits for organisations in Ghana and worldwide.
-            </p>
-            <div className="hero-ctas">
-              <Link className="btn btn-primary" to="/contact/">Reach us</Link>
-              <Link className="btn btn-outline" to="/services/">See what we build</Link>
-            </div>
-            <div className="hero-stats hero-mobile-only">
-              <div><strong>48h</strong><span>first response & quote</span></div>
-              <div><strong>3</strong><span>services, one team</span></div>
-              <div><strong>100%</strong><span>built around your budget</span></div>
-            </div>
-          </div>
-        </div>
         <div className="container">
           <Reveal className="sec-head">
             <span className="kicker">What we do</span>
