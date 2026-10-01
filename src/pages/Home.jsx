@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <JsonLd data={ORG_JSONLD} />
       <JsonLd data={FAQ_JSONLD} />
-      <section className="hero hero-with-motion">
+      <section className="hero hero-with-motion hero-fullscreen">
         <div className="container hero-motion-layout">
           <div className="hero-mobile-intro">
             <div className="hero-mobile-only">
@@ -29,6 +29,11 @@ export default function Home() {
             </h1>
           </div>
           <HeroMotion />
+        </div>
+      </section>
+
+      <section className="section" id="home-services">
+        <div className="container">
           <div className="hero-motion-copy">
             <p className="lede">
               IJW Labs is a web and business software development company based in Accra, Ghana. We build websites, custom business systems and professional photo edits for organisations in Ghana and worldwide.
@@ -44,9 +49,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="section">
         <div className="container">
           <Reveal className="sec-head">
             <span className="kicker">What we do</span>

@@ -103,6 +103,19 @@ h1, h2, h3, h4 { font-family: var(--font-display); color: var(--navy); line-heig
 .hero-stats strong { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--navy); display: block; }
 .hero-stats span { font-size: 0.85rem; color: var(--ink-dim); }
 
+/* ---------- fullscreen hero ---------- */
+body:has(.hero-fullscreen) .nav { position: fixed; inset: 0 0 auto; }
+body:has(.hero-fullscreen):not(.hero-intro-left) .nav { visibility: hidden; pointer-events: none; }
+body:has(.hero-fullscreen):not(.hero-intro-left) > #root .voice-widget { visibility: hidden; }
+.hero.hero-fullscreen { padding: 0; height: 100svh; border: 0; }
+.hero-fullscreen .hero-motion-layout { max-width: none; padding: 0; height: 100%; }
+.hero-fullscreen .hero-mobile-intro { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+.hero-fullscreen .hero-motion { height: 100%; margin: 0; aspect-ratio: auto; }
+.hero-fullscreen .hero-motion picture { display: block; width: 100%; height: 100%; }
+.hero-fullscreen .hero-motion img { width: 100%; height: 100%; object-fit: contain; }
+#home-services { scroll-margin-top: 72px; }
+#home-services .hero-motion-copy { padding: 0; margin: 0 0 48px; }
+
 /* ---------- image slots ---------- */
 .hero-with-motion { padding: 20px 0 56px; background: var(--paper); }
 .hero-motion-layout { display: flex; flex-direction: column; }

@@ -262,6 +262,16 @@
   .lg-word .blue { color: var(--blue); }
   .lg-line { width: 640px; height: 4px; background: var(--blue); margin: 22px 0 26px; }
   .lg-sub { font-family: var(--display); font-weight: 700; font-size: 30px; letter-spacing: .5em; text-transform: uppercase; color: var(--navy); padding-left: .5em; }
+  @media (max-aspect-ratio: 1/1) {
+    #stage { width: 1080px; height: 1920px; }
+    .kicker { left: 80px; top: 130px; }
+    .hl { left: 74px; top: 200px; }
+    .stats { left: 80px; top: 830px; gap: 62px; }
+    .hud { left: 170px; top: 1040px; }
+    .win { left: 170px; top: 1110px; }
+    .p-panel { left: 194px; top: 1504px; }
+    .logo { top: 780px; }
+  }
 </style>
 </head>
 <body>
@@ -570,11 +580,19 @@
     values(cur / 1000);
   }
   function loop(now) {
-    if (!paused) seek((now - origin) / 1000);
+    if (!paused) {
+      const elapsed = (now - origin) / 1000;
+      if (params.has("once") && elapsed >= DUR) {
+        seek(14.45);
+        paused = true;
+        parent.postMessage({ type: "hero-ended" }, "*");
+      } else seek(elapsed);
+    }
     requestAnimationFrame(loop);
   }
   function fit() {
-    const s = Math.min(innerWidth / 1920, innerHeight / 1080);
+    const portrait = innerWidth <= innerHeight;
+    const s = Math.min(innerWidth / (portrait ? 1080 : 1920), innerHeight / (portrait ? 1920 : 1080));
     $("#stage").style.transform = `scale(${s}) translate(-50%, -50%)`;
   }
   addEventListener("resize", fit);
