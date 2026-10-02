@@ -14,12 +14,13 @@ export const FOUNDERS = [
   {
     slug: "isaac-asamoah",
     img: "founder-isaac-20260930.jpg",
-    name: "Isaac Asamoah Junior",
-    alternateNames: ["Isaac Asamoah", "Asamoah Isaac"],
-    role: "Co-founder & CEO",
+    name: "Isaac Asamoah",
+    alternateNames: ["Asamoah Isaac"],
+    role: "Founder & CEO",
     bio: "Isaac Asamoah leads technical direction and development at IJW Labs. His work spans responsive websites, full-stack applications and interactive web experiences.",
     profileUrl: "https://asamoahisaac.netlify.app/",
     profileLabel: "View Isaac's portfolio",
+    linkedinUrl: "https://www.linkedin.com/in/isaac-asamoah-aba780440/",
   },
   {
     slug: "judah-b-amanor",

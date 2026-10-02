@@ -58,7 +58,7 @@ export const ORG_JSONLD = {
   name: "IJW Labs",
   slogan: "Smart Solutions. Stronger Presence. Real Growth.",
   description:
-    "IJW Labs is a web and business software development company based in Accra, Ghana, offering websites, custom business systems and professional photo editing. Its co-founders are Isaac Asamoah Junior, Judah Amanor Tetteh and Wisdom Dzanado.",
+    "IJW Labs is a web and business software development company based in Accra, Ghana, offering websites, custom business systems and professional photo editing. Its founding team is Isaac Asamoah, Founder & CEO; Judah Amanor Tetteh, Co-founder & COO; and Wisdom Dzanado, Co-founder & Creative Director.",
   url: SITE_URL + "/",
   telephone: "+233539923975",
   address: { "@type": "PostalAddress", addressLocality: "Accra", addressCountry: "GH" },
@@ -72,7 +72,7 @@ export const ORG_JSONLD = {
     image: `${SITE_URL}/images/${founder.img}`,
     jobTitle: founder.role,
     description: founder.bio,
-    ...(founder.profileUrl ? { sameAs: [founder.profileUrl] } : {}),
+    ...((founder.profileUrl || founder.linkedinUrl) ? { sameAs: [founder.profileUrl, founder.linkedinUrl].filter(Boolean) } : {}),
   })),
   sameAs: ["https://www.instagram.com/ijw_labs", "https://x.com/ijwlabs"],
   makesOffer: [
@@ -94,7 +94,7 @@ export function founderJsonLd(founder) {
     image: `${SITE_URL}/images/${founder.img}`,
     jobTitle: founder.role,
     description: founder.bio,
-    ...(founder.profileUrl ? { sameAs: [founder.profileUrl] } : {}),
+    ...((founder.profileUrl || founder.linkedinUrl) ? { sameAs: [founder.profileUrl, founder.linkedinUrl].filter(Boolean) } : {}),
     worksFor: { "@id": ORG_JSONLD["@id"] },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
   };
@@ -108,7 +108,7 @@ export const FAQS = [
   },
   {
     q: "Who founded IJW Labs?",
-    a: "IJW Labs has three co-founders: Isaac Asamoah Junior, CEO; Judah Amanor Tetteh, COO; and Wisdom Dzanado, Creative Director. They lead technical development, operations and creative production respectively.",
+    a: "IJW Labs was founded by Isaac Asamoah, Founder & CEO; Judah Amanor Tetteh, Co-founder & COO; and Wisdom Dzanado, Co-founder & Creative Director. They lead technical development, operations and creative production respectively.",
   },
   {
     q: "What business systems does IJW Labs build?",

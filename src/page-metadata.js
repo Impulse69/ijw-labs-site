@@ -31,10 +31,10 @@ export const PAGE_META = {
     noindex: true,
   },
   "/founders/isaac-asamoah": {
-    title: "Isaac Asamoah (Junior) — Web Developer & IJW Labs Co-founder",
-    description: "Isaac Asamoah Junior, also known as Asamoah Isaac, is co-founder and CEO of IJW Labs in Accra, Ghana. He leads web and custom business systems development.",
+    title: "Isaac Asamoah — Founder & CEO of IJW Labs",
+    description: "Isaac Asamoah is Founder & CEO of IJW Labs in Accra, Ghana. He leads web and custom business systems development. Explore his portfolio and LinkedIn profile.",
     path: "/founders/isaac-asamoah/",
-    image: "/images/founder-1.jpg",
+    image: "/images/founder-isaac-20260930.jpg",
   },
   "/founders/judah-b-amanor": {
     title: "Judah Amanor Tetteh — Co-founder & COO of IJW Labs",

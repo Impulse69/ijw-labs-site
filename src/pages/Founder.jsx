@@ -37,6 +37,7 @@ export default function Founder() {
             <p style={{ marginTop: 14, color: "var(--ink-dim)" }}>{founder.bio}</p>
             {founder.alternateNames && <p style={{ marginTop: 14, color: "var(--ink-dim)" }}>Also known as {founder.alternateNames.join(" and ")}.</p>}
             {founder.profileUrl && <p style={{ marginTop: 18 }}><a className="btn btn-outline" href={founder.profileUrl} target="_blank" rel="noopener noreferrer">{founder.profileLabel} <span aria-hidden="true">↗</span></a></p>}
+            {founder.linkedinUrl && <p style={{ marginTop: 12 }}><a className="btn btn-outline" href={founder.linkedinUrl} target="_blank" rel="noopener noreferrer">View {founder.name.split(" ")[0]}'s LinkedIn profile <span aria-hidden="true">↗</span></a></p>}
             <p style={{ marginTop: 14, color: "var(--ink-dim)" }}>
               Explore <Link to="/services/">IJW Labs services</Link> or meet the <Link to="/about/">other founders</Link>.
             </p>
