@@ -61,7 +61,7 @@ export default function Home() {
           <Reveal className="sec-head">
             <span className="kicker">Websites &amp; concepts</span>
             <h2 className="display">A stronger presence online</h2>
-            <p>Our live Nonna Lodge website and published hotel website concepts.</p>
+            <p>Skuldrop’s live delivery platform, the Nonna Lodge website and published hotel website concepts.</p>
           </Reveal>
           <div className="work-grid">
             {WORK.slice(0, 3).map((w, i) => (

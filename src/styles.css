@@ -183,6 +183,9 @@ body:has(.hero-fullscreen):not(.hero-intro-left) > #root .voice-widget { visibil
 .work-item { display: block; text-decoration: none; color: inherit; }
 .work-item .work-thumb { position: relative; border-radius: var(--radius); overflow: hidden; }
 .work-item .img-slot { aspect-ratio: 4 / 3; }
+.work-item .work-preview-contain { background: #29334e; }
+.work-preview-contain picture { position: absolute; inset: 0 0 52px; display: block; }
+.work-preview-contain img { display: block; object-fit: contain; }
 .work-item h4 { margin-top: 14px; font-size: 1.02rem; font-weight: 700; transition: color 0.15s; }
 .work-item:hover h4 { color: var(--blue); }
 .work-tag { font-size: 0.85rem; color: var(--ink-dim); }

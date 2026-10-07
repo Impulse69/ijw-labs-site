@@ -8,7 +8,7 @@ export default function WorkTile({ item }) {
     <a className="work-item" href={item.url} target="_blank" rel="noopener noreferrer"
        aria-label={`Open the ${item.title} ${isProject ? "live website" : "website concept"} in a new tab`}>
       <div className="work-thumb">
-        <ImageSlot file={item.img} alt={`${item.title} ${isProject ? "website" : "website concept"} by IJW Labs`} />
+        <ImageSlot file={item.img} alt={`${item.title} ${isProject ? "website" : "website concept"} by IJW Labs`} className={item.previewFit === "contain" ? "work-preview-contain" : ""} />
         <span className="work-visit">{isProject ? "View live website" : "View live demo"} <IconArrow /></span>
       </div>
       <h4>{item.title}</h4>

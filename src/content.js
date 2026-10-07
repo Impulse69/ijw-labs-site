@@ -45,7 +45,7 @@ export const FOUNDERS = [
 // To add a project: screenshot it into public/images/work/<slug>.jpg, run
 // mockups/portfolio_variants.py, then add a row here.
 export const PORTFOLIO = [
-  { slug: "skuldrop", title: "Skuldrop", tag: "Delivery operations · Live for D Alimachi", url: "https://dalimachi.com/", kind: "project", featured: true, img: "work/skuldrop.png" },
+  { slug: "skuldrop", title: "Skuldrop", tag: "Delivery operations · Live for D Alimachi", url: "https://dalimachi.com/", kind: "project", featured: true, img: "work/skuldrop.png", previewFit: "contain" },
   { slug: "nonna-lodge", title: "Nonna Lodge", tag: "Live hotel website", url: "https://nonna-lodge-site.vercel.app/", kind: "project", featured: true },
   { slug: "eastern-premier-hotel", title: "Eastern Premier Hotel", tag: "Hotel · Koforidua", url: "https://eastern-premier-hotel-koforidua.netlify.app/", featured: true },
   { slug: "freden-hotel-koforidua", title: "Freden Hotel", tag: "Hotel · Koforidua", url: "https://freden-hotel-koforidua.netlify.app/", featured: true },
