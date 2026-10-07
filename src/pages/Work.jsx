@@ -24,7 +24,7 @@ export default function Work() {
 
       <section className="section alt" id="websites" style={{ scrollMarginTop: 100 }}>
         <div className="container">
-          <div className="sec-head"><span className="kicker">Websites &amp; concepts</span><h2 className="display">{PORTFOLIO.length} ways to make an impression.</h2><p>Our live Nonna Lodge website and hospitality design demos. Concept demos are not official websites for the named businesses.</p></div>
+          <div className="sec-head"><span className="kicker">Platforms, websites &amp; concepts</span><h2 className="display">{PORTFOLIO.length} ways to make an impression.</h2><p>Skuldrop powers parcel booking, delivery operations and public tracking for D Alimachi School Parcel Delivery. Explore it alongside our live Nonna Lodge website and hospitality design demos. Concept demos are not official websites for the named businesses.</p></div>
           <div className="work-grid">
             {PORTFOLIO.map((w, i) => (
               <Reveal key={w.slug} delay={(i % 3) * 0.06}>
